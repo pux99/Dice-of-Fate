@@ -7,7 +7,7 @@ public class CombatState : MonoBehaviour
 {
     protected List<Die> dieList = new List<Die>();
     public GameObject container;
-    protected bool onPlace;
+    public bool onPlace;
     protected bool active;
     public void fillList(List<Die> list)
     {
@@ -33,6 +33,7 @@ public class CombatState : MonoBehaviour
     }
     public virtual void startState(List<Die> list)
     {
+        dieList.Clear();
         active = true;
         fillList(list);
     }
