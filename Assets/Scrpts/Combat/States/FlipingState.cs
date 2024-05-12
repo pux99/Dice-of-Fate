@@ -46,7 +46,7 @@ public class FlipingState : CombatState
             }
             else
             {
-                MoveToContainer(5);
+                MoveToContainer(15);
             }
         }   
     }

@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class Scoring : MonoBehaviour
 {
     List<List<Die>> diceList= new List<List<Die>>();
+    public List<Die> SpecialDice;
     public int score;
     public GameObject container;
     bool onPlace;
@@ -21,6 +22,10 @@ public class Scoring : MonoBehaviour
         foreach (Die d in List)
         {
             list.Add(d);
+            if (d.currentFace.special)
+            {
+                SpecialDice.Add(d);
+            }
         }
         diceList.Add(list);
         calculatePoint();
@@ -40,55 +45,74 @@ public class Scoring : MonoBehaviour
         //}
         calculatePoint();
         TotalPointsChange.Invoke(score);
+        SpecialDice.Clear();
         diceList.Clear();
     }
     void calculatePoint()
     {
         int value = 0;
+
         foreach (List<Die> dice in diceList)
         {
-            switch (dice.Count)
+            List<Die> numberDice = new List<Die>();
+            List<Die> specialDice = new List<Die>();
+            int localValue=0;
+            foreach (var die in dice)
+            {
+                if (!die.currentFace.special)
+                    numberDice.Add(die);
+                else specialDice.Add(die);
+            }
+            switch (numberDice.Count)
             {
                 case 1:
-                    switch (dice[0].value)
+                    switch (numberDice[0].value)
                     {
                         case 1:
-                            value += 100;
+                            localValue = 100;
                             break;
                         case 5:
-                            value += 50;
+                            localValue = 50;
                             break;
-                        default: value += 0; break;
+                        default: localValue = 0; break;
                     }
                     break;
                 case 2:
                     if (CheckAllEquals(dice)) {
-                        switch (dice[0].value)
+                        switch (numberDice[0].value)
                         {
                             case 1:
-                                value += 200;
+                                localValue = 200;
                                 break;
                             case 5:
-                                value += 100;
+                                localValue = 100;
                                 break;
-                            default: value += 0; break;
+                            default: localValue = 0; break;
                         }
                     }  
                     break;
                 case int a when a > 2:
-                    if (CheckAllEquals(dice))
+                    if (CheckAllEquals(numberDice))
                     {
-                        if (dice[0].value == 1)
-                            value += dice[0].value * 1000 * (int)Mathf.Pow(2, a - 3);
+                        if (numberDice[0].value == 1)
+                            localValue = numberDice[0].value * 1000 * (int)Mathf.Pow(2, a - 3);
                         else
-                            value += dice[0].value * 100 * (int)Mathf.Pow(2, a - 3);
+                            localValue = numberDice[0].value * 100 * (int)Mathf.Pow(2, a - 3);
                     }
-                    else value += 0;
+                    else localValue = 0;
                     break;
                 default:
-                    value += 0;
+                    localValue = 0;
                     break;
             }
+            foreach (Die die in specialDice)
+            {
+                if (die.currentFace.effect.type == DieFace.diceFaceEffect.EffectType.multyply)
+                {
+                    localValue *= die.currentFace.effect.Value;
+                }
+            }
+            value += localValue;
         }
         score = value;
     }

@@ -36,8 +36,8 @@ Transform:
   m_Children:
   - {fileID: 527730658144189183}
   - {fileID: 7655415439614880619}
-  - {fileID: 6863507805220209837}
   - {fileID: 5550825261317923382}
+  - {fileID: 6863507805220209837}
   - {fileID: 5347131810998330165}
   - {fileID: 4914385689413682759}
   m_Father: {fileID: 0}
@@ -113,6 +113,7 @@ MonoBehaviour:
       m_Calls: []
   _currentFace: {fileID: 4283306078567658793}
   rb: {fileID: 0}
+  disolvTarget: 0
   disolvSpeed: 0
   selectable: 0
   flippable: 0
@@ -333,11 +334,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: _Value
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1656562016463034757, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: m_Name
-      value: DieFace 3
+      value: DieFace 4
       objectReference: {fileID: 0}
     - target: {fileID: 4328276656868253078, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -407,11 +408,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: _Value
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1656562016463034757, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: m_Name
-      value: DieFace 4
+      value: DieFace 3
       objectReference: {fileID: 0}
     - target: {fileID: 4328276656868253078, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: m_LocalPosition.x

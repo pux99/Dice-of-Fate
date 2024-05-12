@@ -55,10 +55,18 @@ public class SelectingState : CombatState
     void calculatePoint()
     {
         int value = 0;
-        switch (selected.Count)
+        List<Die> numberDice = new List<Die>();
+        List<Die> specialDice = new List<Die>();
+        foreach (var die in selected)
+        {
+            if(!die.currentFace.special)
+                numberDice.Add(die);
+            else specialDice.Add(die);
+        }
+        switch (numberDice.Count)
         {
             case 1:
-                switch (selected[0].value)
+                switch (numberDice[0].value)
                 {
                     case 1:
                         value = 100;
@@ -70,9 +78,9 @@ public class SelectingState : CombatState
                 }
                 break;
             case 2:
-                if (CheckAllEquals(selected))
+                if (CheckAllEquals(numberDice))
                 {
-                    switch (selected[0].value)
+                    switch (numberDice[0].value)
                     {
                         case 1:
                             value = 200;
@@ -85,18 +93,25 @@ public class SelectingState : CombatState
                 }
                 break;
             case int a when a > 2:
-                if (CheckAllEquals(selected))
+                if (CheckAllEquals(numberDice))
                 {
-                    if (selected[0].value == 1)
-                        value = selected[0].value * 1000 * (int)Mathf.Pow(2, a - 3);
+                    if (numberDice[0].value == 1)
+                        value = numberDice[0].value * 1000 * (int)Mathf.Pow(2, a - 3);
                     else
-                        value = selected[0].value * 100 * (int)Mathf.Pow(2, a - 3);
+                        value = numberDice[0].value * 100 * (int)Mathf.Pow(2, a - 3);
                 }
                 else value = 0;
                 break;
             default:
                 value = 0;
                 break;
+        }
+        foreach (Die die in specialDice)
+        {
+            if (die.currentFace.effect.type == DieFace.diceFaceEffect.EffectType.multyply)
+            {
+                value *= die.currentFace.effect.Value;
+            }
         }
          _points=value;
     }
@@ -106,7 +121,7 @@ public class SelectingState : CombatState
         bool allEquals = true;
         for (int i = 0; i < list.Count; i++)
         {
-            if (list[i].value != value)
+            if (list[i].value != value )
             {
                 allEquals = false; break;
             }

@@ -282,4 +282,5 @@ public class UiManager : MonoBehaviour
         CombatUI.SetActive(false);
         LossOverlay.SetActive(true);
     }
+   
 }

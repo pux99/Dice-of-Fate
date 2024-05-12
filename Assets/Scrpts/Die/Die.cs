@@ -16,11 +16,12 @@ public class Die : MonoBehaviour
 
 
     [SerializeField] private DieFace _currentFace;
+    public DieFace currentFace {  get { return _currentFace; } }
     [SerializeField] private Rigidbody rb;
 
     private bool Disolving;
     private float disolv;
-    private float disolvTarget;
+    public float disolvTarget;
     [SerializeField] private float disolvSpeed;
     private MeshRenderer mr;
 
@@ -66,6 +67,13 @@ public class Die : MonoBehaviour
         }
         _outline= transform.GetChild(transform.childCount - 1).gameObject;
         freez();
+
+        disolv = 1;
+        foreach (Material mat in mr.materials)
+        {
+            mat.SetFloat("_Disolv", disolv);
+        }
+
     }
 
     void Update()
@@ -196,5 +204,9 @@ public class Die : MonoBehaviour
         {
             disolvTarget=0;
         }
+    }
+    public void Randomize()
+    {
+        transform.Rotate(Random.Range(0,360), Random.Range(0, 360), Random.Range(0, 360));
     }
 }

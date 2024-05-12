@@ -31,7 +31,8 @@ public class Rewards
          Heal,
          Damage,
          MaxLife,
-         DiceMode
+         DiceMode,
+         changaDie
      }
     [Serializable]
     public struct Effect

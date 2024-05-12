@@ -221,4 +221,21 @@ public class CombatManager : MonoBehaviour
             }
         }
     }
+    void ApllyDiceEffects(List<Die> dice, Fighter target)
+    {
+        foreach (Die die in dice)
+        {
+            switch (die.currentFace.effect.type)
+            {
+                case DieFace.diceFaceEffect.EffectType.heal:
+                    player.Heal(die.currentFace.value);
+                    break;
+                case DieFace.diceFaceEffect.EffectType.damage:
+                    player.Damage(die.currentFace.value);
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
 }

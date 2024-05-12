@@ -43,8 +43,11 @@ public class RollingState : CombatState
     public override void startState(List<Die>list)
     {
         base.startState(list);
+        InstantMoveToContainer();
         foreach (var die in dieList)
         {
+            die.Disolv(false);
+            die.Randomize();
             die.Roll();
         }
         rollingCount=0;

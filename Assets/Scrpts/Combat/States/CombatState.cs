@@ -41,6 +41,17 @@ public class CombatState : MonoBehaviour
     {
         startState(list);
     }
+    protected void InstantMoveToContainer()
+    {
+        float DieSize = dieList[0].size * 2;
+        Vector3 offset = new Vector3(-container.transform.localScale.x, 0, container.transform.localScale.z);
+        for (int i = 0; i < dieList.Count; i++)
+        {   
+            dieList[i].freez();//freeze constrains
+            dieList[i].transform.position =container.transform.position + offset * DieSize / 2 + new Vector3((int)(i / 3) * (DieSize + 0.3f), 0, -(i % 3 * (DieSize + 0.3f)));
+        }
+    }
+
     protected void MoveToContainer( float speed) 
     {
         List<Die> list = dieList;
