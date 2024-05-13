@@ -25,7 +25,7 @@ public class Die : MonoBehaviour
     [SerializeField] private float disolvSpeed;
     private MeshRenderer mr;
 
-    private int _value;
+    [SerializeField]private int _value;
     private bool _rolling;
     private bool _stopRolling;
     public bool selectable;

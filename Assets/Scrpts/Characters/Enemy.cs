@@ -8,6 +8,7 @@ public class Enemy : Fighter
 {
     public UnityEvent<Enemy> CreateDiceForEnemy=new UnityEvent<Enemy>();
     public List<Rewards> rewards;
+    public CardEnemy card;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +33,8 @@ public class Enemy : Fighter
         List<Effect.Effects> OnCombatStartStartEffects,
         List<Effect.Effects> OnTurnStartEffects,
         List<Effect.Effects> OnTakingDamageEffects,
-        List<Rewards> reward)
+        List<Rewards> reward,
+        CardEnemy card)
     {
         _maxHealth = maxHealth;
         _health = health;
@@ -41,6 +43,7 @@ public class Enemy : Fighter
         _OnTakingDamageEffects = OnTakingDamageEffects;
         _OnTurnStartEffects = OnTurnStartEffects;
         rewards = reward;
+        this.card = card;
         dice.Clear();
         for (int i = 0; i < diceHolder.transform.childCount; i++)
         {
@@ -50,5 +53,9 @@ public class Enemy : Fighter
         {
             CreateDiceForEnemy.Invoke(this);
         }
+        //for (int i = 0; i < transform.Find("Dice").childCount; i++)
+        //{
+        //    dice.Add(transform.Find("Dice").GetChild(i).GetComponent<Die>());
+        //}
     }
 }

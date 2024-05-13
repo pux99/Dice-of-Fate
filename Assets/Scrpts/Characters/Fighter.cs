@@ -41,8 +41,10 @@ public class Fighter : MonoBehaviour
     {
         if (value > _shield)
         {
-            if(_OnTakingDamageEffects!=null)
-            foreach (Effect.Effects effect in _OnTakingDamageEffects)
+
+
+            //if(_OnTakingDamageEffects!=null)
+           // foreach (Effect.Effects effect in _OnTakingDamageEffects)
                 //effect.ApplyEffect(this,1);
             _health -= value;
             if (_health <= 0)

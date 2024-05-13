@@ -40,16 +40,20 @@ public class EnemyTurn : CombatState
     }
     public void stepTwo()
     {
-        foreach(Die die in dieList)
-            EndOfEnemyTurn.Invoke(die.value*100);
+        foreach (Die die in dieList)
+        { 
+            EndOfEnemyTurn.Invoke(die.value * 100);
+        }
         clearList();
     }
     public override void startState(List<Die> list)
     {
         base.startState(list);
+        InstantMoveToContainer();
         foreach (Die die in dieList)
         {
-            
+            die.GetComponent<Collider>().enabled = true;
+            die.Disolv(false);
             die.Roll();
         }
         enemyTurn = true;

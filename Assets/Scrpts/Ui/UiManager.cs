@@ -93,6 +93,7 @@ public class UiManager : MonoBehaviour
     void CombatStart()
     {
         CombatUI.SetActive(true);
+        EnemyCard.sprite = combat.enemy.card.CardArt;
         combat.flip.FlipCountChange.AddListener(modifyFlips);
         CombatEventSubscription();
         MakeButtonsNotInteractable();

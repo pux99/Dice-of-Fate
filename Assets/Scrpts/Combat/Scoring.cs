@@ -10,11 +10,13 @@ public class Scoring : MonoBehaviour
     public int score;
     public GameObject container;
     bool onPlace;
+    public bool timeToMove;
     public UnityEvent<int> TotalPointsChange=new UnityEvent<int>();
 
     void Update()
     {
-        MoveToContainer(10);
+        if(timeToMove)
+            MoveToContainer(10);
     }
     public void scoring(List<Die> List)
     {
@@ -27,11 +29,10 @@ public class Scoring : MonoBehaviour
                 SpecialDice.Add(d);
             }
         }
+        timeToMove = true;
         diceList.Add(list);
         calculatePoint();
         TotalPointsChange.Invoke(score);
-        Debug.Log("list"+List.Count);
-        Debug.Log(diceList.Count);
     }
     public void ClearList()
     {
@@ -43,6 +44,7 @@ public class Scoring : MonoBehaviour
         //        }
         //    diceList.Remove(d);//preguntar si las sitas vacias quedan en memoria?
         //}
+        
         calculatePoint();
         TotalPointsChange.Invoke(score);
         SpecialDice.Clear();
@@ -144,7 +146,7 @@ public class Scoring : MonoBehaviour
                 //int inCorectPlase = 0;
                 Vector3 offset = new Vector3(-container.transform.localScale.x, 0, container.transform.localScale.z);
                 
-                for (int j=0;j< diceList[i].Count;j++)
+                for (int j=0;j< diceList[i]?.Count;j++)
                 {
                     diceList[i][j].transform.position = Vector3.MoveTowards(diceList[i][j].transform.position,
                                                                         container.transform.position + offset * DieSize / 2 + new Vector3(+(j % 3 * (DieSize + 0.3f)), 0,-(int)(j / 3) * (DieSize + 0.3f)-2*spacing),

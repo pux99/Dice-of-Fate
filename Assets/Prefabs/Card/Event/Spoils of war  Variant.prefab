@@ -49,6 +49,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6421564163255508911, guid: 22d49f95973bcc448a19d58b7a59ab5a, type: 3}
+      propertyPath: CardArt
+      value: 
+      objectReference: {fileID: 21300000, guid: 2a173b3ae3542e84bbe2ddc436a0d7a9, type: 3}
+    - target: {fileID: 6421564163255508911, guid: 22d49f95973bcc448a19d58b7a59ab5a, type: 3}
       propertyPath: CardName
       value: 'Spoils of war '
       objectReference: {fileID: 0}

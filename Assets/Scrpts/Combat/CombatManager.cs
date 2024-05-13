@@ -60,10 +60,7 @@ public class CombatManager : MonoBehaviour
 
     void Rolling(List<Die> list)
     {
-        Debug.Log(list.Count);
-        Debug.Log(OnUseDie.Count);
         removeDiceFromUse(list);
-        Debug.Log(OnUseDie.Count);
         rolling.startState(OnUseDie);
     }
     void fliping()
@@ -81,6 +78,11 @@ public class CombatManager : MonoBehaviour
     }
     public void ResetAndRoll()
     {
+        foreach (var die in enemy.dice)
+        {
+            die.Disolv(true);
+            die.GetComponent<Collider>().enabled = false;
+        }
         OnUseDie.Clear();
         foreach (var die in player.dice)
         {
@@ -142,17 +144,18 @@ public class CombatManager : MonoBehaviour
     public void EndOfPlayerTurn()
     {
         select.ResetValues();
-        enemy.Damage(scoring.score);
+        DamageFigther(enemy,scoring.score);
         foreach(Die die in player.dice)
         {
             die.Disolv(true);
         }
-        enemyTurn.startState(enemy.dice);
+        scoring.timeToMove = false;
+        if(enemy.health>0)
+            enemyTurn.startState(enemy.dice);
     }
     public void EndOfEnemyTurn(int value)
     {
-        DamageFigther(player,value);
-
+        player.Damage(value);
     }
     void DamageFigther(Fighter fighter,int value)
     {

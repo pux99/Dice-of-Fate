@@ -18,6 +18,7 @@ public class BoardManager : MonoBehaviour
     public bool watingDie;
     private CardEvent.Options currentOption;
     public MoveCamera moveCamera;
+    public Vector3 dieStartingPosition; 
     void Start()
     {
         for (int i = 0; i < transform.childCount; i++)
@@ -96,6 +97,13 @@ public class BoardManager : MonoBehaviour
         }
 
     }
+    public void CombatEnd()
+    {
+        foreach (BoardSpace boardSpace in spaceList)
+        {
+            boardSpace.EventOnGoing = false;
+        }
+    }
 
     void StartCombat()
     {
@@ -107,6 +115,8 @@ public class BoardManager : MonoBehaviour
         currentOption = options;
         if (options.roll)
         {
+            die.Disolv(false);
+            die.transform.position = dieStartingPosition;
             die.Roll();
             watingDie = true;
         }

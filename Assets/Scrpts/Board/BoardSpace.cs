@@ -36,6 +36,7 @@ public class BoardSpace : MonoBehaviour
                 space._previewSpace = this;
             }
             meshRenderer.material = CardFront;
+            meshRenderer.material.mainTexture = card.CardArt.texture;
         }
         if (ImNext)
         {
@@ -47,7 +48,13 @@ public class BoardSpace : MonoBehaviour
         }
         if (Used)
         {
-            gameObject.GetComponent<MeshRenderer>().material.color = Color.white;
+            meshRenderer.material.mainTexture = card.CardArt.texture;
+            if (ImNext)
+            {
+                meshRenderer.material = Blinking;
+                meshRenderer.material.SetTexture("_Texture", card.CardArt.texture);
+            }
+
         }
     }
 

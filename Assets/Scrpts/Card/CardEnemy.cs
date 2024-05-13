@@ -22,7 +22,8 @@ public class CardEnemy : Card
 
     public void SetUpEnemy(Enemy enemy)
     {
-        enemy.SetUp(maxHealth, health, shield, numbreOfDice, OnCombatStartStartEffects, OnTurnStartEffects, OnTakingDamageEffects,rewards);
+        enemy.SetUp(maxHealth, health, shield, numbreOfDice, OnCombatStartStartEffects, OnTurnStartEffects, OnTakingDamageEffects,rewards,this);
+        
     }
     // Start is called before the first frame update
     void Start()
