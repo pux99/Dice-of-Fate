@@ -20,6 +20,7 @@ public class CombatManager : MonoBehaviour
     public UnityEvent combatStart=new UnityEvent();
     public UnityEvent<int> FlipValueChange=new UnityEvent<int>();
     public UnityEvent<string> win = new UnityEvent<string>();
+    public UnityEvent<string> TextoDeEffectos = new UnityEvent<string>();
     public UnityEvent loss = new UnityEvent();
 
 
@@ -39,7 +40,9 @@ public class CombatManager : MonoBehaviour
         enemyTurn.EndOfEnemyTurn.AddListener(EndOfEnemyTurn);
         select.ScoringEvent.AddListener(removeDiceFromUseScoring);//dudoso
         select.ScoringEvent.AddListener(checkFlipValuePostScore);
-        
+        enemyTurn.EndOfEnemyTurnDiceEfects.AddListener(EndOfEnemyTurnDiceEfects);
+
+
     }
 
     public void CombatStart(Player NewPlayer,Enemy NewEnemy)
@@ -145,17 +148,23 @@ public class CombatManager : MonoBehaviour
     {
         select.ResetValues();
         DamageFigther(enemy,scoring.score);
-        foreach(Die die in player.dice)
+        ApllyDiceEffects(scoring.SpecialDice, enemy,player);
+        foreach (Die die in player.dice)
         {
             die.Disolv(true);
         }
         scoring.timeToMove = false;
         if(enemy.health>0)
-            enemyTurn.startState(enemy.dice);
+            enemyTurn.startState(enemy.dice,enemy.attack);
     }
     public void EndOfEnemyTurn(int value)
     {
         player.Damage(value);
+        applyEffectsEnemy(enemy._OnTurnStartEffects);
+    }
+    public void EndOfEnemyTurnDiceEfects(List<Die> specialDice)
+    {
+        ApllyDiceEffects(specialDice, player, enemy);
     }
     void DamageFigther(Fighter fighter,int value)
     {
@@ -224,21 +233,51 @@ public class CombatManager : MonoBehaviour
             }
         }
     }
-    void ApllyDiceEffects(List<Die> dice, Fighter target)
+    void applyEffectsEnemy(List<Rewards.Effect> effects)
     {
-        foreach (Die die in dice)
+
+        foreach (Rewards.Effect effect in effects)
         {
-            switch (die.currentFace.effect.type)
+            switch (effect.reward)
             {
-                case DieFace.diceFaceEffect.EffectType.heal:
-                    player.Heal(die.currentFace.value);
+                case Rewards.EffectType.Heal:
+                    Effect.heal.ApplyEffect(enemy, effect.value);
                     break;
-                case DieFace.diceFaceEffect.EffectType.damage:
-                    player.Damage(die.currentFace.value);
+                case Rewards.EffectType.Damage:
+                    Effect.damage.ApplyEffect(player, effect.value);
+                    break;
+                case Rewards.EffectType.MaxLife:
+                    Effect.maxheathMod.ApplyEffect(enemy, effect.value);
+                    break;
+                case Rewards.EffectType.DiceMode:
+                    Effect.diceamountMod.ApplyEffect(enemy, effect.value);
                     break;
                 default:
                     break;
             }
         }
+    }
+    void ApllyDiceEffects(List<Die> dice, Fighter resiver, Fighter dealer)
+    {
+        string sucesos;
+        sucesos = "El " + dealer.name;
+        foreach (Die die in dice)
+        {
+            switch (die.currentFace.effect.type)
+            {
+                case DieFace.diceFaceEffect.EffectType.heal:
+                    dealer.Heal(die.currentFace.effect.Value);
+                    sucesos += " se curo "+ die.currentFace.effect.Value;
+                    break;
+                case DieFace.diceFaceEffect.EffectType.damage:
+                    resiver.Damage(die.currentFace.effect.Value);
+                    sucesos += " le hizo " + die.currentFace.effect.Value + " de daño a "+ resiver.name;
+                    break;
+                default:
+                    break;
+            }
+        }
+        if(dice.Count > 0)
+            TextoDeEffectos.Invoke(sucesos);
     }
 }

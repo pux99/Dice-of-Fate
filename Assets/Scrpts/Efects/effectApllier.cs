@@ -8,6 +8,7 @@ public class effectApllier : MonoBehaviour
     public Heal heal;
     public DiceAmountMod diceamountMod;
     public MaxHeathMod maxheathMod;
+    public ChangeDie changeDie;
     // Start is called before the first frame update
     void Start()
     {

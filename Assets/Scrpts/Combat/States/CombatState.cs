@@ -65,9 +65,9 @@ public class CombatState : MonoBehaviour
             {
                 list[i].freez();//freeze constrains
                 list[i].transform.position = Vector3.MoveTowards(list[i].transform.position,
-                                                                    container.transform.position + offset * DieSize / 2 + new Vector3((int)(i / 3) * (DieSize + 0.3f), 0, -(i % 3 * (DieSize + 0.3f))),
+                                                                    container.transform.position + offset * DieSize / 2 + new Vector3((int)(i / 3) * (DieSize/2 + 0.3f), 0, -(i % 3 * (DieSize/2 + 0.3f))),
                                                                     speed * Time.deltaTime);//move to new position
-                if (list[i].transform.position == container.transform.position + offset * DieSize / 2 + new Vector3((int)(i / 3) * (DieSize + 0.3f), 0, -(i % 3 * (DieSize + 0.3f))))
+                if (list[i].transform.position == container.transform.position + offset * DieSize / 2 + new Vector3((int)(i / 3) * (DieSize/2 + 0.3f), 0, -(i % 3 * (DieSize/2 + 0.3f))))
                 {
                     inCorectPlase++;//+1 is a die is in position
                 }

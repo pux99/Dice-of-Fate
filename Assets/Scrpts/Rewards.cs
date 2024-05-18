@@ -39,8 +39,10 @@ public class Rewards
      {
          [SerializeField] private EffectType _reward;
          [SerializeField] private int _value;
-         public EffectType reward { get { return _reward; } }
+        [SerializeField] private GameObject _GameObjectReward;
+        public EffectType reward { get { return _reward; } }
          public int value { get { return _value; } }
+        public GameObject GameObjectReward { get { return _GameObjectReward; } }
      }
      [Serializable]
      public struct Reward

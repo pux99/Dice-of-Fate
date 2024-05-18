@@ -31,6 +31,10 @@ public class FlipingState : CombatState
         {
             if(onPlace)
             {
+                foreach(Die die in dieList)
+                {
+                    die.flippable = true;
+                }
                 if (flips <= 0)
                 {
                     active = false;
@@ -56,7 +60,7 @@ public class FlipingState : CombatState
         flips=value;
         foreach (var die in dieList)
         {
-            die.flippable=true;
+            
             die.flipt.AddListener(diceFlipt);
         }
     }

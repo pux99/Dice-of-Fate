@@ -80,7 +80,7 @@ public class Scoring : MonoBehaviour
                     }
                     break;
                 case 2:
-                    if (CheckAllEquals(dice)) {
+                    if (CheckAllEquals(numberDice)) {
                         switch (numberDice[0].value)
                         {
                             case 1:

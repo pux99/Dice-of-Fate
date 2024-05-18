@@ -8,7 +8,9 @@ public class EnemyTurn : CombatState
 {
     private int stopCounter;
     public UnityEvent<int> EndOfEnemyTurn = new UnityEvent<int>();
+    public UnityEvent<List<Die>> EndOfEnemyTurnDiceEfects = new UnityEvent<List<Die>>();
     bool enemyTurn;
+    int attack;
     void Start()
     {
         enemyTurn = false;
@@ -19,6 +21,7 @@ public class EnemyTurn : CombatState
     {
         if (enemyTurn)
         {
+            StartCoroutine(StuckPrevention());
             foreach (Die die in dieList)
             {
                 if (die.stopRolling)
@@ -40,13 +43,18 @@ public class EnemyTurn : CombatState
     }
     public void stepTwo()
     {
+        List<Die> specialDice = new List<Die>();
         foreach (Die die in dieList)
         { 
-            EndOfEnemyTurn.Invoke(die.value * 100);
+            if(!die.currentFace.special)
+                EndOfEnemyTurn.Invoke(die.value * attack);
+            else
+                specialDice.Add(die);
         }
+        EndOfEnemyTurnDiceEfects.Invoke(specialDice);
         clearList();
     }
-    public override void startState(List<Die> list)
+    public override void startState(List<Die> list,int damage)
     {
         base.startState(list);
         InstantMoveToContainer();
@@ -57,5 +65,20 @@ public class EnemyTurn : CombatState
             die.Roll();
         }
         enemyTurn = true;
+        attack = damage;
+    }
+    IEnumerator StuckPrevention()
+    {
+        yield return new WaitForSeconds(5);
+        foreach (Die die in dieList)
+        {
+            if (!die.stopRolling)
+            {
+                die.CheckValue();
+            }
+        }
+        stepTwo();
+        enemyTurn = false;
+
     }
 }

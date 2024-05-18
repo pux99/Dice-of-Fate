@@ -24,6 +24,7 @@ public class GameObjectInstancer : MonoBehaviour
     {
         GameObject newDie;
         newDie =Instantiate(Die,fighter.transform.Find("Dice"));
+        newDie.transform.localScale *= 0.5f;
         fighter.dice.Add(newDie.GetComponent<Die>());
         newDie.gameObject.SetActive(false);
     }

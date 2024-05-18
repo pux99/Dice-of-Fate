@@ -11,6 +11,7 @@ public class BoardSpace : MonoBehaviour
     public bool ImNext;
     public bool Used;
     public bool EventOnGoing;
+    public bool finalSpace;
     #region materials
     public Material Blinking;
     public Material CardBack;

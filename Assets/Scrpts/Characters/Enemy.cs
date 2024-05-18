@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using static CardEnemy;
@@ -9,6 +10,8 @@ public class Enemy : Fighter
     public UnityEvent<Enemy> CreateDiceForEnemy=new UnityEvent<Enemy>();
     public List<Rewards> rewards;
     public CardEnemy card;
+    public int attack;
+    public List<Die> specialdice;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,9 +33,11 @@ public class Enemy : Fighter
         int health,
         int shield,
         int numbreOfDice,
-        List<Effect.Effects> OnCombatStartStartEffects,
-        List<Effect.Effects> OnTurnStartEffects,
-        List<Effect.Effects> OnTakingDamageEffects,
+        int attack,
+        List<Die> specialdice,
+        List<Rewards.Effect> OnCombatStartStartEffects,
+        List<Rewards.Effect> OnTurnStartEffects,
+        List<Rewards.Effect> OnTakingDamageEffects,
         List<Rewards> reward,
         CardEnemy card)
     {
@@ -44,6 +49,8 @@ public class Enemy : Fighter
         _OnTurnStartEffects = OnTurnStartEffects;
         rewards = reward;
         this.card = card;
+        this.attack = attack;
+        this.specialdice = specialdice;
         dice.Clear();
         for (int i = 0; i < diceHolder.transform.childCount; i++)
         {
@@ -52,6 +59,13 @@ public class Enemy : Fighter
         for (int i = 0; i < numbreOfDice; i++)
         {
             CreateDiceForEnemy.Invoke(this);
+        }
+        foreach (Die die in specialdice)
+        {
+            GameObject newDie =Instantiate(die.gameObject);
+            newDie.transform.parent= this.diceHolder.transform;
+            dice.Add(newDie.GetComponent<Die>());
+            newDie.gameObject.SetActive(false);
         }
         //for (int i = 0; i < transform.Find("Dice").childCount; i++)
         //{

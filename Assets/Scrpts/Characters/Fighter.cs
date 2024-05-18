@@ -8,11 +8,11 @@ public class Fighter : MonoBehaviour
     [SerializeField] protected int _maxHealth;
     [SerializeField] protected int _health;
     [SerializeField] protected int _shield;// minimun amount of point to get damage
-    [SerializeField] protected GameObject diceHolder;
+    [SerializeField] public GameObject diceHolder;
     public List<Die> dice;
-    protected List<Effect.Effects> _OnCombatStartStartEffects;
-    protected List<Effect.Effects> _OnTurnStartEffects;
-    protected List<Effect.Effects> _OnTakingDamageEffects;
+    public List<Rewards.Effect> _OnCombatStartStartEffects;
+    public List<Rewards.Effect> _OnTurnStartEffects;
+    public List<Rewards.Effect> _OnTakingDamageEffects;
     protected string Reward;
 
     public int shield { get { return _shield; } }
@@ -20,6 +20,8 @@ public class Fighter : MonoBehaviour
     public int maxHealth { get { return _maxHealth; } }
     public UnityEvent Defeted = new UnityEvent();
     public UnityEvent<Fighter> UpdateHealthBar=new UnityEvent<Fighter>();
+
+
     void Start()
     {
         
@@ -36,6 +38,7 @@ public class Fighter : MonoBehaviour
         {
             _health = _maxHealth;
         }
+        UpdateHealthBar.Invoke(this); 
     }
     public void Damage(int value)
     {

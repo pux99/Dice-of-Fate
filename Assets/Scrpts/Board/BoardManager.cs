@@ -19,6 +19,11 @@ public class BoardManager : MonoBehaviour
     private CardEvent.Options currentOption;
     public MoveCamera moveCamera;
     public Vector3 dieStartingPosition; 
+
+    public BoardSpace PCurrentSpace
+    {
+        get { return currentSpace; }
+    }
     void Start()
     {
         for (int i = 0; i < transform.childCount; i++)
@@ -95,6 +100,7 @@ public class BoardManager : MonoBehaviour
             cardEnemy.SetUpEnemy(enemy);
 
         }
+        space.Used = true;
 
     }
     public void CombatEnd()
@@ -146,6 +152,9 @@ public class BoardManager : MonoBehaviour
                     break;
                 case Rewards.EffectType.DiceMode:
                     Effect.diceamountMod.ApplyEffect(player,effect.value);
+                    break;
+                case Rewards.EffectType.changaDie:
+                    Effect.changeDie.ApplyEffect(player, effect.value,effect.GameObjectReward);
                     break;
                 default:
                     break;

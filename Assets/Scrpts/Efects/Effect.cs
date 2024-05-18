@@ -11,7 +11,9 @@ public class Effect:MonoBehaviour
         Heal,
         Damage,
         MaxLife,
-        DiceMode
+        DiceMode,
+        changaDie
+
     }
     [Serializable]
     public struct Effects

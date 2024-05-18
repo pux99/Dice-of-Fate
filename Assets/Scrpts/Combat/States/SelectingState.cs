@@ -137,7 +137,6 @@ public class SelectingState : CombatState
                 die.selectable = false;
                 die.select.RemoveListener(ChangeSelected);
             }
-            Debug.Log(dieList.Count);
             RollAgain.Invoke(dieList);
             dieList.Clear();
         }

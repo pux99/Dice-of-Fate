@@ -60,8 +60,10 @@ public class UiManager : MonoBehaviour
     [SerializeField] private Button BRollTheRest;
     [SerializeField] private Button BPlusFlips;
     [SerializeField] private Button BMinusFlips;
+    [SerializeField] private TextMeshProUGUI sucesos;
 
     [SerializeField] private GameObject WinOverlay;
+    [SerializeField] private GameObject endOfGameOverlay;
     [SerializeField] private GameObject LossOverlay;
     #endregion
     #region Board
@@ -127,6 +129,7 @@ public class UiManager : MonoBehaviour
         combat.FlipValueChange.AddListener(FlipValueChange);
         combat.win.AddListener(WinCombat);
         combat.loss.AddListener(LossCombat);
+        combat.TextoDeEffectos.AddListener(CombatEffectText);
     }
     public void BoardEventSubscription() 
     {
@@ -148,6 +151,7 @@ public class UiManager : MonoBehaviour
     {
         combat.ResetAndRoll();
         MakeButtonsNotInteractable();
+        sucesos.gameObject.SetActive(false);
     }
     public void RollTheRest()
     {
@@ -277,11 +281,22 @@ public class UiManager : MonoBehaviour
         CombatUI.SetActive(false);
         WinOverlay.SetActive(true);
         WinOverlay.transform.Find("Reward").GetComponent<TextMeshProUGUI>().text = Reward;
+        if (board.PCurrentSpace.finalSpace)
+        {
+            WinOverlay.SetActive(false);
+            endOfGameOverlay.SetActive(true);
+        }
     }
     public void LossCombat()
     {
         CombatUI.SetActive(false);
         LossOverlay.SetActive(true);
+    }
+
+    public void CombatEffectText(string text) 
+    {
+        sucesos.gameObject.SetActive(true);
+        sucesos.text = text;
     }
    
 }

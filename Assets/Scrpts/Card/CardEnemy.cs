@@ -11,18 +11,20 @@ public class CardEnemy : Card
     [SerializeField] private int maxHealth;
     [SerializeField] private int health;
     [SerializeField] private int shield;// minimun amount of point to get damage
-    [SerializeField] private int numbreOfDice;
+    [SerializeField] private int numbreOfNormalDice;
+    [SerializeField] private int attack;
 
-    [SerializeField] private List<Effect.Effects> OnCombatStartStartEffects;
-    [SerializeField] private List<Effect.Effects> OnTurnStartEffects;
-    [SerializeField] private List<Effect.Effects> OnTakingDamageEffects;
+    [SerializeField] private List<Die> specialDice;
+    [SerializeField] private List<Rewards.Effect> OnCombatStartStartEffects;
+    [SerializeField] private List<Rewards.Effect> OnTurnStartEffects;
+    [SerializeField] private List<Rewards.Effect> OnTakingDamageEffects;
     [SerializeField] private bool Random;
     public List<Rewards> rewards;
     public bool button;
 
     public void SetUpEnemy(Enemy enemy)
     {
-        enemy.SetUp(maxHealth, health, shield, numbreOfDice, OnCombatStartStartEffects, OnTurnStartEffects, OnTakingDamageEffects,rewards,this);
+        enemy.SetUp(maxHealth, health, shield, numbreOfNormalDice,attack, specialDice, OnCombatStartStartEffects, OnTurnStartEffects, OnTakingDamageEffects,rewards,this);
         
     }
     // Start is called before the first frame update
