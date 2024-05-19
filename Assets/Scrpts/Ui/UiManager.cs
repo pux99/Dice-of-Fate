@@ -44,6 +44,7 @@ public class UiManager : MonoBehaviour
 
     #region Combat
     [Header("Combat")]
+    [SerializeField] private GameObject options;
     [SerializeField] private CombatManager combat;
     [SerializeField] private GameObject CombatUI;
     [SerializeField] private Slider playerHP;
@@ -91,7 +92,18 @@ public class UiManager : MonoBehaviour
         BoardEventSubscription();
         BoraedSetUp();
     }
-    
+    private void Update()
+    {
+        if(Input.GetKeyUp(KeyCode.Escape))
+        {
+            if(options.active)
+            {
+                options.SetActive(false);
+            }
+            else
+                options.SetActive(true);
+        }
+    }
     void CombatStart()
     {
         CombatUI.SetActive(true);
