@@ -144,22 +144,35 @@ public class SelectingState : CombatState
     }
     public void ScorePoints()
     {
-        if (_points > 0)
+        if (selected.Count > 0)
         {
+            bool allSpecial = true;
             foreach (Die die in selected)
             {
-                die.selectable = false;
-                die.select.RemoveListener(ChangeSelected);
-                die.turnOffOutline();
-                dieList.Remove(die);
+                if (!die.currentFace.special)
+                {
+                    allSpecial = false;
+                }
             }
-            ScoringEvent.Invoke(selected);
-            //removeFormList(selected);
-            selected.Clear();
-            calculatePoint();
-            SelectedPointsChange.Invoke(_points);
-            _pointsScored = true;
+            if (_points > 0 || allSpecial)
+            {
+                foreach (Die die in selected)
+                {
+                    die.selectable = false;
+                    die.select.RemoveListener(ChangeSelected);
+                    die.turnOffOutline();
+                    dieList.Remove(die);
+                }
+                ScoringEvent.Invoke(selected);
+                //removeFormList(selected);
+                selected.Clear();
+                calculatePoint();
+                SelectedPointsChange.Invoke(_points);
+                _points = 0;
+                _pointsScored = true;
+            }
         }
+       
     }
     public void ResetValues()
     {

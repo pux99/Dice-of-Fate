@@ -114,15 +114,15 @@ PrefabInstance:
       objectReference: {fileID: 6035187242539847581, guid: 2189997501c5eb0488b934bc67e2fa1c, type: 3}
     - target: {fileID: 6991649286504490163, guid: 1992427890a899343b05e97e52df37fd, type: 3}
       propertyPath: OnTurnStartEffects.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6991649286504490163, guid: 1992427890a899343b05e97e52df37fd, type: 3}
       propertyPath: OnTakingDamageEffects.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6991649286504490163, guid: 1992427890a899343b05e97e52df37fd, type: 3}
       propertyPath: OnCombatStartStartEffects.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6991649286504490163, guid: 1992427890a899343b05e97e52df37fd, type: 3}
       propertyPath: OnTurnStartEffects.Array.data[0]._value

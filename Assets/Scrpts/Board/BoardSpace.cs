@@ -70,7 +70,7 @@ public class BoardSpace : MonoBehaviour
     {
         if(ImNext&&!EventOnGoing)
         {
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(0))
             {
                 _previewSpace.Active = false;
                 _previewSpace.TurnoOfNetxSpaces();

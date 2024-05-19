@@ -13,6 +13,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 706537979836700029, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
+      propertyPath: _Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 706537979836700029, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
       propertyPath: _special
       value: 1
       objectReference: {fileID: 0}
@@ -29,6 +33,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: ed9224c815b9b9b4fa87abee00ab156f, type: 2}
     - target: {fileID: 1350328714100774807, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
+      propertyPath: _Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1350328714100774807, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
       propertyPath: _special
       value: 1
       objectReference: {fileID: 0}
@@ -39,6 +47,10 @@ PrefabInstance:
     - target: {fileID: 1350328714100774807, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
       propertyPath: effect.Value
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983357739008930790, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
+      propertyPath: _Value
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1983357739008930790, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
       propertyPath: _special
@@ -63,6 +75,10 @@ PrefabInstance:
     - target: {fileID: 4005147430234924429, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
       propertyPath: m_Name
       value: Die 2 Heal 2x Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373924018973162171, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
+      propertyPath: _Value
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4373924018973162171, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
       propertyPath: _special

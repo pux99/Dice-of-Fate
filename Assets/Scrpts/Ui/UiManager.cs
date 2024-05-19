@@ -102,7 +102,11 @@ public class UiManager : MonoBehaviour
             }
             else
                 options.SetActive(true);
+
+            
         }
+        if (combat.pOnUseDie.Count <= 0)
+            BRollTheRest.interactable = false;
     }
     void CombatStart()
     {
@@ -237,7 +241,8 @@ public class UiManager : MonoBehaviour
     }
     void turnOnRollAgain(List<Die> list)
     {
-        BRollTheRest.interactable = true;
+        if(combat.pOnUseDie.Count > 0)
+            BRollTheRest.interactable = true;
     }
     void CardEventDisplay(CardEvent card)
     {

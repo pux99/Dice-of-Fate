@@ -65,6 +65,10 @@ PrefabInstance:
       value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8935343960842473775, guid: 943335cc01d4cfe44b00b8840d51f07c, type: 3}
+      propertyPath: CardArt
+      value: 
+      objectReference: {fileID: 21300000, guid: f8b5feb37a082c24cbccd5dd3ae5d4df, type: 3}
+    - target: {fileID: 8935343960842473775, guid: 943335cc01d4cfe44b00b8840d51f07c, type: 3}
       propertyPath: CardName
       value: Loro
       objectReference: {fileID: 0}
@@ -75,6 +79,18 @@ PrefabInstance:
     - target: {fileID: 8935343960842473775, guid: 943335cc01d4cfe44b00b8840d51f07c, type: 3}
       propertyPath: numbreOfNormalDice
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935343960842473775, guid: 943335cc01d4cfe44b00b8840d51f07c, type: 3}
+      propertyPath: OnTurnStartEffects.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935343960842473775, guid: 943335cc01d4cfe44b00b8840d51f07c, type: 3}
+      propertyPath: OnTakingDamageEffects.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935343960842473775, guid: 943335cc01d4cfe44b00b8840d51f07c, type: 3}
+      propertyPath: OnCombatStartStartEffects.Array.size
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

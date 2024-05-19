@@ -13,6 +13,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1983357739008930790, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
+      propertyPath: _Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983357739008930790, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
       propertyPath: _special
       value: 1
       objectReference: {fileID: 0}
@@ -31,6 +35,10 @@ PrefabInstance:
     - target: {fileID: 4005147430234924429, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
       propertyPath: m_Name
       value: Die 2 2x Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373924018973162171, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
+      propertyPath: _Value
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4373924018973162171, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
       propertyPath: _special

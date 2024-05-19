@@ -14,6 +14,7 @@ public class CombatManager : MonoBehaviour
     public EnemyTurn enemyTurn;
     public Player player;
     private List<Die> OnUseDie= new List<Die>();
+    public List<Die> pOnUseDie { get { return OnUseDie; } }
     public Enemy enemy;
     public int Flips=0;
     public effectApllier Effect;
@@ -86,11 +87,11 @@ public class CombatManager : MonoBehaviour
             die.Disolv(true);
             die.GetComponent<Collider>().enabled = false;
         }
-        OnUseDie.Clear();
-        foreach (var die in player.dice)
-        {
-            OnUseDie.Add(die);
-        }
+        //OnUseDie.Clear();
+        //foreach (var die in player.dice)
+        //{
+        //    OnUseDie.Add(die);
+        //}
         scoring.ClearList();
         Rolling(OnUseDie);
     }
@@ -148,6 +149,8 @@ public class CombatManager : MonoBehaviour
     {
         select.ResetValues();
         DamageFigther(enemy,scoring.score);
+        scoring.score = 0;
+        scoring.TotalPointsChange.Invoke(scoring.score);
         ApllyDiceEffects(scoring.SpecialDice, enemy,player);
         foreach (Die die in player.dice)
         {
@@ -156,6 +159,11 @@ public class CombatManager : MonoBehaviour
         scoring.timeToMove = false;
         if(enemy.health>0)
             enemyTurn.startState(enemy.dice,enemy.attack);
+        OnUseDie.Clear();
+        foreach (var die in player.dice)
+        {
+            OnUseDie.Add(die);
+        }
     }
     public void EndOfEnemyTurn(int value)
     {
