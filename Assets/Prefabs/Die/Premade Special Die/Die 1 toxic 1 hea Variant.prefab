@@ -46,7 +46,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1983357739008930790, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
       propertyPath: effect.Value
-      value: 251
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 2100316555826662188, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
       propertyPath: m_Materials.Array.data[0]

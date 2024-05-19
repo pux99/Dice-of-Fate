@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 706537979836700029, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
       propertyPath: effect.Value
-      value: 251
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 1185661082007686832, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -38,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1350328714100774807, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
       propertyPath: effect.Value
-      value: 251
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 1983357739008930790, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
       propertyPath: _special
@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1983357739008930790, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
       propertyPath: effect.Value
-      value: 251
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 2070221506520527589, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
       propertyPath: _special
@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2070221506520527589, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
       propertyPath: effect.Value
-      value: 251
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 2100316555826662188, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -94,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4373924018973162171, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
       propertyPath: effect.Value
-      value: 251
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 5898821936678234927, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
       propertyPath: _Value
@@ -110,7 +110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5898821936678234927, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
       propertyPath: effect.Value
-      value: 251
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6464672885471464400, guid: c861bde3f5f3fff4ab0436607a994e78, type: 3}
       propertyPath: m_LocalPosition.x
