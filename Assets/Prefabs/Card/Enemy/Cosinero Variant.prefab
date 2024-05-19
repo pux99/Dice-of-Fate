@@ -41,10 +41,6 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2377084636335857313, guid: 7dcff1982849afe42912a14070946c36, type: 3}
-      propertyPath: OnTurnStartEffects.Array.data[0]._value
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2377084636335857313, guid: 7dcff1982849afe42912a14070946c36, type: 3}
       propertyPath: OnTurnStartEffects.Array.data[0].effect
       value: 1
       objectReference: {fileID: 0}
