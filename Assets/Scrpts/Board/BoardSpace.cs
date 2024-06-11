@@ -17,7 +17,7 @@ public class BoardSpace : MonoBehaviour
     public Material CardBack;
     public Material CardFront;
     #endregion
-    public ScriptableCard card;
+    public Card card;
     public MeshRenderer meshRenderer;
     public UnityEvent<BoardSpace> newCurrentSpace=new UnityEvent<BoardSpace>();
     // Start is called before the first frame update

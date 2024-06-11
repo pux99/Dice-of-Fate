@@ -8,7 +8,7 @@ public class BoardManager : MonoBehaviour
     // Start is called before the first frame update
     List<BoardSpace> spaceList=new List<BoardSpace>();
     [SerializeField] private BoardSpace currentSpace;
-    public UnityEvent<ScriptableEventCard> cardEvent=new UnityEvent<ScriptableEventCard>();
+    public UnityEvent<EventCard> cardEvent=new UnityEvent<EventCard>();
     public UnityEvent<Rewards.Reward> endOfEventRewardCalculation=new UnityEvent<Rewards.Reward>();
     public CombatManager combat;
     public Die die;
@@ -16,7 +16,7 @@ public class BoardManager : MonoBehaviour
     public Player player;
     public Enemy enemy;
     public bool watingDie;
-    private ScriptableEventCard.Options currentOption;
+    private EventCard.Options currentOption;
     public MoveCamera moveCamera;
     public Vector3 dieStartingPosition; 
 
@@ -87,7 +87,7 @@ public class BoardManager : MonoBehaviour
             {
                 boardSpace.EventOnGoing = true;
             }
-            cardEvent.Invoke((ScriptableEventCard)space.card);
+            cardEvent.Invoke((EventCard)space.card);
         }
         if (space.card.CardType == "Enemy" && !space.Used)
         {
@@ -96,7 +96,7 @@ public class BoardManager : MonoBehaviour
                 boardSpace.EventOnGoing = true;
             }
             moveCamera.MoveToDice();
-            ScriptableEnemeyCard cardEnemy = (ScriptableEnemeyCard)space.card;
+            EnemeyCard cardEnemy = (EnemeyCard)space.card;
             cardEnemy.SetUpEnemy(enemy);
 
         }
@@ -116,7 +116,7 @@ public class BoardManager : MonoBehaviour
         combat.CombatStart(player, enemy);
     }
 
-    public void ResolveEvent(ScriptableEventCard.Options options)
+    public void ResolveEvent(EventCard.Options options)
     {
         currentOption = options;
         if (options.roll)

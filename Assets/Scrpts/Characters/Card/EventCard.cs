@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardEvent : Card
+[CreateAssetMenu(fileName ="newEventCard",menuName ="Card/Event Card")]
+public class EventCard : Card
 {
     [SerializeField] private string _cardText;
     public string cardText { get { return _cardText; } }

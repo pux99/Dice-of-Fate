@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "newEnemyCard", menuName = "Card/Enemy Card")]
-public class ScriptableEnemeyCard : ScriptableCard
+public class EnemeyCard : Card
 {
     public Enemy enemy;
     [SerializeField] private int maxHealth;
