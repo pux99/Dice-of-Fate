@@ -8,15 +8,15 @@ public class BoardManager : MonoBehaviour
     // Start is called before the first frame update
     List<BoardSpace> spaceList=new List<BoardSpace>();
     [SerializeField] private BoardSpace currentSpace;
-    public UnityEvent<CardEvent> cardEvent=new UnityEvent<CardEvent>();
+    public UnityEvent<ScriptableEventCard> cardEvent=new UnityEvent<ScriptableEventCard>();
     public UnityEvent<Rewards.Reward> endOfEventRewardCalculation=new UnityEvent<Rewards.Reward>();
     public CombatManager combat;
     public Die die;
-    public effectApllier Effect;
+    public EffectApllier effectApllier;
     public Player player;
     public Enemy enemy;
     public bool watingDie;
-    private CardEvent.Options currentOption;
+    private ScriptableEventCard.Options currentOption;
     public MoveCamera moveCamera;
     public Vector3 dieStartingPosition; 
 
@@ -87,7 +87,7 @@ public class BoardManager : MonoBehaviour
             {
                 boardSpace.EventOnGoing = true;
             }
-            cardEvent.Invoke((CardEvent)space.card);
+            cardEvent.Invoke((ScriptableEventCard)space.card);
         }
         if (space.card.CardType == "Enemy" && !space.Used)
         {
@@ -96,7 +96,7 @@ public class BoardManager : MonoBehaviour
                 boardSpace.EventOnGoing = true;
             }
             moveCamera.MoveToDice();
-            CardEnemy cardEnemy = (CardEnemy)space.card;
+            ScriptableEnemeyCard cardEnemy = (ScriptableEnemeyCard)space.card;
             cardEnemy.SetUpEnemy(enemy);
 
         }
@@ -116,7 +116,7 @@ public class BoardManager : MonoBehaviour
         combat.CombatStart(player, enemy);
     }
 
-    public void ResolveEvent(CardEvent.Options options)
+    public void ResolveEvent(ScriptableEventCard.Options options)
     {
         currentOption = options;
         if (options.roll)
@@ -142,19 +142,19 @@ public class BoardManager : MonoBehaviour
             switch (effect.reward)
             {
                 case Rewards.EffectType.Heal:
-                    Effect.heal.ApplyEffect(player,effect.value);
+                    effectApllier.heal.ApplyEffect(player,effect.value);
                     break;
                 case Rewards.EffectType.Damage:
-                    Effect.damage.ApplyEffect(player,effect.value);
+                    effectApllier.damage.ApplyEffect(player,effect.value);
                     break;
                 case Rewards.EffectType.MaxLife:
-                    Effect.maxheathMod.ApplyEffect(player,effect.value);
+                    effectApllier.maxheathMod.ApplyEffect(player,effect.value);
                     break;
                 case Rewards.EffectType.DiceMode:
-                    Effect.diceamountMod.ApplyEffect(player,effect.value);
+                    effectApllier.diceamountMod.ApplyEffect(player,effect.value);
                     break;
                 case Rewards.EffectType.changaDie:
-                    Effect.changeDie.ApplyEffect(player, effect.value,effect.GameObjectReward);
+                    effectApllier.changeDie.ApplyEffect(player, effect.value, effect.GameObjectReward);
                     break;
                 default:
                     break;

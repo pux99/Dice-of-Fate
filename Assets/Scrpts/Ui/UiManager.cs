@@ -244,7 +244,7 @@ public class UiManager : MonoBehaviour
         if(combat.pOnUseDie.Count > 0)
             BRollTheRest.interactable = true;
     }
-    void CardEventDisplay(CardEvent card)
+    void CardEventDisplay(ScriptableEventCard card)
     {
         BoardUI.SetActive(true);
         EventText.text = card.cardText;

@@ -1,12 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardEnemy : Card
+[CreateAssetMenu(fileName = "newEnemyCard", menuName = "Card/Enemy Card")]
+public class ScriptableEnemeyCard : ScriptableCard
 {
-    
-    
     public Enemy enemy;
     [SerializeField] private int maxHealth;
     [SerializeField] private int health;
@@ -23,7 +21,7 @@ public class CardEnemy : Card
 
     public void SetUpEnemy(Enemy enemy)
     {
-        //enemy.SetUp(maxHealth, health, shield, numbreOfNormalDice,attack, specialDice, OnCombatStartStartEffects, OnTurnStartEffects, OnTakingDamageEffects,rewards,this);
-        
+        enemy.SetUp(maxHealth, health, shield, numbreOfNormalDice, attack, specialDice, OnCombatStartStartEffects, OnTurnStartEffects, OnTakingDamageEffects, rewards, this);
+
     }
 }

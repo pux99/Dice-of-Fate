@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
-using static CardEnemy;
+using static ScriptableEnemeyCard;
 
 public class Enemy : Fighter
 {
     public UnityEvent<Enemy> CreateDiceForEnemy=new UnityEvent<Enemy>();
     public List<Rewards> rewards;
-    public CardEnemy card;
+    public ScriptableEnemeyCard card;
     public int attack;
     public List<Die> specialdice;
     // Start is called before the first frame update
@@ -39,7 +39,7 @@ public class Enemy : Fighter
         List<Rewards.Effect> OnTurnStartEffects,
         List<Rewards.Effect> OnTakingDamageEffects,
         List<Rewards> reward,
-        CardEnemy card)
+        ScriptableEnemeyCard card)
     {
         _maxHealth = maxHealth;
         _health = health;

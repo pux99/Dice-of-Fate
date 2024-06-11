@@ -32,7 +32,14 @@ public class Rewards
          Damage,
          MaxLife,
          DiceMode,
-         changaDie
+         changaDie,
+         EnemylossTurn,
+         RevelEnemyCard,
+         BuffEnemyArmor,
+         DamageBoss,
+         ArmorBoss,
+         DiceBoss,
+         StartBattle
      }
     [Serializable]
     public struct Effect

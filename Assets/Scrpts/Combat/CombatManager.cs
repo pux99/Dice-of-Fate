@@ -12,12 +12,18 @@ public class CombatManager : MonoBehaviour
     public SelectingState select;
     public Scoring scoring;
     public EnemyTurn enemyTurn;
+
+
     public Player player;
+    public Enemy enemy;
+
     private List<Die> OnUseDie= new List<Die>();
     public List<Die> pOnUseDie { get { return OnUseDie; } }
-    public Enemy enemy;
+    
     public int Flips=0;
-    public effectApllier Effect;
+
+    public EffectApllier effectApllier;
+
     public UnityEvent combatStart=new UnityEvent();
     public UnityEvent<int> FlipValueChange=new UnityEvent<int>();
     public UnityEvent<string> win = new UnityEvent<string>();
@@ -225,16 +231,16 @@ public class CombatManager : MonoBehaviour
             switch (effect.reward)
             {
                 case Rewards.EffectType.Heal:
-                    Effect.heal.ApplyEffect(player, effect.value);
+                    effectApllier.heal.ApplyEffect(player, effect.value);
                     break;
                 case Rewards.EffectType.Damage:
-                    Effect.damage.ApplyEffect(player, effect.value);
+                    effectApllier.damage.ApplyEffect(player, effect.value);
                     break;
                 case Rewards.EffectType.MaxLife:
-                    Effect.maxheathMod.ApplyEffect(player, effect.value);
+                    effectApllier.maxheathMod.ApplyEffect(player, effect.value);
                     break;
                 case Rewards.EffectType.DiceMode:
-                    Effect.diceamountMod.ApplyEffect(player, effect.value);
+                    effectApllier.diceamountMod.ApplyEffect(player, effect.value);
                     break;
                 default:
                     break;
@@ -249,16 +255,16 @@ public class CombatManager : MonoBehaviour
             switch (effect.reward)
             {
                 case Rewards.EffectType.Heal:
-                    Effect.heal.ApplyEffect(enemy, effect.value);
+                    effectApllier.heal.ApplyEffect(enemy, effect.value);
                     break;
                 case Rewards.EffectType.Damage:
-                    Effect.damage.ApplyEffect(player, effect.value);
+                    effectApllier.damage.ApplyEffect(player, effect.value);
                     break;
                 case Rewards.EffectType.MaxLife:
-                    Effect.maxheathMod.ApplyEffect(enemy, effect.value);
+                    effectApllier.maxheathMod.ApplyEffect(enemy, effect.value);
                     break;
                 case Rewards.EffectType.DiceMode:
-                    Effect.diceamountMod.ApplyEffect(enemy, effect.value);
+                    effectApllier.diceamountMod.ApplyEffect(enemy, effect.value);
                     break;
                 default:
                     break;
