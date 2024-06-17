@@ -85,7 +85,6 @@ public class UiManager : MonoBehaviour
 
 
 
-
     void Start()
     {
         combat.combatStart.AddListener(CombatStart);
@@ -96,7 +95,7 @@ public class UiManager : MonoBehaviour
     {
         if(Input.GetKeyUp(KeyCode.Escape))
         {
-            if(options.active)
+            if(options.activeSelf)
             {
                 options.SetActive(false);
             }
@@ -244,7 +243,7 @@ public class UiManager : MonoBehaviour
         if(combat.pOnUseDie.Count > 0)
             BRollTheRest.interactable = true;
     }
-    void CardEventDisplay(CardEvent card)
+    void CardEventDisplay(EventCard card)
     {
         BoardUI.SetActive(true);
         EventText.text = card.cardText;

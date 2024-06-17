@@ -109,9 +109,9 @@ public class Scoring : MonoBehaviour
             }
             foreach (Die die in specialDice)
             {
-                if (die.currentFace.effect.type == DieFace.diceFaceEffect.EffectType.multyply)
+                if (die.currentFace.effect.effectData.type == EffectData.Type.multiplyDamage)
                 {
-                    localValue *= die.currentFace.effect.Value;
+                    localValue *= die.currentFace.effect.effectData.Value;
                 }
             }
             value += localValue;
