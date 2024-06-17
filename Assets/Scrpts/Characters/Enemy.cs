@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
-using static EnemeyCard;
+using static EnemyCard;
 
 public class Enemy : Fighter
 {
     public UnityEvent<Enemy> CreateDiceForEnemy=new UnityEvent<Enemy>();
     public List<Rewards> rewards;
-    public EnemeyCard card;
+    public EnemyCard card;
     public int attack;
     public List<Die> specialdice;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,10 +24,6 @@ public class Enemy : Fighter
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void SetUp(
         int maxHealth,
@@ -35,16 +32,16 @@ public class Enemy : Fighter
         int numbreOfDice,
         int attack,
         List<Die> specialdice,
-        List<Rewards.Effect> OnCombatStartStartEffects,
-        List<Rewards.Effect> OnTurnStartEffects,
-        List<Rewards.Effect> OnTakingDamageEffects,
+        List<EffectData> OnCombatStartEffects,
+        List<EffectData> OnTurnStartEffects,
+        List<EffectData> OnTakingDamageEffects,
         List<Rewards> reward,
-        EnemeyCard card)
+        EnemyCard card)
     {
         _maxHealth = maxHealth;
         _health = health;
         _shield = shield;
-        _OnCombatStartStartEffects = OnCombatStartStartEffects;
+        _OnCombatStartEffects = OnCombatStartEffects;
         _OnTakingDamageEffects = OnTakingDamageEffects;
         _OnTurnStartEffects = OnTurnStartEffects;
         rewards = reward;

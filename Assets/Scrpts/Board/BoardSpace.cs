@@ -12,6 +12,7 @@ public class BoardSpace : MonoBehaviour
     public bool Used;
     public bool EventOnGoing;
     public bool finalSpace;
+    public bool reveld;
     #region materials
     public Material Blinking;
     public Material CardBack;
@@ -56,6 +57,10 @@ public class BoardSpace : MonoBehaviour
                 meshRenderer.material.SetTexture("_Texture", card.CardArt.texture);
             }
 
+        }
+        if(reveld)
+        {
+            meshRenderer.material.mainTexture = card.CardArt.texture;
         }
     }
 

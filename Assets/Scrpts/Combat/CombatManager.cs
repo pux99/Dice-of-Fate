@@ -65,6 +65,9 @@ public class CombatManager : MonoBehaviour
         {
             OnUseDie.Add(die);
         }
+        player.OnStartOfBattle();
+        enemy.OnStartOfBattle();
+        player.OnTurnStart();
         combatStart.Invoke();
     }
 
@@ -163,18 +166,25 @@ public class CombatManager : MonoBehaviour
             die.Disolv(true);
         }
         scoring.timeToMove = false;
-        if(enemy.health>0)
-            enemyTurn.startState(enemy.dice,enemy.attack);
+        if (enemy.health > 0 && !enemy.SkipNextTurn)
+            enemyTurn.startState(enemy.dice, enemy.attack);
+        else if (enemy.SkipNextTurn)
+        {
+            enemyTurn.EndOfEnemyTurn.Invoke(0);
+            enemy.SkipNextTurn=false;
+        }
         OnUseDie.Clear();
         foreach (var die in player.dice)
         {
             OnUseDie.Add(die);
         }
+        enemy.OnTurnStart();
     }
     public void EndOfEnemyTurn(int value)
     {
         player.Damage(value);
-        applyEffectsEnemy(enemy._OnTurnStartEffects);
+        player.OnTurnStart();
+        //applyEffectsEnemy(enemy._OnTurnStartEffects);
     }
     public void EndOfEnemyTurnDiceEfects(List<Die> specialDice)
     {
@@ -223,69 +233,69 @@ public class CombatManager : MonoBehaviour
         loss.Invoke();
     }
 
-    void applyEffects(List<Rewards.Effect> effects)
+    void applyEffects(List<EffectData> effects)
     {
 
-        foreach (Rewards.Effect effect in effects)
+        foreach (EffectData effect in effects)
         {
-            switch (effect.reward)
+            switch (effect.type)
             {
-                case Rewards.EffectType.Heal:
-                    effectApllier.heal.ApplyEffect(player, effect.value);
+                case EffectData.Type.Heal:
+                    effectApllier.heal.ApplyEffect(player, effect.Value);
                     break;
-                case Rewards.EffectType.Damage:
-                    effectApllier.damage.ApplyEffect(player, effect.value);
+                case EffectData.Type.Damage:
+                    effectApllier.damage.ApplyEffect(player, effect.Value);
                     break;
-                case Rewards.EffectType.MaxLife:
-                    effectApllier.maxheathMod.ApplyEffect(player, effect.value);
+                case EffectData.Type.MaxLife:
+                    effectApllier.maxheathMod.ApplyEffect(player, effect.Value);
                     break;
-                case Rewards.EffectType.DiceMode:
-                    effectApllier.diceamountMod.ApplyEffect(player, effect.value);
+                case EffectData.Type.DiceMode:
+                    effectApllier.diceamountMod.ApplyEffect(player, effect.Value);
                     break;
                 default:
                     break;
             }
         }
     }
-    void applyEffectsEnemy(List<Rewards.Effect> effects)
-    {
+    //void applyEffectsEnemy(List<EffectData> effects)
+    //{
 
-        foreach (Rewards.Effect effect in effects)
-        {
-            switch (effect.reward)
-            {
-                case Rewards.EffectType.Heal:
-                    effectApllier.heal.ApplyEffect(enemy, effect.value);
-                    break;
-                case Rewards.EffectType.Damage:
-                    effectApllier.damage.ApplyEffect(player, effect.value);
-                    break;
-                case Rewards.EffectType.MaxLife:
-                    effectApllier.maxheathMod.ApplyEffect(enemy, effect.value);
-                    break;
-                case Rewards.EffectType.DiceMode:
-                    effectApllier.diceamountMod.ApplyEffect(enemy, effect.value);
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
+    //    foreach (EffectData effect in effects)
+    //    {
+    //        switch (effect.type)
+    //        {
+    //            case EffectData.Type.Heal:
+    //                effectApllier.heal.ApplyEffect(enemy, effect.Value);
+    //                break;
+    //            case EffectData.Type.Damage:
+    //                effectApllier.damage.ApplyEffect(player, effect.Value);
+    //                break;
+    //            case EffectData.Type.MaxLife:
+    //                effectApllier.maxheathMod.ApplyEffect(enemy, effect.Value);
+    //                break;
+    //            case EffectData.Type.DiceMode:
+    //                effectApllier.diceamountMod.ApplyEffect(enemy, effect.Value);
+    //                break;
+    //            default:
+    //                break;
+    //        }
+    //    }
+    //}
     void ApllyDiceEffects(List<Die> dice, Fighter resiver, Fighter dealer)
     {
         string sucesos;
         sucesos = "El " + dealer.name;
         foreach (Die die in dice)
         {
-            switch (die.currentFace.effect.type)
+            switch (die.currentFace.effect.effectData.type)
             {
-                case DieFace.diceFaceEffect.EffectType.heal:
-                    dealer.Heal(die.currentFace.effect.Value);
-                    sucesos += " se curo "+ die.currentFace.effect.Value;
+                case EffectData.Type.Heal:
+                    dealer.Heal(die.currentFace.effect.effectData.Value);
+                    sucesos += " se curo "+ die.currentFace.effect.effectData.type;
                     break;
-                case DieFace.diceFaceEffect.EffectType.damage:
-                    resiver.Damage(die.currentFace.effect.Value);
-                    sucesos += " le hizo " + die.currentFace.effect.Value + " de daño a "+ resiver.name;
+                case EffectData.Type.Damage:
+                    resiver.Damage(die.currentFace.effect.effectData.Value);
+                    sucesos += " le hizo " + die.currentFace.effect.effectData.Value + " de daño a "+ resiver.name;
                     break;
                 default:
                     break;

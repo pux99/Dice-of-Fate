@@ -10,10 +10,13 @@ public class Fighter : MonoBehaviour
     [SerializeField] protected int _shield;// minimun amount of point to get damage
     [SerializeField] public GameObject diceHolder;
     public List<Die> dice;
-    public List<Rewards.Effect> _OnCombatStartStartEffects;
-    public List<Rewards.Effect> _OnTurnStartEffects;
-    public List<Rewards.Effect> _OnTakingDamageEffects;
+    public List<EffectData> _OnCombatStartEffects;
+    public List<EffectData> _OnTurnStartEffects;
+    public List<EffectData> _OnTakingDamageEffects;
     protected string Reward;
+    public int lives=1;
+    public bool SkipNextTurn;
+    [SerializeField]private EffectApllier effectApllier;
 
     public int shield { get { return _shield; } }
     public int health { get { return _health; } }
@@ -22,15 +25,6 @@ public class Fighter : MonoBehaviour
     public UnityEvent<Fighter> UpdateHealthBar=new UnityEvent<Fighter>();
 
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
     public void Heal(int value)
     {
         _health += value;
@@ -46,15 +40,19 @@ public class Fighter : MonoBehaviour
         {
 
 
-            //if(_OnTakingDamageEffects!=null)
-           // foreach (Effect.Effects effect in _OnTakingDamageEffects)
-                //effect.ApplyEffect(this,1);
+           if(_OnTakingDamageEffects!=null)
+            foreach (EffectData effect in _OnTakingDamageEffects)
+                effectApllier.ApplyEffect(effect);
             _health -= value;
             if (_health <= 0)
             {
                 _health = 0;
                 UpdateHealthBar.Invoke(this);
-                defeat();
+                lives--;
+                if(lives<=0)
+                    defeat();
+                else
+                    Revive();
             }
             else
             {
@@ -81,5 +79,20 @@ public class Fighter : MonoBehaviour
     private void defeat() 
     {
         Defeted.Invoke();
+    }
+    private void Revive()
+    {
+        // efecto estetico
+        _health = _maxHealth / 2;
+    }
+    public void OnTurnStart()
+    {
+        foreach (EffectData effect in _OnTurnStartEffects)
+            effectApllier.ApplyEffect(effect);
+    }
+    public void OnStartOfBattle()
+    {
+        foreach (EffectData effect in _OnCombatStartEffects)
+            effectApllier.ApplyEffect(effect);
     }
 }

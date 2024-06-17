@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class Die : MonoBehaviour
 {
     #region Variables
+    [SerializeField] public ScriptableDie DieData;
+
     private List<DieFace> _faces=new List<DieFace>();
     private GameObject _outline;
 
@@ -33,6 +35,7 @@ public class Die : MonoBehaviour
     private bool _selected;
     [SerializeField]private float _size;
 
+
     public float size
     {
         get { return _size; }
@@ -56,16 +59,24 @@ public class Die : MonoBehaviour
     {
         flipt=new UnityEvent();
         select=new UnityEvent<bool,Die>();
+        mr = GetComponent<MeshRenderer>();
+        rb = GetComponent<Rigidbody>();
     }
     void Start()
     {
-        mr = GetComponent<MeshRenderer>();
-        rb= GetComponent<Rigidbody>();
-        for(int i = 0; i < transform.childCount-1; i++) 
+        for (int i = 0; i < transform.childCount-1; i++) 
         {
             _faces.Add(transform.GetChild(i).GetComponent<DieFace>());
         }
-        _outline= transform.GetChild(transform.childCount - 1).gameObject;
+        if (DieData != null)
+        {
+            mr.material.mainTexture = DieData.texture;
+            for (int i = 0; i < _faces.Count; i++)
+            {
+                _faces[i].effect = DieData.faces[i];
+            }
+        }
+        _outline = transform.GetChild(transform.childCount - 1).gameObject;
         freez();
 
         disolv = 1;
@@ -78,7 +89,6 @@ public class Die : MonoBehaviour
 
     void Update()
     {
-        
         if(rb.velocity.magnitude > 0)
         {
             _rolling = true;
@@ -109,8 +119,7 @@ public class Die : MonoBehaviour
             {
                 mat.SetFloat("_Disolv", disolv);
             }
-        }
-        
+        }  
     }
     void RollingPhase()
     {
@@ -208,5 +217,17 @@ public class Die : MonoBehaviour
     public void Randomize()
     {
         transform.Rotate(Random.Range(0,360), Random.Range(0, 360), Random.Range(0, 360));
+    }
+    public void ChangeDiePropertys(ScriptableDie Data)
+    {
+        DieData = Data;
+        if (DieData != null)
+        {
+            mr.material.mainTexture = DieData.texture;
+            for (int i = 0; i < _faces.Count; i++)
+            {
+                _faces[i].effect = DieData.faces[i];
+            }
+        }
     }
 }

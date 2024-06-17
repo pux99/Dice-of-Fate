@@ -31,15 +31,15 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.99705887, y: 0, z: -3.1983871}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 527730658144189183}
   - {fileID: 7655415439614880619}
   - {fileID: 5550825261317923382}
+  - {fileID: 527730658144189183}
+  - {fileID: 4914385689413682759}
   - {fileID: 6863507805220209837}
   - {fileID: 5347131810998330165}
-  - {fileID: 4914385689413682759}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1904573949664150735
@@ -49,7 +49,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6717307124609694603}
-  m_Mesh: {fileID: 4300000, guid: 6afecd9182dbc814886d76b61998b003, type: 2}
+  m_Mesh: {fileID: -5495902117074765545, guid: b44d9354ce7541b4c9204c073a7975f6, type: 3}
 --- !u!23 &8123346388604599972
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -70,8 +70,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2f1616104c6b24a40ae8b2d48cf7ab9d, type: 2}
-  - {fileID: 2100000, guid: 4324907c37c6ed847b993f4dfc93e27a, type: 2}
+  - {fileID: 2100000, guid: f1bdc1e29611cb342ac9e5442042e660, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,6 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16657f7a417c8fb45b5217ae40e5e5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DieData: {fileID: 0}
   flipt:
     m_PersistentCalls:
       m_Calls: []
@@ -179,7 +179,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: _Value
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: _special
@@ -187,7 +187,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: _rotation.x
-      value: 270
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
+      propertyPath: _rotation.z
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: effect.Value
@@ -195,7 +199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1656562016463034757, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: m_Name
-      value: DieFace 1
+      value: DieFace 3
       objectReference: {fileID: 0}
     - target: {fileID: 4328276656868253078, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: m_LocalScale.x
@@ -289,15 +293,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: _Value
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: _special
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
+      propertyPath: _rotation.x
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: _rotation.z
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: effect.Value
@@ -305,7 +313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1656562016463034757, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: m_Name
-      value: DieFace 2
+      value: DieFace 1
       objectReference: {fileID: 0}
     - target: {fileID: 4328276656868253078, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: m_LocalScale.x
@@ -383,7 +391,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: _Value
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: _special
@@ -391,7 +399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: _rotation.z
-      value: 270
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: effect.Value
@@ -399,7 +407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1656562016463034757, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: m_Name
-      value: DieFace 4
+      value: DieFace 5
       objectReference: {fileID: 0}
     - target: {fileID: 4328276656868253078, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: m_LocalScale.x
@@ -481,7 +489,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: _Value
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: _special
@@ -489,7 +497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: _rotation.z
-      value: 90
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: effect.Value
@@ -497,7 +505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1656562016463034757, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: m_Name
-      value: DieFace 3
+      value: DieFace 2
       objectReference: {fileID: 0}
     - target: {fileID: 4328276656868253078, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: m_LocalScale.x
@@ -580,11 +588,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: _Value
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: _special
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
+      propertyPath: _rotation.x
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: effect.Value
@@ -592,7 +604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1656562016463034757, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: m_Name
-      value: DieFace 5
+      value: DieFace 6
       objectReference: {fileID: 0}
     - target: {fileID: 4328276656868253078, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: m_LocalScale.x
@@ -670,7 +682,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: _Value
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: _special
@@ -678,7 +690,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: _rotation.x
-      value: 90
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
+      propertyPath: _rotation.z
+      value: 270
       objectReference: {fileID: 0}
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: effect.Value
@@ -686,7 +702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1656562016463034757, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: m_Name
-      value: DieFace 6
+      value: DieFace 4
       objectReference: {fileID: 0}
     - target: {fileID: 4328276656868253078, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: m_LocalScale.x

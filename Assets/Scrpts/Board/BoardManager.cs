@@ -18,7 +18,8 @@ public class BoardManager : MonoBehaviour
     public bool watingDie;
     private EventCard.Options currentOption;
     public MoveCamera moveCamera;
-    public Vector3 dieStartingPosition; 
+    public Vector3 dieStartingPosition;
+    public BossModifiers bossMods=new BossModifiers();
 
     public BoardSpace PCurrentSpace
     {
@@ -81,7 +82,7 @@ public class BoardManager : MonoBehaviour
     void changeCurrentSpace(BoardSpace space)
     {
         currentSpace= space;
-        if (space.card.CardType == "Event"&&!space.Used)
+        if (space.card.GetType() == typeof(EventCard)&&!space.Used)//space.card.CardType == "Event"&&!space.Used)
         {
             foreach(BoardSpace boardSpace in spaceList)
             {
@@ -89,15 +90,16 @@ public class BoardManager : MonoBehaviour
             }
             cardEvent.Invoke((EventCard)space.card);
         }
-        if (space.card.CardType == "Enemy" && !space.Used)
+        if (space.card.GetType() == typeof(EnemyCard) && !space.Used)//space.card.CardType == "Enemy" && !space.Used)
         {
-            foreach (BoardSpace boardSpace in spaceList)
-            {
-                boardSpace.EventOnGoing = true;
-            }
-            moveCamera.MoveToDice();
-            EnemeyCard cardEnemy = (EnemeyCard)space.card;
-            cardEnemy.SetUpEnemy(enemy);
+            startCombat((EnemyCard)space.card);
+            //foreach (BoardSpace boardSpace in spaceList)
+            //{
+            //    boardSpace.EventOnGoing = true;
+            //}
+            //moveCamera.MoveToDice();
+            //EnemyCard cardEnemy = (EnemyCard)space.card;
+            //cardEnemy.SetUpEnemy(enemy,bossMods);
 
         }
         space.Used = true;
@@ -134,31 +136,53 @@ public class BoardManager : MonoBehaviour
         }
     }
 
-    void applyEffects(List< Rewards.Effect> effects)
+    void applyEffects(List< EffectData> effects)
     {
 
-        foreach (Rewards.Effect effect in effects)
+        foreach (EffectData effect in effects)
         {
-            switch (effect.reward)
-            {
-                case Rewards.EffectType.Heal:
-                    effectApllier.heal.ApplyEffect(player,effect.value);
-                    break;
-                case Rewards.EffectType.Damage:
-                    effectApllier.damage.ApplyEffect(player,effect.value);
-                    break;
-                case Rewards.EffectType.MaxLife:
-                    effectApllier.maxheathMod.ApplyEffect(player,effect.value);
-                    break;
-                case Rewards.EffectType.DiceMode:
-                    effectApllier.diceamountMod.ApplyEffect(player,effect.value);
-                    break;
-                case Rewards.EffectType.changaDie:
-                    effectApllier.changeDie.ApplyEffect(player, effect.value, effect.GameObjectReward);
-                    break;
-                default:
-                    break;
-            }
+            effectApllier.ApplyEffect(effect);
+        //    switch (effect.type)
+        //    {
+        //        case EffectData.Type.Heal:
+        //            effectApllier.heal.ApplyEffect(player,effect.Value);
+        //            break;
+        //        case EffectData.Type.Damage:
+        //            effectApllier.damage.ApplyEffect(player,effect.Value);
+        //            break;
+        //        case EffectData.Type.MaxLife:
+        //            effectApllier.maxheathMod.ApplyEffect(player,effect.Value);
+        //            break;
+        //        case EffectData.Type.DiceMode:
+        //            effectApllier.diceamountMod.ApplyEffect(player,effect.Value);
+        //            break;
+        //        case EffectData.Type.changaDie:
+        //            effectApllier.changeDie.ApplyEffect(player, effect.Value, effect.specialDie);
+        //            break;
+        //        case EffectData.Type.EnemylossTurn:
+        //            effectApllier.skipEnemyTurn.ApplyEffect(enemy, effect.Value);
+        //            break;
+        //        case EffectData.Type.RevelEnemyCard:
+        //            effectApllier.revealEnemyCards.ApplyEffect(player, effect.Value);
+        //            break;
+        //        case EffectData.Type.ArmorBoss:
+        //            effectApllier.modifyBossShield.ApplyEffect(player, effect.Value);
+        //            break;
+        //        case EffectData.Type.healthBoss:
+        //            effectApllier.modifyBossHealth.ApplyEffect(player, effect.Value);
+        //            break;
+        //        case EffectData.Type.DiceBoss:
+        //            effectApllier.modifyBossDieCount.ApplyEffect(player, effect.Value);
+        //            break;
+        //        case EffectData.Type.extraLife:
+        //            effectApllier.add1ExtraLife.ApplyEffect(player, effect.Value);
+        //            break;
+        //        case EffectData.Type.StartBattle:
+        //            effectApllier.startEventCombat.ApplyEffect(player, effect.Value,effect.enemy);
+        //            break;
+        //        default:
+        //            break;
+        //    }
         }
     }
     public void ResumeBoardMovement()
@@ -168,5 +192,23 @@ public class BoardManager : MonoBehaviour
         {
             boardSpace.EventOnGoing = false;
         }
+    }
+    public void reveleEnemyCard()
+    {
+        foreach (BoardSpace boardSpace in spaceList) 
+        {
+            if(boardSpace.card!=null&&boardSpace.card.GetType() == typeof(EnemyCard))
+                boardSpace.reveld=true;
+
+        }
+    }
+    public void startCombat(EnemyCard enemyCard)
+    {
+        foreach (BoardSpace boardSpace in spaceList)
+        {
+            boardSpace.EventOnGoing = true;
+        }
+        moveCamera.MoveToDice();
+        enemyCard.SetUpEnemy(enemy, bossMods);
     }
 }

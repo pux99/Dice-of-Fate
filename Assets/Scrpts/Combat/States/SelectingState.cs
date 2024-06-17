@@ -108,9 +108,9 @@ public class SelectingState : CombatState
         }
         foreach (Die die in specialDice)
         {
-            if (die.currentFace.effect.type == DieFace.diceFaceEffect.EffectType.multyply)
+            if (die.currentFace.effect.effectData.type == EffectData.Type.multiplyDamage)
             {
-                value *= die.currentFace.effect.Value;
+                value *= die.currentFace.effect.effectData.Value;
             }
         }
          _points=value;
