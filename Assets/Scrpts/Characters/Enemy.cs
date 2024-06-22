@@ -12,6 +12,7 @@ public class Enemy : Fighter
     public EnemyCard card;
     public int attack;
     public List<Die> specialdice;
+    public GameObject BaseDie;
     
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,7 @@ public class Enemy : Fighter
         int shield,
         int numbreOfDice,
         int attack,
-        List<Die> specialdice,
+        List<ScriptableDie> specialdice,
         List<EffectData> OnCombatStartEffects,
         List<EffectData> OnTurnStartEffects,
         List<EffectData> OnTakingDamageEffects,
@@ -47,7 +48,7 @@ public class Enemy : Fighter
         rewards = reward;
         this.card = card;
         this.attack = attack;
-        this.specialdice = specialdice;
+        //this.specialdice = specialdice;
         dice.Clear();
         for (int i = 0; i < diceHolder.transform.childCount; i++)
         {
@@ -57,13 +58,22 @@ public class Enemy : Fighter
         {
             CreateDiceForEnemy.Invoke(this);
         }
-        foreach (Die die in specialdice)
+        for (int i = 0; i < specialdice.Count; i++)
         {
-            GameObject newDie =Instantiate(die.gameObject);
-            newDie.transform.parent= this.diceHolder.transform;
-            dice.Add(newDie.GetComponent<Die>());
+            GameObject newDie = Instantiate(BaseDie);
+            newDie.transform.parent = this.diceHolder.transform;
+            Die script = newDie.GetComponent<Die>();
+            script.ChangeDiePropertys(specialdice[i]);
+            dice.Add(script);
             newDie.gameObject.SetActive(false);
         }
+        //foreach (Die die in specialdice)
+        //{
+        //    GameObject newDie =Instantiate(die.gameObject);
+        //    newDie.transform.parent= this.diceHolder.transform;
+        //    dice.Add(newDie.GetComponent<Die>());
+        //    newDie.gameObject.SetActive(false);
+        //}
         //for (int i = 0; i < transform.Find("Dice").childCount; i++)
         //{
         //    dice.Add(transform.Find("Dice").GetChild(i).GetComponent<Die>());

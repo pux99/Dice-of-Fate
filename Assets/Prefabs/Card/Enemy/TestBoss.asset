@@ -28,7 +28,12 @@ MonoBehaviour:
     Value: 100
     enemy: {fileID: 0}
     specialDie: {fileID: 0}
-  OnTurnStartEffects: []
+  OnTurnStartEffects:
+  - target: 1
+    type: 2
+    Value: 500
+    enemy: {fileID: 0}
+    specialDie: {fileID: 0}
   OnTakingDamageEffects:
   - target: 1
     type: 2

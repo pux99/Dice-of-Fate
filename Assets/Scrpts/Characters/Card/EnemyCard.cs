@@ -13,7 +13,7 @@ public class EnemyCard : Card
     [SerializeField] private int attack;
     [SerializeField] public bool boss;
 
-    [SerializeField] private List<Die> specialDice;
+    [SerializeField] private List<ScriptableDie> specialDice;
     [SerializeField] private List<EffectData> OnCombatStartEffects;
     [SerializeField] private List<EffectData> OnTurnStartEffects;
     [SerializeField] private List<EffectData> OnTakingDamageEffects;

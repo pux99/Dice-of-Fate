@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e1cbffc0f515d43b6b04b985e63136, type: 3}
   m_Name: test
   m_EditorClassIdentifier: 
-  texture: {fileID: 0}
+  texture: {fileID: 2800000, guid: dd4729ee5491bda4ca7c6ff1bd1490a7, type: 3}
   faces:
   - name: Face 1
     effectData:

@@ -54,6 +54,7 @@ public class EnemyTurn : CombatState
         EndOfEnemyTurnDiceEfects.Invoke(specialDice);
         EndOfEnemyTurn.Invoke(0);
         clearList();
+        stopCounter = 0;
     }
     public override void startState(List<Die> list,int damage)
     {

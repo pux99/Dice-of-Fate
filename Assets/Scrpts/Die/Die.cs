@@ -74,6 +74,8 @@ public class Die : MonoBehaviour
             for (int i = 0; i < _faces.Count; i++)
             {
                 _faces[i].effect = DieData.faces[i];
+                if (_faces[i].effect.effectData.type != EffectData.Type.None)
+                    _faces[i].special = true;
             }
         }
         _outline = transform.GetChild(transform.childCount - 1).gameObject;
@@ -84,7 +86,6 @@ public class Die : MonoBehaviour
         {
             mat.SetFloat("_Disolv", disolv);
         }
-
     }
 
     void Update()
@@ -218,6 +219,10 @@ public class Die : MonoBehaviour
     {
         transform.Rotate(Random.Range(0,360), Random.Range(0, 360), Random.Range(0, 360));
     }
+    public void GetReadyToRoll()
+    {
+        _stopRolling = false;
+    }
     public void ChangeDiePropertys(ScriptableDie Data)
     {
         DieData = Data;
@@ -227,6 +232,8 @@ public class Die : MonoBehaviour
             for (int i = 0; i < _faces.Count; i++)
             {
                 _faces[i].effect = DieData.faces[i];
+                if(_faces[i].effect.effectData.type!=EffectData.Type.None)
+                    _faces[i].special=true;
             }
         }
     }

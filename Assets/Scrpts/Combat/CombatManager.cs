@@ -188,7 +188,9 @@ public class CombatManager : MonoBehaviour
     }
     public void EndOfEnemyTurnDiceEfects(List<Die> specialDice)
     {
-        ApllyDiceEffects(specialDice, player, enemy);
+        foreach (var die in specialDice)
+            effectApllier.ApplyEffect(die.DieData.faces[die.currentFace.normalValue-1].effectData);
+        //ApllyDiceEffects(specialDice, player, enemy);
     }
     void DamageFigther(Fighter fighter,int value)
     {

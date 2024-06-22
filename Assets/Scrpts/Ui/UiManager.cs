@@ -41,6 +41,7 @@ public class UiManager : MonoBehaviour
         }
        
     }
+    public ShowText showText;
 
     #region Combat
     [Header("Combat")]
@@ -245,7 +246,9 @@ public class UiManager : MonoBehaviour
     }
     void CardEventDisplay(EventCard card)
     {
+        float baseShowSpeed = 0.005f;
         BoardUI.SetActive(true);
+        showText.Show(EventText, baseShowSpeed);
         EventText.text = card.cardText;
         CardImage.sprite = card.CardArt;
         if (card.options.Count > 0)
@@ -254,6 +257,7 @@ public class UiManager : MonoBehaviour
             option1.gameObject.SetActive(true);
             option1.text.text = card.options[0].buttonText;
             option1.button.interactable = true;
+            showText.Show(option1.text, baseShowSpeed - 0.002f);
         }
         else
             option1.gameObject.SetActive(false);
@@ -263,6 +267,7 @@ public class UiManager : MonoBehaviour
             option2.gameObject.SetActive(true);
             option2.text.text = card.options[1].buttonText;
             option2.button.interactable = true;
+            showText.Show(option2.text, baseShowSpeed - 0.0025f);
         }
         else
             option2.gameObject.SetActive(false);
@@ -272,6 +277,7 @@ public class UiManager : MonoBehaviour
             option3.gameObject.SetActive(true);
             option3.text.text = card.options[2].buttonText;
             option3.button.interactable = true;
+            showText.Show(option3.text, baseShowSpeed - 0.003f);
         }
         else
             option3.gameObject.SetActive(false);
