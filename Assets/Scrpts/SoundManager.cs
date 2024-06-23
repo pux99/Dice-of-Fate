@@ -14,13 +14,21 @@ public static class SoundManager
         OneDiceRollF,
         OneDiceRollG,
     }
-    public static void PlaySound(Sound sound)
+    
+    
+    public static void PlaySound(Sound sound, bool loop)
     {
         GameObject soundGameObject = new GameObject("Sound");
         AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
-        audioSource.PlayOneShot(GetAudioClip(sound));
-    }
+        audioSource.clip = GetAudioClip(sound);
+        audioSource.tag = "Sound";
+        if (loop)
+        {
+            audioSource.loop = true;
+        }
+        audioSource.Play();
 
+    }
     private static AudioClip GetAudioClip(Sound sound)
     {
         foreach(SoundAudioClip.SoundAudioClipClass soundAudioClipNow in SoundAudioClip.instance.soundAudioClips)

@@ -19,12 +19,20 @@ public class SoundAudioClip: MonoBehaviour
         {
             if (_instance == null)
             {
-                _instance = Instantiate(Resources.Load<SoundAudioClip>("SoundAudioClip"));
+                _instance = Instantiate(Resources.Load<SoundAudioClip>("SoundManager"));
             }
             return _instance;
         }
     }
 
+    public void DestroySounds()
+    {
+        GameObject[] sounds = GameObject.FindGameObjectsWithTag("Sound");
+        foreach (GameObject audioSource in sounds)
+        {
+            Destroy(audioSource);
+        }
+    }
 
     public SoundAudioClipClass[] soundAudioClips;
 }
