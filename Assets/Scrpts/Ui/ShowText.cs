@@ -19,7 +19,7 @@ public class ShowText : MonoBehaviour
         {
             if (text[i].show)
                 if (text[i].text.alpha <= 1)
-                    text[i].text.alpha += text[i].alphaSpeed;
+                    text[i].text.alpha += text[i].alphaSpeed*Time.deltaTime;
                 else
                 {
                     text.Remove(text[i]);
@@ -36,5 +36,6 @@ public class ShowText : MonoBehaviour
         nText.alphaSpeed = Tspeed;
         nText.text.alpha = 0;
         nText.show = true;
+        text.Add(nText);
     }
 }

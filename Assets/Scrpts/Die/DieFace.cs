@@ -26,10 +26,10 @@ public class DieFace : MonoBehaviour
     public bool onTop{get { return _onTop; }}
     public int value {get { return _Value; }}
     public Vector3 rotation{ get { return _rotation; }}
-    private void Update()
-    {
-        Debug.DrawLine(transform.position, transform.up * 1000, Color.green);
-    }
+    //private void Update()
+    //{
+    //    Debug.DrawLine(transform.position, transform.up * 1000, Color.green);
+    //}
     public void ChekIfOnTop()
     {
         int layerMask = 1 << 8;

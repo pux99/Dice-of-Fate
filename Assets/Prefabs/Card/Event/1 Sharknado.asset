@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardName: Sharknado
   CardArt: {fileID: 21300000, guid: baf1b45c0f9214c4f94e6a8ff7729d1a, type: 3}
-  _cardText: 
+  _cardText: 'Aparece un tornado por estribor que lleva consigo tiburones. '
   options:
-  - _buttonText: 'Aparece un tornado por estribor que lleva consigo tiburones. '
+  - _buttonText: 'Intetar esquivar el tornado '
     _text: 
     _roll: 1
     _options:
@@ -30,7 +30,7 @@ MonoBehaviour:
           Value: 200
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 
+        _consequence: Un tiburon te muerde y perdes 200 de vida
       roll2:
         effects:
         - target: 1
@@ -38,7 +38,7 @@ MonoBehaviour:
           Value: 200
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: "Un tibur\xF3n vuela hacia vos y te da un mordisco"
+        _consequence: Un tiburon te muerde y perdes 200 de vida
       roll3:
         effects: []
         _consequence: Esquivas el tornado

@@ -11,9 +11,11 @@ public class ChangeDie : Effect
         Die dieScript = newDie.GetComponent<Die>();
         dieScript.ChangeDiePropertys(die);
         newDie.transform.parent = figther.diceHolder.transform;
+        newDie.GetComponent<Die>().freez();
         figther.dice.Add(dieScript);
-        newDie.gameObject.SetActive(false);
         Die dieToDestroy = figther.diceHolder.transform.GetChild(0).gameObject.GetComponent<Die>();
+        if(dieToDestroy.GetComponent<Die>().DieData==null ) { figther.normalDieCount--; }
+        figther.specialdice.Add(die);
         figther.dice.Remove(dieToDestroy);
         Destroy(dieToDestroy.gameObject);
     }

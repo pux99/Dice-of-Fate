@@ -78,7 +78,8 @@ public class UiManager : MonoBehaviour
     [SerializeField] private MyOptionButton option1;
     [SerializeField] private MyOptionButton option2;
     [SerializeField] private MyOptionButton option3;
-    [SerializeField] private Button BEndEvent;
+    [SerializeField] public EventBattleStarter startBattle;
+    [SerializeField] public Button BEndEvent;
     
     #endregion
 
@@ -246,7 +247,7 @@ public class UiManager : MonoBehaviour
     }
     void CardEventDisplay(EventCard card)
     {
-        float baseShowSpeed = 0.005f;
+        float baseShowSpeed = 1;
         BoardUI.SetActive(true);
         showText.Show(EventText, baseShowSpeed);
         EventText.text = card.cardText;
@@ -257,7 +258,7 @@ public class UiManager : MonoBehaviour
             option1.gameObject.SetActive(true);
             option1.text.text = card.options[0].buttonText;
             option1.button.interactable = true;
-            showText.Show(option1.text, baseShowSpeed - 0.002f);
+            showText.Show(option1.text, .9f);
         }
         else
             option1.gameObject.SetActive(false);
@@ -267,7 +268,7 @@ public class UiManager : MonoBehaviour
             option2.gameObject.SetActive(true);
             option2.text.text = card.options[1].buttonText;
             option2.button.interactable = true;
-            showText.Show(option2.text, baseShowSpeed - 0.0025f);
+            showText.Show(option2.text, baseShowSpeed - .8f);
         }
         else
             option2.gameObject.SetActive(false);
@@ -277,17 +278,18 @@ public class UiManager : MonoBehaviour
             option3.gameObject.SetActive(true);
             option3.text.text = card.options[2].buttonText;
             option3.button.interactable = true;
-            showText.Show(option3.text, baseShowSpeed - 0.003f);
+            showText.Show(option3.text, baseShowSpeed - 0.7f);
         }
         else
             option3.gameObject.SetActive(false);
     }
-    public void CardEventEnding(Rewards.Reward reward)
+    public void CardEventEnding(Rewards.Reward reward,string OptionText)
     {
-        EventText.text = EventText.text + "\n" + reward.consequence;
-        option1.button.interactable = false;
-        option2.button.interactable = false;
-        option3.button.interactable = false;
+        EventText.text = EventText.text + "\n\n<color=#ac0505>" + OptionText + "</color>";
+        EventText.text = EventText.text + "\n\n" + reward.consequence;
+        option1.gameObject.SetActive(false);
+        option2.gameObject.SetActive(false);
+        option3.gameObject.SetActive(false);
         BEndEvent.gameObject.SetActive(true);
         
     }
@@ -295,7 +297,7 @@ public class UiManager : MonoBehaviour
     {
 
         BoardUI.SetActive(false);
-        BEndEvent.gameObject.SetActive(false);
+        //BEndEvent.gameObject.SetActive(false);
         board.ResumeBoardMovement();
     }
     public void WinCombat(string Reward)

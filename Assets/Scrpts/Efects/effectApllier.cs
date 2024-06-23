@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EffectApllier : MonoBehaviour
 {
+    [HideInInspector]public UnityEvent<EffectData, Fighter> effectAplide=new UnityEvent<EffectData, Fighter>();
     [SerializeField] private Player player;
     [SerializeField] public Enemy enemy;
     [SerializeField] public BoardManager boardManager;
@@ -72,6 +74,7 @@ public class EffectApllier : MonoBehaviour
             default:
                 break;
         }
+        effectAplide.Invoke(effect, targert);
     }
 }
 

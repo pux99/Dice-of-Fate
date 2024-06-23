@@ -19,12 +19,15 @@ public class BoardSpace : MonoBehaviour
     public Material CardFront;
     #endregion
     public Card card;
+    public CardPool cardPool;
     public MeshRenderer meshRenderer;
     public UnityEvent<BoardSpace> newCurrentSpace=new UnityEvent<BoardSpace>();
     // Start is called before the first frame update
     void Start()
     {
-        meshRenderer = gameObject.GetComponent<MeshRenderer>();   
+        meshRenderer = gameObject.GetComponent<MeshRenderer>();
+        if (cardPool != null&& cardPool.cards != null)
+            card = cardPool.cards[Random.Range(0, cardPool.cards.Count)];
     }
 
     // Update is called once per frame

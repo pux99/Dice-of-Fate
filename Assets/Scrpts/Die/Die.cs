@@ -136,7 +136,10 @@ public class Die : MonoBehaviour
         {
             face.ChekIfOnTop();
             if (face.onTop)
+            {
                 _currentFace = face;
+                break;
+            }
         }
         _value = _currentFace.value;
         fixRotation();
@@ -168,7 +171,8 @@ public class Die : MonoBehaviour
     }
     void UnFreez()
     {
-        rb.WakeUp();
+        //rb.constraints = RigidbodyConstraints.FreezeAll;
+        //rb.WakeUp();
         rb.constraints = RigidbodyConstraints.None;
     }
 

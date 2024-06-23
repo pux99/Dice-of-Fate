@@ -9,7 +9,7 @@ public class BoardManager : MonoBehaviour
     List<BoardSpace> spaceList=new List<BoardSpace>();
     [SerializeField] private BoardSpace currentSpace;
     public UnityEvent<EventCard> cardEvent=new UnityEvent<EventCard>();
-    public UnityEvent<Rewards.Reward> endOfEventRewardCalculation=new UnityEvent<Rewards.Reward>();
+    public UnityEvent<Rewards.Reward, string> endOfEventRewardCalculation=new UnityEvent<Rewards.Reward,string>();
     public CombatManager combat;
     public Die die;
     public EffectApllier effectApllier;
@@ -18,7 +18,7 @@ public class BoardManager : MonoBehaviour
     public bool watingDie;
     private EventCard.Options currentOption;
     public MoveCamera moveCamera;
-    public Vector3 dieStartingPosition;
+    public GameObject RollingBox ;
     public BossModifiers bossMods=new BossModifiers();
 
     public BoardSpace PCurrentSpace
@@ -51,27 +51,27 @@ public class BoardManager : MonoBehaviour
                 {
                     case 1:
                         applyEffects(currentOption.options.roll1.effects);
-                        endOfEventRewardCalculation.Invoke(currentOption.options.roll1);
+                        endOfEventRewardCalculation.Invoke(currentOption.options.roll1,currentOption.buttonText);
                         break;
                     case 2:
                         applyEffects(currentOption.options.roll2.effects);
-                        endOfEventRewardCalculation.Invoke(currentOption.options.roll2);
+                        endOfEventRewardCalculation.Invoke(currentOption.options.roll2, currentOption.buttonText);
                         break;
                     case 3:
                         applyEffects(currentOption.options.roll3.effects);
-                        endOfEventRewardCalculation.Invoke(currentOption.options.roll3);
+                        endOfEventRewardCalculation.Invoke(currentOption.options.roll3, currentOption.buttonText);
                         break;
                     case 4:
                         applyEffects(currentOption.options.roll4.effects);
-                        endOfEventRewardCalculation.Invoke(currentOption.options.roll4);
+                        endOfEventRewardCalculation.Invoke(currentOption.options.roll4, currentOption.buttonText);
                         break;
                     case 5:
                         applyEffects(currentOption.options.roll5.effects);
-                        endOfEventRewardCalculation.Invoke(currentOption.options.roll5);
+                        endOfEventRewardCalculation.Invoke(currentOption.options.roll5, currentOption.buttonText);
                         break;
                     case 6:
                         applyEffects(currentOption.options.roll6.effects);
-                        endOfEventRewardCalculation.Invoke(currentOption.options.roll6);
+                        endOfEventRewardCalculation.Invoke(currentOption.options.roll6, currentOption.buttonText);
                         break;
                     default: break;
                 }
@@ -81,6 +81,7 @@ public class BoardManager : MonoBehaviour
     }
     void changeCurrentSpace(BoardSpace space)
     {
+        
         currentSpace= space;
         if (space.card.GetType() == typeof(EventCard)&&!space.Used)//space.card.CardType == "Event"&&!space.Used)
         {
@@ -124,14 +125,14 @@ public class BoardManager : MonoBehaviour
         if (options.roll)
         {
             die.Disolv(false);
-            die.transform.position = dieStartingPosition;
+            die.transform.position = RollingBox.transform.position;
             die.Roll();
             watingDie = true;
         }
         else
         {
             applyEffects(options.options.noRoll.effects);
-            endOfEventRewardCalculation.Invoke(currentOption.options.noRoll);
+            endOfEventRewardCalculation.Invoke(currentOption.options.noRoll, currentOption.buttonText);
             //options.options.noRoll.consequence
         }
     }
@@ -142,47 +143,6 @@ public class BoardManager : MonoBehaviour
         foreach (EffectData effect in effects)
         {
             effectApllier.ApplyEffect(effect);
-        //    switch (effect.type)
-        //    {
-        //        case EffectData.Type.Heal:
-        //            effectApllier.heal.ApplyEffect(player,effect.Value);
-        //            break;
-        //        case EffectData.Type.Damage:
-        //            effectApllier.damage.ApplyEffect(player,effect.Value);
-        //            break;
-        //        case EffectData.Type.MaxLife:
-        //            effectApllier.maxheathMod.ApplyEffect(player,effect.Value);
-        //            break;
-        //        case EffectData.Type.DiceMode:
-        //            effectApllier.diceamountMod.ApplyEffect(player,effect.Value);
-        //            break;
-        //        case EffectData.Type.changaDie:
-        //            effectApllier.changeDie.ApplyEffect(player, effect.Value, effect.specialDie);
-        //            break;
-        //        case EffectData.Type.EnemylossTurn:
-        //            effectApllier.skipEnemyTurn.ApplyEffect(enemy, effect.Value);
-        //            break;
-        //        case EffectData.Type.RevelEnemyCard:
-        //            effectApllier.revealEnemyCards.ApplyEffect(player, effect.Value);
-        //            break;
-        //        case EffectData.Type.ArmorBoss:
-        //            effectApllier.modifyBossShield.ApplyEffect(player, effect.Value);
-        //            break;
-        //        case EffectData.Type.healthBoss:
-        //            effectApllier.modifyBossHealth.ApplyEffect(player, effect.Value);
-        //            break;
-        //        case EffectData.Type.DiceBoss:
-        //            effectApllier.modifyBossDieCount.ApplyEffect(player, effect.Value);
-        //            break;
-        //        case EffectData.Type.extraLife:
-        //            effectApllier.add1ExtraLife.ApplyEffect(player, effect.Value);
-        //            break;
-        //        case EffectData.Type.StartBattle:
-        //            effectApllier.startEventCombat.ApplyEffect(player, effect.Value,effect.enemy);
-        //            break;
-        //        default:
-        //            break;
-        //    }
         }
     }
     public void ResumeBoardMovement()

@@ -17,9 +17,17 @@ public class DiceAmountMod : Effect
         }
         else
         {
-            for (int i = 0; i < Value * -1; i++)
+            if(figther.dice.Count>Value*-1)
+                for (int i = 0; i < Value * -1; i++)
+                {
+                    instancer.removeDie(figther);
+                }
+            else
             {
-                instancer.removeDie(figther);
+                for (int i = 0; i < figther.dice.Count-1; i++)
+                {
+                    instancer.removeDie(figther);
+                }
             }
         }
     }

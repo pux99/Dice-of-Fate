@@ -18,7 +18,7 @@ public class EnemyCard : Card
     [SerializeField] private List<EffectData> OnTurnStartEffects;
     [SerializeField] private List<EffectData> OnTakingDamageEffects;
     [SerializeField] private bool Random;
-    public List<Rewards> rewards;
+    public List<EffectData> rewards;
 
     public void SetUpEnemy(Enemy enemy,BossModifiers mod)
     {

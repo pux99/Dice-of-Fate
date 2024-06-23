@@ -1,9 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.Events;
 using static UnityEngine.Rendering.DebugUI;
+using static UnityEngine.UI.GridLayoutGroup;
 
 public class CombatManager : MonoBehaviour
 {
@@ -12,6 +17,7 @@ public class CombatManager : MonoBehaviour
     public SelectingState select;
     public Scoring scoring;
     public EnemyTurn enemyTurn;
+    public BattleLog Log;
 
 
     public Player player;
@@ -60,14 +66,16 @@ public class CombatManager : MonoBehaviour
         enemy.TurnOnOffDice(true);
         player.Defeted.AddListener(Loss);
         enemy.Defeted.AddListener(Win);
+        player.GenerateDie();
         OnUseDie.Clear();
-        foreach (var die in player.dice)
-        {
-            OnUseDie.Add(die);
-        }
         player.OnStartOfBattle();
         enemy.OnStartOfBattle();
         player.OnTurnStart();
+        foreach (var die in player.dice)
+        {
+            OnUseDie.Add(die);
+            die.freez();
+        }
         combatStart.Invoke();
     }
 
@@ -158,6 +166,7 @@ public class CombatManager : MonoBehaviour
     {
         select.ResetValues();
         DamageFigther(enemy,scoring.score);
+        Log.AddLog("<color=#FF0000>" + enemy.name + "</color>" + " perdio " + scoring.score + " puntos de vida");
         scoring.score = 0;
         scoring.TotalPointsChange.Invoke(scoring.score);
         ApllyDiceEffects(scoring.SpecialDice, enemy,player);
@@ -166,6 +175,7 @@ public class CombatManager : MonoBehaviour
             die.Disolv(true);
         }
         scoring.timeToMove = false;
+        enemy.OnTurnStart();
         if (enemy.health > 0 && !enemy.SkipNextTurn)
             enemyTurn.startState(enemy.dice, enemy.attack);
         else if (enemy.SkipNextTurn)
@@ -177,20 +187,19 @@ public class CombatManager : MonoBehaviour
         foreach (var die in player.dice)
         {
             OnUseDie.Add(die);
-        }
-        enemy.OnTurnStart();
+            die.freez();
+        }    
     }
     public void EndOfEnemyTurn(int value)
     {
         player.Damage(value);
+        Log.AddLog("<color=#005500>" + player.name + "</color>" + " perdio " + value + " puntos de vida");
         player.OnTurnStart();
-        //applyEffectsEnemy(enemy._OnTurnStartEffects);
     }
     public void EndOfEnemyTurnDiceEfects(List<Die> specialDice)
     {
         foreach (var die in specialDice)
             effectApllier.ApplyEffect(die.DieData.faces[die.currentFace.normalValue-1].effectData);
-        //ApllyDiceEffects(specialDice, player, enemy);
     }
     void DamageFigther(Fighter fighter,int value)
     {
@@ -217,14 +226,15 @@ public class CombatManager : MonoBehaviour
     {
         modifyFlipCount(0);
     }
-    void Win()
+    void Win( )
     {
         enemy.Defeted.RemoveListener(Win);
         string rewardText="";
-        foreach (Rewards effect in enemy.rewards)
+        
+        foreach (EffectData effect in enemy.rewards )
         {
-            applyEffects(effect.noRoll.effects);
-            rewardText += effect.noRoll.consequence;
+            effectApllier.ApplyEffect(effect);
+            rewardText += Log.Logs.Last().GetComponent<TextMeshProUGUI>().text +" " ;
         }
         
         win.Invoke(rewardText);
@@ -234,74 +244,13 @@ public class CombatManager : MonoBehaviour
     {
         loss.Invoke();
     }
-
-    void applyEffects(List<EffectData> effects)
-    {
-
-        foreach (EffectData effect in effects)
-        {
-            switch (effect.type)
-            {
-                case EffectData.Type.Heal:
-                    effectApllier.heal.ApplyEffect(player, effect.Value);
-                    break;
-                case EffectData.Type.Damage:
-                    effectApllier.damage.ApplyEffect(player, effect.Value);
-                    break;
-                case EffectData.Type.MaxLife:
-                    effectApllier.maxheathMod.ApplyEffect(player, effect.Value);
-                    break;
-                case EffectData.Type.DiceMode:
-                    effectApllier.diceamountMod.ApplyEffect(player, effect.Value);
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
-    //void applyEffectsEnemy(List<EffectData> effects)
-    //{
-
-    //    foreach (EffectData effect in effects)
-    //    {
-    //        switch (effect.type)
-    //        {
-    //            case EffectData.Type.Heal:
-    //                effectApllier.heal.ApplyEffect(enemy, effect.Value);
-    //                break;
-    //            case EffectData.Type.Damage:
-    //                effectApllier.damage.ApplyEffect(player, effect.Value);
-    //                break;
-    //            case EffectData.Type.MaxLife:
-    //                effectApllier.maxheathMod.ApplyEffect(enemy, effect.Value);
-    //                break;
-    //            case EffectData.Type.DiceMode:
-    //                effectApllier.diceamountMod.ApplyEffect(enemy, effect.Value);
-    //                break;
-    //            default:
-    //                break;
-    //        }
-    //    }
-    //}
     void ApllyDiceEffects(List<Die> dice, Fighter resiver, Fighter dealer)
     {
         string sucesos;
         sucesos = "El " + dealer.name;
         foreach (Die die in dice)
         {
-            switch (die.currentFace.effect.effectData.type)
-            {
-                case EffectData.Type.Heal:
-                    dealer.Heal(die.currentFace.effect.effectData.Value);
-                    sucesos += " se curo "+ die.currentFace.effect.effectData.type;
-                    break;
-                case EffectData.Type.Damage:
-                    resiver.Damage(die.currentFace.effect.effectData.Value);
-                    sucesos += " le hizo " + die.currentFace.effect.effectData.Value + " de daño a "+ resiver.name;
-                    break;
-                default:
-                    break;
-            }
+            effectApllier.ApplyEffect(die.currentFace.effect.effectData);
         }
         if(dice.Count > 0)
             TextoDeEffectos.Invoke(sucesos);

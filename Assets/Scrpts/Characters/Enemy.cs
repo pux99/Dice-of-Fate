@@ -8,23 +8,10 @@ using static EnemyCard;
 public class Enemy : Fighter
 {
     public UnityEvent<Enemy> CreateDiceForEnemy=new UnityEvent<Enemy>();
-    public List<Rewards> rewards;
+    public List<EffectData> rewards;
     public EnemyCard card;
     public int attack;
-    public List<Die> specialdice;
-    public GameObject BaseDie;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        //for (int i = 0; i < transform.childCount; i++)
-        //{
-        //    if (transform.GetChild(i).GetComponent<Die>() != null)
-        //        dice.Add(transform.GetChild(i).GetComponent<Die>());
-        //}
-    }
-
-    // Update is called once per frame
 
     public void SetUp(
         int maxHealth,
@@ -36,7 +23,7 @@ public class Enemy : Fighter
         List<EffectData> OnCombatStartEffects,
         List<EffectData> OnTurnStartEffects,
         List<EffectData> OnTakingDamageEffects,
-        List<Rewards> reward,
+        List<EffectData> reward,
         EnemyCard card)
     {
         _maxHealth = maxHealth;
@@ -48,25 +35,27 @@ public class Enemy : Fighter
         rewards = reward;
         this.card = card;
         this.attack = attack;
-        //this.specialdice = specialdice;
+        this.normalDieCount = numbreOfDice;
+        this.specialdice = specialdice;
         dice.Clear();
         for (int i = 0; i < diceHolder.transform.childCount; i++)
         {
             Destroy( diceHolder.transform.GetChild(i).gameObject);// cambiar para que no destrulla sino para que lo modifique
         }
-        for (int i = 0; i < numbreOfDice; i++)
-        {
-            CreateDiceForEnemy.Invoke(this);
-        }
-        for (int i = 0; i < specialdice.Count; i++)
-        {
-            GameObject newDie = Instantiate(BaseDie);
-            newDie.transform.parent = this.diceHolder.transform;
-            Die script = newDie.GetComponent<Die>();
-            script.ChangeDiePropertys(specialdice[i]);
-            dice.Add(script);
-            newDie.gameObject.SetActive(false);
-        }
+        GenerateDie();
+        //for (int i = 0; i < numbreOfDice; i++)
+        //{
+        //    CreateDiceForEnemy.Invoke(this);
+        //}
+        //for (int i = 0; i < specialdice.Count; i++)
+        //{
+        //    GameObject newDie = Instantiate(BaseDie);
+        //    newDie.transform.parent = this.diceHolder.transform;
+        //    Die script = newDie.GetComponent<Die>();
+        //    script.ChangeDiePropertys(specialdice[i]);
+        //    dice.Add(script);
+        //    newDie.gameObject.SetActive(false);
+        //}
         //foreach (Die die in specialdice)
         //{
         //    GameObject newDie =Instantiate(die.gameObject);

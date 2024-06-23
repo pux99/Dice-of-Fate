@@ -7,34 +7,25 @@ public class GameObjectInstancer : MonoBehaviour
     public Player player;
     public Enemy enemy;
     public GameObject Die;
-    public bool button;
     private void Start()
     {
         enemy.CreateDiceForEnemy.AddListener(AddDie);
     }
-    private void Update()
-    {
-        if (button)
-        {
-            AddDie(player);
-            button = false;
-        }
-    }
     public void AddDie( Fighter fighter)
     {
         GameObject newDie;
-        newDie =Instantiate(Die,fighter.transform.Find("Dice"));
-        newDie.transform.localScale *= 0.5f;
-        fighter.dice.Add(newDie.GetComponent<Die>());
-        newDie.gameObject.SetActive(false);
+        newDie =Instantiate(Die);
+        Die newDieScript = newDie.GetComponent<Die>();
+        fighter.AddDie(newDieScript);
+        newDieScript.disolvTarget = 1;
+        newDieScript.freez();
     }
     public void removeDie(Fighter fighter)
     {
         if (fighter.dice.Count>1)
         {
             GameObject Removed = fighter.dice[0].gameObject;
-            fighter.dice.RemoveAt(0);
-            Destroy(Removed);
+            fighter.RemoveDie(Removed.GetComponent<Die>());
         }
             
     }

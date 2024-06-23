@@ -21,7 +21,6 @@ public class EnemyTurn : CombatState
     {
         if (enemyTurn)
         {
-            StartCoroutine(StuckPrevention());
             foreach (Die die in dieList)
             {
                 if (die.stopRolling)
@@ -32,6 +31,7 @@ public class EnemyTurn : CombatState
             if (stopCounter == dieList.Count)
             {
                 stepTwo();
+                
                 enemyTurn = false;
             }
             else
@@ -43,16 +43,18 @@ public class EnemyTurn : CombatState
     }
     public void stepTwo()
     {
+        StopAllCoroutines();
         List<Die> specialDice = new List<Die>();
+        int damage=0;
         foreach (Die die in dieList)
         { 
             if(!die.currentFace.special)
-                EndOfEnemyTurn.Invoke(die.value * attack);
+                damage+=die.value * attack;
             else
                 specialDice.Add(die);
         }
         EndOfEnemyTurnDiceEfects.Invoke(specialDice);
-        EndOfEnemyTurn.Invoke(0);
+        EndOfEnemyTurn.Invoke(damage);
         clearList();
         stopCounter = 0;
     }
@@ -64,8 +66,10 @@ public class EnemyTurn : CombatState
         {
             die.GetComponent<Collider>().enabled = true;
             die.Disolv(false);
+            die.gameObject.transform.position=container.transform.position+new Vector3(Random.Range(-2f,2f),0, Random.Range(-2f, 2f));
             die.Roll();
         }
+        StartCoroutine(StuckPrevention());
         enemyTurn = true;
         attack = damage;
     }
