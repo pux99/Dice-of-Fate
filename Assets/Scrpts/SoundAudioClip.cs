@@ -25,6 +25,7 @@ public class SoundAudioClip: MonoBehaviour
         }
     }
 
+    //Esta funcion busca todos los objetos con el tag "Sound" y los destruye.
     public void DestroySounds()
     {
         GameObject[] sounds = GameObject.FindGameObjectsWithTag("Sound");

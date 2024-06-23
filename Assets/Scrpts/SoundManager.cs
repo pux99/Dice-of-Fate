@@ -4,6 +4,7 @@ using UnityEngine;
 
 public static class SoundManager
 {
+    //Lista de los sonidos que se pueden usar.
     public enum Sound
     {
         OneDiceRollA,
@@ -16,6 +17,7 @@ public static class SoundManager
     }
     
     
+    //Esta funcion recibe un sonido de la lista Sound y un booleano para decidir si el sonido se loopea o no. Luego crea un gameobject con el AudioSource y lo corre.
     public static void PlaySound(Sound sound, bool loop)
     {
         GameObject soundGameObject = new GameObject("Sound");
