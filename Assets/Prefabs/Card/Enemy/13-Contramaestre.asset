@@ -17,12 +17,12 @@ MonoBehaviour:
   enemy: {fileID: 0}
   maxHealth: 2200
   health: 2200
-  shield: 1400
+  shield: 1000
   numbreOfNormalDice: 5
   attack: 20
   boss: 1
   specialDice:
-  - {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
+  - {fileID: 11400000, guid: 71d0dbf5b7a97f743bbc12384a7480c7, type: 2}
   OnCombatStartEffects: []
   OnTurnStartEffects: []
   OnTakingDamageEffects: []
