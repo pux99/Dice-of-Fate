@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: efec3c4baeec50a4bb1dc6a20e911333, type: 3}
-  m_Name: 4 Vientos fuertes
+  m_Name: 04-Vientos fuertes
   m_EditorClassIdentifier: 
   CardName: Vientos fuertes
   CardArt: {fileID: 21300000, guid: 755d0a3ec1a1e6e40a219d7b3713bf34, type: 3}
   _cardText: "Te levantas y notas un fuerte viento esta ma\xF1ana. Tratas de aprovecharlo
     para poder impulsar el barco. "
   options:
-  - _buttonText: tirar
+  - _buttonText: Mover las Velas
     _text: 
     _roll: 1
     _options:
@@ -26,9 +26,9 @@ MonoBehaviour:
         _consequence: 
       roll1:
         effects:
-        - target: 1
-          type: 7
-          Value: 0
+        - target: 2
+          type: 8
+          Value: 100
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
         _consequence: "Logras mover las velas para hacer un gran uso del viento.

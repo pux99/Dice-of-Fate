@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efec3c4baeec50a4bb1dc6a20e911333, type: 3}
+  m_Name: 03-Sirenas
+  m_EditorClassIdentifier: 
+  CardName: Sirenas
+  CardArt: {fileID: 21300000, guid: baf1b45c0f9214c4f94e6a8ff7729d1a, type: 3}
+  _cardText: "Antes de irte a dormir empiezas a escuchar una canci\xF3n proveniente
+    del oc\xE9ano \xA1SIRENAS! "
+  options:
+  - _buttonText: 'Tratar de resistir los encantos '
+    _text: 
+    _roll: 1
+    _options:
+      noRoll:
+        effects:
+        - target: 1
+          type: 0
+          Value: 0
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: 
+      roll1:
+        effects:
+        - target: 1
+          type: 4
+          Value: -1
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: Sucumbiste ante el encanto de las sirenas y para cuando vuelves
+          en ti notas que te falta un dado.
+      roll2:
+        effects:
+        - target: 1
+          type: 4
+          Value: -1
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: Sucumbiste ante el encanto de las sirenas y para cuando vuelves
+          en ti notas que te falta un dado.
+      roll3:
+        effects:
+        - target: 1
+          type: 4
+          Value: -1
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: Sucumbiste ante el encanto de las sirenas y para cuando vuelves
+          en ti notas que te falta un dado.
+      roll4:
+        effects:
+        - target: 1
+          type: 4
+          Value: 1
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: Logras resistirte a su hipnosis y le robas un dado a alguien
+          que se distrajo con el canto.
+      roll5:
+        effects:
+        - target: 1
+          type: 4
+          Value: 1
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: 
+      roll6:
+        effects:
+        - target: 1
+          type: 4
+          Value: 1
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: 

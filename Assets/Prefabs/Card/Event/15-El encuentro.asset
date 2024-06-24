@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efec3c4baeec50a4bb1dc6a20e911333, type: 3}
+  m_Name: 15-El encuentro
+  m_EditorClassIdentifier: 
+  CardName: El encuentro
+  CardArt: {fileID: 21300000, guid: bdd1ffad37767ed419c419b16f7e4e89, type: 3}
+  _cardText: "El vig\xEDa grita \u201CBarco Aliado!\", y pueden ver como a lo lejos
+    un Barco Pirata se acerca r\xE1pidamente y bastante m\xE1s atr\xE1s un barco
+    de La Marina. Los piratas se acercan y les piden ayuda con recursos y refuerzos,
+    a cambio de tesoros. "
+  options:
+  - _buttonText: Ayudar al Barco Pirata
+    _text: 
+    _roll: 0
+    _options:
+      noRoll:
+        effects:
+        - target: 2
+          type: 12
+          Value: 0
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: 
+      roll1:
+        effects: []
+        _consequence: 
+      roll2:
+        effects: []
+        _consequence: 
+      roll3:
+        effects: []
+        _consequence: 
+      roll4:
+        effects: []
+        _consequence: 
+      roll5:
+        effects: []
+        _consequence: 
+      roll6:
+        effects: []
+        _consequence: 
+  - _buttonText: "\xA1Correr como gallinas!"
+    _text: 
+    _roll: 0
+    _options:
+      noRoll:
+        effects: []
+        _consequence: 
+      roll1:
+        effects: []
+        _consequence: 
+      roll2:
+        effects: []
+        _consequence: 
+      roll3:
+        effects: []
+        _consequence: 
+      roll4:
+        effects: []
+        _consequence: 
+      roll5:
+        effects: []
+        _consequence: 
+      roll6:
+        effects: []
+        _consequence: 

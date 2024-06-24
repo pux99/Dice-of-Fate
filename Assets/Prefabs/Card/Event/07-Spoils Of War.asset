@@ -10,74 +10,70 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: efec3c4baeec50a4bb1dc6a20e911333, type: 3}
-  m_Name: 3 Sirenas
+  m_Name: 07-Spoils Of War
   m_EditorClassIdentifier: 
-  CardName: Sirenas
-  CardArt: {fileID: 21300000, guid: baf1b45c0f9214c4f94e6a8ff7729d1a, type: 3}
-  _cardText: "Descripci\xF3n: Antes de irte a dormir empiezas a escuchar una canci\xF3n
-    proveniente del oc\xE9ano \xA1SIRENAS! "
+  CardName: Spoils of war
+  CardArt: {fileID: 21300000, guid: 47f145626a2a69948abb32a55c938170, type: 3}
+  _cardText: " Acaban de asaltar un barco que llevaba pasajeros a \xC1frica, y al
+    parecer hay discusiones sobre que se llevar\xE1 cada uno por su aporte."
   options:
-  - _buttonText: tirar
+  - _buttonText: "Tira los dados para saber cu\xE1l ser\xE1 tu recompensa. "
     _text: 
     _roll: 1
     _options:
       noRoll:
-        effects:
-        - target: 1
-          type: 0
-          Value: 0
-          enemy: {fileID: 0}
-          specialDie: {fileID: 0}
+        effects: []
         _consequence: 
       roll1:
         effects:
         - target: 1
           type: 4
-          Value: -1
+          Value: 2
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: Sucumbiste ante el encanto de las sirenas y para cuando vuelves
-          en ti notas que te falta un dado.
+        - target: 1
+          type: 3
+          Value: 200
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: 
       roll2:
-        effects:
-        - target: 1
-          type: 4
-          Value: -1
-          enemy: {fileID: 0}
-          specialDie: {fileID: 0}
-        _consequence: Sucumbiste ante el encanto de las sirenas y para cuando vuelves
-          en ti notas que te falta un dado.
-      roll3:
-        effects:
-        - target: 1
-          type: 4
-          Value: -1
-          enemy: {fileID: 0}
-          specialDie: {fileID: 0}
-        _consequence: Sucumbiste ante el encanto de las sirenas y para cuando vuelves
-          en ti notas que te falta un dado.
-      roll4:
         effects:
         - target: 1
           type: 4
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: Logras resistirte a su hipnosis y le robas un dado a alguien
-          que se distrajo con el canto.
+        _consequence: 
+      roll3:
+        effects:
+        - target: 1
+          type: 3
+          Value: 400
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: 
+      roll4:
+        effects:
+        - target: 1
+          type: 3
+          Value: 200
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: 
       roll5:
         effects:
-        - target: 0
-          type: 0
-          Value: 0
+        - target: 1
+          type: 2
+          Value: 300
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
         _consequence: 
       roll6:
         effects:
-        - target: 0
-          type: 0
-          Value: 0
+        - target: 1
+          type: 4
+          Value: -1
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
         _consequence: 

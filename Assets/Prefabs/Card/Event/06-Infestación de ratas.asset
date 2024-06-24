@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efec3c4baeec50a4bb1dc6a20e911333, type: 3}
+  m_Name: "06-Infestaci\xF3n de ratas"
+  m_EditorClassIdentifier: 
+  CardName: "Infestaci\xF3n de ratas"
+  CardArt: {fileID: 21300000, guid: 335518b78de678141b1cfa8418221cca, type: 3}
+  _cardText: " Las ratas que hay en el barco se multiplicaron y terminaron volvi\xE9ndose
+    una plaga \xBFQui\xE9n lo hubiera dicho? Hay que resolver este problema "
+  options:
+  - _buttonText: Negociar con las ratas
+    _text: "Las dejas vivir en el barco a cambio de que le hagan 200 de da\xF1o al
+      jefe del nivel. "
+    _roll: 0
+    _options:
+      noRoll:
+        effects:
+        - target: 2
+          type: 9
+          Value: -200
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: 
+      roll1:
+        effects: []
+        _consequence: 
+      roll2:
+        effects: []
+        _consequence: 
+      roll3:
+        effects: []
+        _consequence: 
+      roll4:
+        effects: []
+        _consequence: 
+      roll5:
+        effects: []
+        _consequence: 
+      roll6:
+        effects: []
+        _consequence: 
+  - _buttonText: Exterminar las ratas
+    _text: Iniciar una batalla.
+    _roll: 0
+    _options:
+      noRoll:
+        effects:
+        - target: 2
+          type: 12
+          Value: 0
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: 
+      roll1:
+        effects: []
+        _consequence: 
+      roll2:
+        effects: []
+        _consequence: 
+      roll3:
+        effects: []
+        _consequence: 
+      roll4:
+        effects: []
+        _consequence: 
+      roll5:
+        effects: []
+        _consequence: 
+      roll6:
+        effects: []
+        _consequence: 
