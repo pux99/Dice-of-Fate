@@ -829,11 +829,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: _rotation.x
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: _rotation.z
-      value: 270
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 14246080584667712, guid: 09293d335edf88b458a46ece838ca5ac, type: 3}
       propertyPath: effect.Value

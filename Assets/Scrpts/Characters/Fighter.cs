@@ -45,6 +45,7 @@ public class Fighter : MonoBehaviour
             foreach (EffectData effect in _OnTakingDamageEffects)
                 effectApllier.ApplyEffect(effect);
             _health -= value;
+            PlayDamageSound();
             if (_health <= 0)
             {
                 _health = 0;
@@ -63,24 +64,25 @@ public class Fighter : MonoBehaviour
     }
     public void  DamageEffect(int value)
     {
-            if (_OnTakingDamageEffects != null)
-                foreach (EffectData effect in _OnTakingDamageEffects)
-                    effectApllier.ApplyEffect(effect);
-            _health -= value;
-            if (_health <= 0)
-            {
-                _health = 0;
-                UpdateHealthBar.Invoke(this);
-                lives--;
-                if (lives <= 0)
-                    defeat();
-                else
-                    Revive();
-            }
+        if (_OnTakingDamageEffects != null)
+            foreach (EffectData effect in _OnTakingDamageEffects)
+                effectApllier.ApplyEffect(effect);
+        _health -= value;
+        PlayDamageSound();
+        if (_health <= 0)
+        {
+            _health = 0;
+            UpdateHealthBar.Invoke(this);
+            lives--;
+            if (lives <= 0)
+                defeat();
             else
-            {
-                UpdateHealthBar.Invoke(this);
-            }
+                Revive();
+        }
+        else
+        {
+            UpdateHealthBar.Invoke(this);
+        }
 
     }
     public void ChangeMaxHealth(int value)
@@ -114,6 +116,7 @@ public class Fighter : MonoBehaviour
     }
     public void OnStartOfBattle()
     {
+        UpdateHealthBar.Invoke(this);
         foreach (EffectData effect in _OnCombatStartEffects)
             effectApllier.ApplyEffect(effect);
     }
@@ -153,5 +156,21 @@ public class Fighter : MonoBehaviour
         dice.Remove(odie);
         Destroy(odie.gameObject);
         normalDieCount--;
+    }
+    public void PlayDamageSound()
+    {
+        int randomNum;
+        randomNum = Random.Range(1, 4);
+        switch (randomNum)
+        {
+            case 1: SoundManager.PlaySound(SoundManager.Sound.DamageSoundA, false);
+                break;
+            case 2: SoundManager.PlaySound(SoundManager.Sound.DamageSoundB, false);
+                break;
+            case 3: SoundManager.PlaySound(SoundManager.Sound.DamageSoundC, false);
+                break;
+            default:
+                break;
+        }
     }
 }

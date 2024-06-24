@@ -35,15 +35,33 @@ public class SoundAudioClip: MonoBehaviour
         }
         SoundManager.sounds.Clear();
     }
+    public void Destroymusic()
+    {
+        foreach (AudioSource audioSource in SoundManager.music)
+        {
+            Destroy(audioSource.gameObject);
+        }
+        SoundManager.music.Clear();
+    }
 
     public SoundAudioClipClass[] soundAudioClips;
 
-    public void ChangeVolume(float volume)
+    public void ChangeSoundVolume(float volume)
     {
         SoundManager.soundLevel = volume;
         foreach (AudioSource audioSource in SoundManager.sounds)
         {
             audioSource.volume = volume;
         }
+        SoundManager.soundVolumeChange.Invoke(volume);
+    }
+    public void ChangeMusicVolume(float volume)
+    {
+        SoundManager.musicLevel = volume;
+        foreach (AudioSource audioSource in SoundManager.music)
+        {
+            audioSource.volume = volume;
+        }
+        SoundManager.musicVolumeChange.Invoke(volume);
     }
 }

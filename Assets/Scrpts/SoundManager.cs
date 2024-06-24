@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Rendering;
 
 public static class SoundManager
 {
     //Lista de los sonidos que se pueden usar.
-    public static float soundLevel =0.5f;
+    public static float soundLevel =0.1f;
+    public static float musicLevel = 0.1f;
     public static List<AudioSource> sounds =new List<AudioSource>();
+    public static List<AudioSource> music = new List<AudioSource>();
+    public static UnityEvent<float> soundVolumeChange=new UnityEvent<float>();
+    public static UnityEvent<float> musicVolumeChange = new UnityEvent<float>();
     public enum Sound
     {
         OneDiceRollA,
@@ -42,6 +47,21 @@ public static class SoundManager
             audioSource.loop = true;
         }
         sounds.Add(audioSource);
+        audioSource.Play();
+
+    }
+    public static void PlayMusic(Sound sound, bool loop)
+    {
+        GameObject soundGameObject = new GameObject("Sound");
+        AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
+        audioSource.clip = GetAudioClip(sound);
+        audioSource.volume = soundLevel;
+        audioSource.tag = "Sound";
+        if (loop)
+        {
+            audioSource.loop = true;
+        }
+        music.Add(audioSource);
         audioSource.Play();
 
     }

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class musicPlayerOnStart : MonoBehaviour
 {
+    public SoundManager.Sound music;
     void Start()
     {
-        SoundManager.PlaySound(SoundManager.Sound.MenuMusic, true);
+        SoundManager.PlayMusic(music, true);
     }
 }

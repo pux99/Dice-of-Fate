@@ -149,6 +149,7 @@ public class Die : MonoBehaviour
     public void Roll()
     {
         UnFreez();
+        PlayRandomDiceSound();
         rb.AddForce(new Vector3(Random.Range(-5, 5), Random.Range(-20, -10), Random.Range(10, 20)), ForceMode.Impulse);
         rb.AddTorque(new Vector3(Random.Range(30, 100), Random.Range(30, 50), Random.Range(30, 200)), ForceMode.Impulse);
         _stopRolling = false;
@@ -239,6 +240,37 @@ public class Die : MonoBehaviour
                 if(_faces[i].effect.effectData.type!=EffectData.Type.None)
                     _faces[i].special=true;
             }
+        }
+    }
+    public void PlayRandomDiceSound()
+    {
+        int randomNum;
+        randomNum = Random.Range(1, 8);
+        switch (randomNum)
+        {
+            case 1:
+                SoundManager.PlaySound(SoundManager.Sound.OneDiceRollA, false);
+                break;
+            case 2:
+                SoundManager.PlaySound(SoundManager.Sound.OneDiceRollB, false);
+                break;
+            case 3:
+                SoundManager.PlaySound(SoundManager.Sound.OneDiceRollC, false);
+                break;
+            case 4:
+                SoundManager.PlaySound(SoundManager.Sound.OneDiceRollD, false);
+                break;
+            case 5:
+                SoundManager.PlaySound(SoundManager.Sound.OneDiceRollE, false);
+                break;
+            case 6:
+                SoundManager.PlaySound(SoundManager.Sound.OneDiceRollF, false);
+                break;
+            case 7:
+                SoundManager.PlaySound(SoundManager.Sound.OneDiceRollG, false);
+                break;
+            default:
+                break;
         }
     }
 }
