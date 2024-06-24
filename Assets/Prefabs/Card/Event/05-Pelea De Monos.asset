@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efec3c4baeec50a4bb1dc6a20e911333, type: 3}
+  m_Name: 05-Pelea De Monos
+  m_EditorClassIdentifier: 
+  CardName: Pelea de monos
+  CardArt: {fileID: 21300000, guid: 44b199109bb503046bba43e34252bf72, type: 3}
+  _cardText: "Notas que la tripulaci\xF3n est\xE1 toda junta rodeando algo. Al acercarte
+    notas que la raz\xF3n por la que est\xE1n as\xED es porque est\xE1n teniendo
+    una pelea de monos con apuestas"
+  options:
+  - _buttonText: Apostar Por el Mono Con Cuchillo
+    _text: 
+    _roll: 1
+    _options:
+      noRoll:
+        effects: []
+        _consequence: 
+      roll1:
+        effects:
+        - target: 1
+          type: 4
+          Value: -1
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: 'Pierdes un dado aleatorio. '
+      roll2:
+        effects:
+        - target: 1
+          type: 4
+          Value: -1
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: 'Pierdes un dado aleatorio. '
+      roll3:
+        effects:
+        - target: 1
+          type: 4
+          Value: -1
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: 'Pierdes un dado aleatorio. '
+      roll4:
+        effects:
+        - target: 1
+          type: 5
+          Value: 1
+          enemy: {fileID: 0}
+          specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
+        _consequence: 
+      roll5:
+        effects:
+        - target: 1
+          type: 5
+          Value: 1
+          enemy: {fileID: 0}
+          specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
+        _consequence: 
+      roll6:
+        effects:
+        - target: 1
+          type: 5
+          Value: 1
+          enemy: {fileID: 0}
+          specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
+        _consequence: 
+  - _buttonText: Apostar por el mono con pistola
+    _text: 
+    _roll: 1
+    _options:
+      noRoll:
+        effects: []
+        _consequence: 
+      roll1:
+        effects:
+        - target: 1
+          type: 4
+          Value: -2
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: 'Pierdes dos dado aleatorio. '
+      roll2:
+        effects:
+        - target: 1
+          type: 4
+          Value: -2
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: 'Pierdes un dado aleatorio. '
+      roll3:
+        effects:
+        - target: 1
+          type: 4
+          Value: -2
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: 'Pierdes un dado aleatorio. '
+      roll4:
+        effects:
+        - target: 1
+          type: 5
+          Value: -2
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: 
+      roll5:
+        effects:
+        - target: 1
+          type: 5
+          Value: -2
+          enemy: {fileID: 0}
+          specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
+        _consequence: 
+      roll6:
+        effects:
+        - target: 1
+          type: 5
+          Value: 2
+          enemy: {fileID: 0}
+          specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
+        _consequence: 
+  - _buttonText: No Apostar
+    _text: 
+    _roll: 0
+    _options:
+      noRoll:
+        effects: []
+        _consequence: 
+      roll1:
+        effects: []
+        _consequence: 'Pierdes dos dado aleatorio. '
+      roll2:
+        effects: []
+        _consequence: 'Pierdes un dado aleatorio. '
+      roll3:
+        effects: []
+        _consequence: 'Pierdes un dado aleatorio. '
+      roll4:
+        effects: []
+        _consequence: 
+      roll5:
+        effects: []
+        _consequence: 
+      roll6:
+        effects: []
+        _consequence: 

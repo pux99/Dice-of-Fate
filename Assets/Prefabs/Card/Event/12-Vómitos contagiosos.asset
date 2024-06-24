@@ -10,15 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: efec3c4baeec50a4bb1dc6a20e911333, type: 3}
-  m_Name: 2 Fiesta
+  m_Name: "12-V\xF3mitos contagiosos"
   m_EditorClassIdentifier: 
-  CardName: Fiesta
-  CardArt: {fileID: 21300000, guid: 7970436bfcbbbf24ea4b73b10031474f, type: 3}
-  _cardText: 
+  CardName: "V\xF3mitos contagiosos"
+  CardArt: {fileID: 21300000, guid: a5442cf0ae865fb4c8e67531f9bba298, type: 3}
+  _cardText: "El gran oleaje hace que algunos de los piratas m\xE1s flojos, empiezan
+    a vomitar "
   options:
-  - _buttonText: "La tripulaci\xF3n decide tener una fiesta luego del exitoso mot\xEDn,
-      para festejar te pones en un duelo de resistencia con un compa\xF1ero a ver
-      qui\xE9n toma m\xE1s. "
+  - _buttonText: El olor, color y ruido empiezan a contagiar al resto de los tripulantes.
     _text: 
     _roll: 1
     _options:
@@ -28,48 +27,48 @@ MonoBehaviour:
       roll1:
         effects:
         - target: 1
-          type: 5
-          Value: 1
+          type: 4
+          Value: -1
           enemy: {fileID: 0}
-          specialDie: {fileID: 11400000, guid: cbc925046427bc9478a2e2d1a27d31df, type: 2}
+          specialDie: {fileID: 0}
         _consequence: 
       roll2:
         effects:
         - target: 1
-          type: 5
-          Value: 1
+          type: 4
+          Value: -1
           enemy: {fileID: 0}
-          specialDie: {fileID: 11400000, guid: cbc925046427bc9478a2e2d1a27d31df, type: 2}
+          specialDie: {fileID: 0}
         _consequence: 
       roll3:
         effects:
         - target: 1
-          type: 5
-          Value: 1
+          type: 4
+          Value: -1
           enemy: {fileID: 0}
-          specialDie: {fileID: 11400000, guid: cbc925046427bc9478a2e2d1a27d31df, type: 2}
+          specialDie: {fileID: 0}
         _consequence: 
       roll4:
         effects:
-        - target: 2
-          type: 6
+        - target: 1
+          type: 4
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 'Tu oponente pierde un turno al comienzo de tu siguiente combate. '
+        _consequence: 
       roll5:
         effects:
-        - target: 2
-          type: 6
+        - target: 1
+          type: 4
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 'Tu oponente pierde un turno al comienzo de tu siguiente combate. '
+        _consequence: 
       roll6:
         effects:
-        - target: 2
-          type: 6
+        - target: 1
+          type: 4
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 'Tu oponente pierde un turno al comienzo de tu siguiente combate. '
+        _consequence: 
