@@ -9,5 +9,7 @@ public class TestReset : MonoBehaviour
     public void resetLevel()
     {
         SceneManager.LoadScene(0);
+        SoundAudioClip.instance.DestroySounds();
+        SoundAudioClip.instance.Destroymusic();
     }
 }

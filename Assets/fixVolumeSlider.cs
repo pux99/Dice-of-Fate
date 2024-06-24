@@ -19,10 +19,12 @@ public class fixVolumeSlider : MonoBehaviour
         if (sound == musicOrSound.sound)
         {
             SoundManager.soundVolumeChange.AddListener(fixSlider);
+            slider.value = SoundManager.soundLevel;
         }
         else
         {
             SoundManager.musicVolumeChange.AddListener(fixSlider);
+            slider.value = SoundManager.musicLevel;
         }
 
     }
