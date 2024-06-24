@@ -10,6 +10,8 @@ public class SceneControler : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(scene);
+        SoundAudioClip.instance.Destroymusic();
+        SoundAudioClip.instance.DestroySounds();
     }
     public void restartTime()
     {

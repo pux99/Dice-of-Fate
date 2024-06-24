@@ -112,6 +112,8 @@ public class BoardManager : MonoBehaviour
         {
             boardSpace.EventOnGoing = false;
         }
+        SoundAudioClip.instance.Destroymusic();
+        SoundManager.PlayMusic(SoundManager.Sound.BackgroundMusic, true);
     }
 
     void StartCombat()

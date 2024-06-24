@@ -18,7 +18,7 @@ public class CombatManager : MonoBehaviour
     public Scoring scoring;
     public EnemyTurn enemyTurn;
     public BattleLog Log;
-
+    public SoundAudioClip audioManager;
 
     public Player player;
     public Enemy enemy;
@@ -76,6 +76,8 @@ public class CombatManager : MonoBehaviour
             OnUseDie.Add(die);
             die.freez();
         }
+        SoundAudioClip.instance.Destroymusic();
+        SoundManager.PlayMusic(SoundManager.Sound.EnemyMusic,true);
         combatStart.Invoke();
     }
 
@@ -228,6 +230,8 @@ public class CombatManager : MonoBehaviour
     }
     void Win( )
     {
+        SoundAudioClip.instance.Destroymusic();
+        SoundManager.PlayMusic(SoundManager.Sound.VictoryMusic, false);
         enemy.Defeted.RemoveListener(Win);
         string rewardText="";
         
@@ -242,6 +246,8 @@ public class CombatManager : MonoBehaviour
     }
     void Loss()
     {
+        SoundAudioClip.instance.Destroymusic();
+        SoundManager.PlayMusic(SoundManager.Sound.DefeatMusic, false);
         loss.Invoke();
     }
     void ApllyDiceEffects(List<Die> dice, Fighter resiver, Fighter dealer)
