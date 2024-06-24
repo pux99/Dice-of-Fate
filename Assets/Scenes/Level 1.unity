@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1253,7 +1253,7 @@ MonoBehaviour:
   CardBack: {fileID: 2100000, guid: a58d47be9e83d084bb7b5a14e3902b73, type: 2}
   CardFront: {fileID: 2100000, guid: 19024e8e2c281e14eafda82aa0153f32, type: 2}
   card: {fileID: 11400000, guid: 90a9670851466a64eb1c32d5fcc07e05, type: 2}
-  cardPool: {fileID: 0}
+  cardPool: {fileID: 11400000, guid: da65638bcc5772641af6b7abb4825792, type: 2}
   meshRenderer: {fileID: 0}
   newCurrentSpace:
     m_PersistentCalls:
@@ -6280,7 +6280,7 @@ MonoBehaviour:
   CardBack: {fileID: 2100000, guid: a58d47be9e83d084bb7b5a14e3902b73, type: 2}
   CardFront: {fileID: 2100000, guid: 19024e8e2c281e14eafda82aa0153f32, type: 2}
   card: {fileID: 11400000, guid: 90a9670851466a64eb1c32d5fcc07e05, type: 2}
-  cardPool: {fileID: 0}
+  cardPool: {fileID: 11400000, guid: fa10a6e266976ee4f8bab5f3f3b1d623, type: 2}
   meshRenderer: {fileID: 0}
   newCurrentSpace:
     m_PersistentCalls:
@@ -6616,7 +6616,7 @@ MonoBehaviour:
   CardBack: {fileID: 2100000, guid: a58d47be9e83d084bb7b5a14e3902b73, type: 2}
   CardFront: {fileID: 2100000, guid: 19024e8e2c281e14eafda82aa0153f32, type: 2}
   card: {fileID: 11400000, guid: b69a120f819607a4e88c64fb0bce907d, type: 2}
-  cardPool: {fileID: 0}
+  cardPool: {fileID: 11400000, guid: 5a6d3c53530369b409dbb333635ccd53, type: 2}
   meshRenderer: {fileID: 0}
   newCurrentSpace:
     m_PersistentCalls:
@@ -7163,7 +7163,7 @@ MonoBehaviour:
   CardBack: {fileID: 2100000, guid: a58d47be9e83d084bb7b5a14e3902b73, type: 2}
   CardFront: {fileID: 2100000, guid: 19024e8e2c281e14eafda82aa0153f32, type: 2}
   card: {fileID: 11400000, guid: 90a9670851466a64eb1c32d5fcc07e05, type: 2}
-  cardPool: {fileID: 0}
+  cardPool: {fileID: 11400000, guid: 49a1a9d2b372b4742a8a8dedbd424b07, type: 2}
   meshRenderer: {fileID: 0}
   newCurrentSpace:
     m_PersistentCalls:
@@ -7415,7 +7415,7 @@ MonoBehaviour:
   CardBack: {fileID: 2100000, guid: a58d47be9e83d084bb7b5a14e3902b73, type: 2}
   CardFront: {fileID: 2100000, guid: 19024e8e2c281e14eafda82aa0153f32, type: 2}
   card: {fileID: 11400000, guid: 90a9670851466a64eb1c32d5fcc07e05, type: 2}
-  cardPool: {fileID: 0}
+  cardPool: {fileID: 11400000, guid: da65638bcc5772641af6b7abb4825792, type: 2}
   meshRenderer: {fileID: 0}
   newCurrentSpace:
     m_PersistentCalls:
@@ -7625,7 +7625,7 @@ MonoBehaviour:
   CardBack: {fileID: 2100000, guid: a58d47be9e83d084bb7b5a14e3902b73, type: 2}
   CardFront: {fileID: 2100000, guid: 19024e8e2c281e14eafda82aa0153f32, type: 2}
   card: {fileID: 11400000, guid: 90a9670851466a64eb1c32d5fcc07e05, type: 2}
-  cardPool: {fileID: 0}
+  cardPool: {fileID: 11400000, guid: 5a6d3c53530369b409dbb333635ccd53, type: 2}
   meshRenderer: {fileID: 0}
   newCurrentSpace:
     m_PersistentCalls:
@@ -7726,7 +7726,7 @@ MonoBehaviour:
   CardBack: {fileID: 2100000, guid: a58d47be9e83d084bb7b5a14e3902b73, type: 2}
   CardFront: {fileID: 2100000, guid: 19024e8e2c281e14eafda82aa0153f32, type: 2}
   card: {fileID: 11400000, guid: 90a9670851466a64eb1c32d5fcc07e05, type: 2}
-  cardPool: {fileID: 0}
+  cardPool: {fileID: 11400000, guid: 5a6d3c53530369b409dbb333635ccd53, type: 2}
   meshRenderer: {fileID: 0}
   newCurrentSpace:
     m_PersistentCalls:
@@ -10493,7 +10493,7 @@ MonoBehaviour:
   Blinking: {fileID: -876546973899608171, guid: 7efdffb6460bd8a4e80c6be7411e0090, type: 3}
   CardBack: {fileID: 2100000, guid: a58d47be9e83d084bb7b5a14e3902b73, type: 2}
   CardFront: {fileID: 2100000, guid: 19024e8e2c281e14eafda82aa0153f32, type: 2}
-  card: {fileID: 11400000, guid: 90a9670851466a64eb1c32d5fcc07e05, type: 2}
+  card: {fileID: 11400000, guid: f30821156e992cc4f8030972b1d71c9d, type: 2}
   cardPool: {fileID: 0}
   meshRenderer: {fileID: 0}
   newCurrentSpace:
@@ -10633,7 +10633,7 @@ MonoBehaviour:
   CardBack: {fileID: 2100000, guid: a58d47be9e83d084bb7b5a14e3902b73, type: 2}
   CardFront: {fileID: 2100000, guid: 19024e8e2c281e14eafda82aa0153f32, type: 2}
   card: {fileID: 11400000, guid: 90a9670851466a64eb1c32d5fcc07e05, type: 2}
-  cardPool: {fileID: 0}
+  cardPool: {fileID: 11400000, guid: 49a1a9d2b372b4742a8a8dedbd424b07, type: 2}
   meshRenderer: {fileID: 0}
   newCurrentSpace:
     m_PersistentCalls:
@@ -13689,7 +13689,7 @@ MonoBehaviour:
   CardBack: {fileID: 2100000, guid: a58d47be9e83d084bb7b5a14e3902b73, type: 2}
   CardFront: {fileID: 2100000, guid: 19024e8e2c281e14eafda82aa0153f32, type: 2}
   card: {fileID: 11400000, guid: b69a120f819607a4e88c64fb0bce907d, type: 2}
-  cardPool: {fileID: 0}
+  cardPool: {fileID: 11400000, guid: 49a1a9d2b372b4742a8a8dedbd424b07, type: 2}
   meshRenderer: {fileID: 0}
   newCurrentSpace:
     m_PersistentCalls:
@@ -13890,7 +13890,7 @@ MonoBehaviour:
   CardBack: {fileID: 2100000, guid: a58d47be9e83d084bb7b5a14e3902b73, type: 2}
   CardFront: {fileID: 2100000, guid: 19024e8e2c281e14eafda82aa0153f32, type: 2}
   card: {fileID: 11400000, guid: 90a9670851466a64eb1c32d5fcc07e05, type: 2}
-  cardPool: {fileID: 0}
+  cardPool: {fileID: 11400000, guid: fa10a6e266976ee4f8bab5f3f3b1d623, type: 2}
   meshRenderer: {fileID: 0}
   newCurrentSpace:
     m_PersistentCalls:
@@ -14028,7 +14028,7 @@ MonoBehaviour:
   CardBack: {fileID: 2100000, guid: a58d47be9e83d084bb7b5a14e3902b73, type: 2}
   CardFront: {fileID: 2100000, guid: 19024e8e2c281e14eafda82aa0153f32, type: 2}
   card: {fileID: 11400000, guid: 90a9670851466a64eb1c32d5fcc07e05, type: 2}
-  cardPool: {fileID: 0}
+  cardPool: {fileID: 11400000, guid: da65638bcc5772641af6b7abb4825792, type: 2}
   meshRenderer: {fileID: 0}
   newCurrentSpace:
     m_PersistentCalls:
