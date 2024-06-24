@@ -59,3 +59,21 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 552c16a79c733e04eb938d4626ad1fd6, type: 3}
   - sound: 6
     audioClip: {fileID: 8300000, guid: 73451740ad6be2347a4025bd6e2649be, type: 3}
+  - sound: 7
+    audioClip: {fileID: 8300000, guid: 017da729678a8e9468528024d25b24b6, type: 3}
+  - sound: 8
+    audioClip: {fileID: 8300000, guid: e7228fa79cdaaff45a31275f74d1c0b1, type: 3}
+  - sound: 9
+    audioClip: {fileID: 8300000, guid: a9073bdff8917014ebc2371a598e5eec, type: 3}
+  - sound: 10
+    audioClip: {fileID: 8300000, guid: 80e78f33e61ce184bb62ea347d8ac589, type: 3}
+  - sound: 11
+    audioClip: {fileID: 8300000, guid: 1e67fb29a6a9535458fe15fe971b875d, type: 3}
+  - sound: 12
+    audioClip: {fileID: 8300000, guid: 4a4613606d6dd1146be6394e9e9c43b0, type: 3}
+  - sound: 13
+    audioClip: {fileID: 8300000, guid: 2d7eefeaa9a280b4397a22c7df718097, type: 3}
+  - sound: 14
+    audioClip: {fileID: 8300000, guid: 4632b673b24d55a4d92e3549c83b655e, type: 3}
+  - sound: 14
+    audioClip: {fileID: 8300000, guid: ba9e616e085212248ad6483dbf99e580, type: 3}

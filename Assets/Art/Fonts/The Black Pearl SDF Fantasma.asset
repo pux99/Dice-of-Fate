@@ -60,9 +60,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: The Black Pearl SDF Fantasma
   m_EditorClassIdentifier: 
-  hashCode: -1878957979
+  hashCode: -80363898
   material: {fileID: 7237824590152214813}
-  materialHashCode: -109143643
+  materialHashCode: -1721081242
   m_Version: 1.1.0
   m_SourceFontFileGUID: e2abac947cc34c24b85026841244c53f
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: e2abac947cc34c24b85026841244c53f, type: 3}
@@ -5005,7 +5005,7 @@ Material:
     - _ColorMask: 15
     - _CullMode: 0
     - _Diffuse: 0.5
-    - _FaceDilate: -0.301
+    - _FaceDilate: -0.3
     - _FaceUVSpeedX: 0
     - _FaceUVSpeedY: 0
     - _GlowInner: 0.388
@@ -5023,8 +5023,8 @@ Material:
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.9
-    - _ScaleRatioB: 1.0021499
-    - _ScaleRatioC: 1.0021499
+    - _ScaleRatioB: 1.00125
+    - _ScaleRatioC: 1.00125
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0

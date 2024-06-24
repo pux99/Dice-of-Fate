@@ -10,6 +10,7 @@ public class SoundAudioClip: MonoBehaviour
         public SoundManager.Sound sound;
         public AudioClip audioClip;
     }
+    List<AudioSource> sounds = new List<AudioSource>();
 
     // Esta variable esta para poder pasarle el array a funciones statics.
     private static SoundAudioClip _instance;
@@ -28,12 +29,21 @@ public class SoundAudioClip: MonoBehaviour
     //Esta funcion busca todos los objetos con el tag "Sound" y los destruye.
     public void DestroySounds()
     {
-        GameObject[] sounds = GameObject.FindGameObjectsWithTag("Sound");
-        foreach (GameObject audioSource in sounds)
+        foreach (AudioSource audioSource in SoundManager.sounds)
         {
-            Destroy(audioSource);
+            Destroy(audioSource.gameObject);
         }
+        SoundManager.sounds.Clear();
     }
 
     public SoundAudioClipClass[] soundAudioClips;
+
+    public void ChangeVolume(float volume)
+    {
+        SoundManager.soundLevel = volume;
+        foreach (AudioSource audioSource in SoundManager.sounds)
+        {
+            audioSource.volume = volume;
+        }
+    }
 }

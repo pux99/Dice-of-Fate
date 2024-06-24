@@ -119,6 +119,11 @@ public class Fighter : MonoBehaviour
     }
     public void GenerateDie()
     {
+        foreach(Die d in dice)
+        {
+            Destroy(d.gameObject);
+        }    
+        dice.Clear();
         for (int i = 0; i < normalDieCount; i++)
         {
             GameObject newDie= Instantiate(BaseDie, diceHolder.transform);
