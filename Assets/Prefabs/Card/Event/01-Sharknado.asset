@@ -41,13 +41,13 @@ MonoBehaviour:
         _consequence: Un tiburon te muerde y perdes 200 de vida
       roll3:
         effects: []
-        _consequence: Esquivas el tornado
+        _consequence: Esquivas el tornado y no te pasa nada
       roll4:
         effects: []
-        _consequence: Esquivas el tornado
+        _consequence: Esquivas el tornado y no te pasa nada
       roll5:
         effects: []
-        _consequence: Esquivas el tornado
+        _consequence: Esquivas el tornado y no te pasa nada
       roll6:
         effects: []
-        _consequence: Esquivas el tornado
+        _consequence: Esquivas el tornado y no te pasa nada

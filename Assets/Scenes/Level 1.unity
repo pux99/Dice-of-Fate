@@ -7007,7 +7007,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1009019123
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11558,19 +11558,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 855418405593181187, guid: 031203dc8cb2e47419ce8eafee4660cf, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1516206277017769665, guid: 031203dc8cb2e47419ce8eafee4660cf, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -4.9999924
       objectReference: {fileID: 0}
+    - target: {fileID: 2219850937618516385, guid: 031203dc8cb2e47419ce8eafee4660cf, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -9
+      objectReference: {fileID: 0}
     - target: {fileID: 3129042037769332245, guid: 031203dc8cb2e47419ce8eafee4660cf, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3191425043175874869, guid: 031203dc8cb2e47419ce8eafee4660cf, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3289672212023809237, guid: 031203dc8cb2e47419ce8eafee4660cf, type: 3}
       propertyPath: audioClip
@@ -11578,7 +11582,7 @@ PrefabInstance:
       objectReference: {fileID: 1873483841}
     - target: {fileID: 4345035294324023820, guid: 031203dc8cb2e47419ce8eafee4660cf, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4428245845165680207, guid: 031203dc8cb2e47419ce8eafee4660cf, type: 3}
       propertyPath: m_AnchoredPosition.x
