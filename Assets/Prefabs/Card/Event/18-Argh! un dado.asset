@@ -27,7 +27,7 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 
+        _consequence: Consigues un dado extra.
       roll1:
         effects: []
         _consequence: 

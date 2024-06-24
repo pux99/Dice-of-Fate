@@ -31,7 +31,7 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
-        _consequence: 
+        _consequence: Agradecida con la ayuda, la bruja te ofrece un dado especial.
       roll2:
         effects:
         - target: 1
@@ -39,7 +39,7 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
-        _consequence: 
+        _consequence: Agradecida con la ayuda, la bruja te ofrece un dado especial.
       roll3:
         effects:
         - target: 1
@@ -47,7 +47,7 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
-        _consequence: 
+        _consequence: Agradecida con la ayuda, la bruja te ofrece un dado especial.
       roll4:
         effects:
         - target: 1
@@ -55,23 +55,27 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
-        _consequence: 
+        _consequence: Agradecida con la ayuda, la bruja te ofrece un dado especial.
       roll5:
         effects:
         - target: 2
           type: 12
           Value: 0
-          enemy: {fileID: 0}
+          enemy: {fileID: 11400000, guid: 7c8c69268dadaf6439478605f078e56b, type: 2}
           specialDie: {fileID: 0}
-        _consequence: 
+        _consequence: "Al perderse mientras iban, la bruja se enoja con ustedes acus\xE1ndolos
+          de que le est\xE1n haciendo perder el tiempo a prop\xF3sito. Inicias una
+          pelea contra la bruja."
       roll6:
         effects:
         - target: 2
           type: 12
           Value: 0
-          enemy: {fileID: 0}
+          enemy: {fileID: 11400000, guid: 7c8c69268dadaf6439478605f078e56b, type: 2}
           specialDie: {fileID: 0}
-        _consequence: 
+        _consequence: "Al perderse mientras iban, la bruja se enoja con ustedes acus\xE1ndolos
+          de que le est\xE1n haciendo perder el tiempo a prop\xF3sito. Inicias una
+          pelea contra la bruja."
   - _buttonText: No Ayudarla
     _text: 
     _roll: 0
@@ -83,7 +87,8 @@ MonoBehaviour:
           Value: 100
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 
+        _consequence: "La bruja ofendida por el rechazo te echa una maldici\xF3n.
+          Pierdes 100 de vida."
       roll1:
         effects:
         - target: 1
