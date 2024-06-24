@@ -249,6 +249,7 @@ public class UiManager : MonoBehaviour
     {
         float baseShowSpeed = 1;
         BoardUI.SetActive(true);
+        BEndEvent.interactable=false;
         showText.Show(EventText, baseShowSpeed);
         EventText.text = card.cardText;
         CardImage.sprite = card.CardArt;
@@ -290,8 +291,8 @@ public class UiManager : MonoBehaviour
         option1.gameObject.SetActive(false);
         option2.gameObject.SetActive(false);
         option3.gameObject.SetActive(false);
-        BEndEvent.gameObject.SetActive(true);
-        
+        BEndEvent.gameObject.SetActive(true); 
+        BEndEvent.interactable=true;
     }
     public void EventEnding()
     {
