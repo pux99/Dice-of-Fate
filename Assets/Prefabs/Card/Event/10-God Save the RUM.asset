@@ -32,7 +32,8 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
-        _consequence: 
+        _consequence: "Te resbalaste y no llegaste a salvar los barriles de ron\u2026
+          todos estamos tristes. Obtienes un dado negativo"
       roll2:
         effects: []
         _consequence: "Llegas justo a agarrar la mayor\xEDa de los barriles aunque
@@ -56,4 +57,4 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
-        _consequence: 
+        _consequence: ' Agarraste todos los barriles. Obtienes un dado especial'

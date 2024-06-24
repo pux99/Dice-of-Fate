@@ -48,14 +48,14 @@ public static class SoundManager
         }
         sounds.Add(audioSource);
         audioSource.Play();
-
     }
+
     public static void PlayMusic(Sound sound, bool loop)
     {
         GameObject soundGameObject = new GameObject("Sound");
         AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
         audioSource.clip = GetAudioClip(sound);
-        audioSource.volume = soundLevel;
+        audioSource.volume = musicLevel;
         audioSource.tag = "Sound";
         if (loop)
         {
@@ -63,8 +63,8 @@ public static class SoundManager
         }
         music.Add(audioSource);
         audioSource.Play();
-
     }
+
     private static AudioClip GetAudioClip(Sound sound)
     {
         foreach(SoundAudioClip.SoundAudioClipClass soundAudioClipNow in SoundAudioClip.instance.soundAudioClips)
@@ -77,5 +77,4 @@ public static class SoundManager
         Debug.LogError("Sound " + sound + " not found.");
         return null;
     }
-
 }
