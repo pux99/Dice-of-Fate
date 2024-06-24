@@ -28,7 +28,7 @@ MonoBehaviour:
         - target: 2
           type: 12
           Value: 0
-          enemy: {fileID: 0}
+          enemy: {fileID: 11400000, guid: 96786f05c718d114887810b032be9478, type: 2}
           specialDie: {fileID: 0}
         _consequence: 
       roll1:

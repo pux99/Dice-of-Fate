@@ -36,7 +36,7 @@ MonoBehaviour:
           Value: 200
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 
+        _consequence: "Un dado extra y 200 de vida m\xE1xima."
       roll2:
         effects:
         - target: 1
@@ -44,7 +44,7 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 
+        _consequence: Un dado extra.
       roll3:
         effects:
         - target: 1
@@ -52,7 +52,7 @@ MonoBehaviour:
           Value: 400
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 
+        _consequence: "400 de vida m\xE1xima."
       roll4:
         effects:
         - target: 1
@@ -60,7 +60,7 @@ MonoBehaviour:
           Value: 200
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 
+        _consequence: "200 de vida m\xE1xima."
       roll5:
         effects:
         - target: 1
@@ -68,7 +68,8 @@ MonoBehaviour:
           Value: 300
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 
+        _consequence: Cuando te pasan tu parte del tesoro te golpea en la cara. -300
+          de vida Max.
       roll6:
         effects:
         - target: 1
@@ -76,4 +77,4 @@ MonoBehaviour:
           Value: -1
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 
+        _consequence: Te sacan un dado por sugerir quedarte con todo.

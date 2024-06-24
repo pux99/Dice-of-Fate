@@ -31,17 +31,17 @@ MonoBehaviour:
           Value: 100
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: "Logras mover las velas para hacer un gran uso del viento.
-          Revela la posici\xF3n de todos los enemigos en el mapa. "
+        _consequence: "Tratas de mover las velas \xE1gilmente pero las terminas rompiendo.
+          Tus superiores est\xE1n enojados contigo. El jefe consigue 100 de armadura."
       roll2:
         effects:
-        - target: 1
-          type: 7
-          Value: 0
+        - target: 2
+          type: 10
+          Value: 100
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: "Logras mover las velas para hacer un gran uso del viento.
-          Revela la posici\xF3n de todos los enemigos en el mapa. "
+        _consequence: "Tratas de mover las velas \xE1gilmente pero las terminas rompiendo.
+          Tus superiores est\xE1n enojados contigo. El jefe consigue 100 de armadura."
       roll3:
         effects:
         - target: 1

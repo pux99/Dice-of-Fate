@@ -32,7 +32,8 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
-        _consequence: 
+        _consequence: "Cantas angelicalmente, el m\xFAsico te ofrece cambiar uno
+          de tus dados por su dado especial."
       roll2:
         effects:
         - target: 1
@@ -40,7 +41,8 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
-        _consequence: 
+        _consequence: "Cantas angelicalmente, el m\xFAsico te ofrece cambiar uno
+          de tus dados por su dado especial."
       roll3:
         effects:
         - target: 1
@@ -48,7 +50,8 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
-        _consequence: 
+        _consequence: "Cantas angelicalmente, el m\xFAsico te ofrece cambiar uno
+          de tus dados por su dado especial."
       roll4:
         effects:
         - target: 1
@@ -56,7 +59,8 @@ MonoBehaviour:
           Value: 200
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 
+        _consequence: "Cantas tan mal que les levantas el \xE1nimo a tus compa\xF1eros\u2026
+          para tirarte fruta podrida y te calles"
       roll5:
         effects:
         - target: 1
@@ -64,7 +68,8 @@ MonoBehaviour:
           Value: 200
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 
+        _consequence: "Cantas tan mal que les levantas el \xE1nimo a tus compa\xF1eros\u2026
+          para tirarte fruta podrida y te calles"
       roll6:
         effects:
         - target: 1
@@ -72,9 +77,10 @@ MonoBehaviour:
           Value: 200
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 
+        _consequence: "Cantas tan mal que les levantas el \xE1nimo a tus compa\xF1eros\u2026
+          para tirarte fruta podrida y te calles"
   - _buttonText: No Ayudar
-    _text: 
+    _text: No tienes porque meterte donde no te llaman.
     _roll: 0
     _options:
       noRoll:

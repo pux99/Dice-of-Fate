@@ -72,7 +72,8 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 
+        _consequence: Logras resistirte a su hipnosis y le robas un dado a alguien
+          que se distrajo con el canto.
       roll6:
         effects:
         - target: 1
@@ -80,4 +81,5 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 
+        _consequence: Logras resistirte a su hipnosis y le robas un dado a alguien
+          que se distrajo con el canto.

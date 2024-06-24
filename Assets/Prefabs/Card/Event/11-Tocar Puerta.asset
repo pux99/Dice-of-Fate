@@ -26,7 +26,7 @@ MonoBehaviour:
         _consequence: 
       roll1:
         effects: []
-        _consequence: 
+        _consequence: Te quedas en el barco y no pasa nada.
       roll2:
         effects:
         - target: 1
@@ -34,7 +34,8 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
-        _consequence: 
+        _consequence: Logras visitar las tiendas de la ciudad. Puedes cambiar uno
+          de tus dados por uno especial.
       roll3:
         effects:
         - target: 1
@@ -42,15 +43,17 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
-        _consequence: 
+        _consequence: Logras visitar las tiendas de la ciudad. Puedes cambiar uno
+          de tus dados por uno especial.
       roll4:
         effects:
         - target: 1
           type: 5
-          Value: 0
+          Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
-        _consequence: 
+        _consequence: Logras visitar las tiendas de la ciudad. Puedes cambiar uno
+          de tus dados por uno especial.
       roll5:
         effects:
         - target: 1
@@ -58,7 +61,8 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
-        _consequence: 
+        _consequence: Logras visitar las tiendas de la ciudad. Puedes cambiar uno
+          de tus dados por uno especial.
       roll6:
         effects: []
-        _consequence: 
+        _consequence: Te quedas en el barco y no pasa nada.

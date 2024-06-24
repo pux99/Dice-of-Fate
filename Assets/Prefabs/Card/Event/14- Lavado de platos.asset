@@ -17,30 +17,34 @@ MonoBehaviour:
   _cardText: "Como ayudante de cocina, tienes que lavar los platos y botellas. Pero
     no est\xE1s seguro de cual de todos los barriles de agua es el correcto\u2026"
   options:
-  - _buttonText: 
+  - _buttonText: Adivinar
     _text: 
-    _roll: 0
+    _roll: 1
     _options:
       noRoll:
         effects: []
         _consequence: 
       roll1:
         effects:
-        - target: 1
-          type: 4
+        - target: 2
+          type: 11
           Value: 1
           enemy: {fileID: 0}
-          specialDie: {fileID: 0}
-        _consequence: 
+          specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
+        _consequence: Logras usar el barril de agua pero el cocinero se enoja contigo
+          por no usar el ron. El jefe consigue un dado extra.
       roll2:
         effects: []
-        _consequence: 
+        _consequence: "Lamentablemente terminas usando el de ron pero la tripulaci\xF3n
+          est\xE1 tan acostumbrada que ni lo nota."
       roll3:
         effects: []
-        _consequence: 
+        _consequence: "Lamentablemente terminas usando el de ron pero la tripulaci\xF3n
+          est\xE1 tan acostumbrada que ni lo nota."
       roll4:
         effects: []
-        _consequence: 
+        _consequence: "Lamentablemente terminas usando el de ron pero la tripulaci\xF3n
+          est\xE1 tan acostumbrada que ni lo nota."
       roll5:
         effects:
         - target: 2
@@ -48,7 +52,9 @@ MonoBehaviour:
           Value: -300
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 
+        _consequence: "Decides no lavarlos por el miedo a equivocarte y la tripulaci\xF3n
+          felicita al cocinero por el sabor extra que tiene su siguiente comida.
+          El jefe empieza con 300 de vida menos."
       roll6:
         effects:
         - target: 2
@@ -56,4 +62,6 @@ MonoBehaviour:
           Value: -300
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 
+        _consequence: "Decides no lavarlos por el miedo a equivocarte y la tripulaci\xF3n
+          felicita al cocinero por el sabor extra que tiene su siguiente comida.
+          El jefe empieza con 300 de vida menos."

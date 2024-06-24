@@ -56,7 +56,7 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
-        _consequence: 
+        _consequence: Consigues un dado extra
       roll5:
         effects:
         - target: 1
@@ -64,7 +64,7 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
-        _consequence: 
+        _consequence: Consigues un dado extra
       roll6:
         effects:
         - target: 1
@@ -72,7 +72,7 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
-        _consequence: 
+        _consequence: Consigues un dado extra
   - _buttonText: Apostar por el mono con pistola
     _text: 
     _roll: 1
@@ -87,7 +87,7 @@ MonoBehaviour:
           Value: -2
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 'Pierdes dos dado aleatorio. '
+        _consequence: 'Pierdes dos dados aleatorio. '
       roll2:
         effects:
         - target: 1
@@ -95,7 +95,7 @@ MonoBehaviour:
           Value: -2
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 'Pierdes un dado aleatorio. '
+        _consequence: 'Pierdes un dados aleatorio. '
       roll3:
         effects:
         - target: 1
@@ -103,33 +103,33 @@ MonoBehaviour:
           Value: -2
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 'Pierdes un dado aleatorio. '
+        _consequence: 'Pierdes un dados aleatorio. '
       roll4:
         effects:
         - target: 1
-          type: 5
-          Value: -2
+          type: 4
+          Value: 2
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 
+        _consequence: Consigues dos dados extras
       roll5:
         effects:
         - target: 1
-          type: 5
-          Value: -2
-          enemy: {fileID: 0}
-          specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
-        _consequence: 
-      roll6:
-        effects:
-        - target: 1
-          type: 5
+          type: 4
           Value: 2
           enemy: {fileID: 0}
           specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
-        _consequence: 
+        _consequence: Consigues dos dados extras
+      roll6:
+        effects:
+        - target: 1
+          type: 4
+          Value: 2
+          enemy: {fileID: 0}
+          specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
+        _consequence: Consigues dos dados extras
   - _buttonText: No Apostar
-    _text: 
+    _text: Mejor no involucrarse en esas cosas.
     _roll: 0
     _options:
       noRoll:

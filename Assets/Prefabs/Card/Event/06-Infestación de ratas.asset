@@ -54,10 +54,10 @@ MonoBehaviour:
     _options:
       noRoll:
         effects:
-        - target: 2
+        - target: 1
           type: 12
           Value: 0
-          enemy: {fileID: 0}
+          enemy: {fileID: 11400000, guid: ba3379ee46f600046aa2363a253dc910, type: 2}
           specialDie: {fileID: 0}
         _consequence: 
       roll1:

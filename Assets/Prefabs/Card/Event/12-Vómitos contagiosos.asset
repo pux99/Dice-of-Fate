@@ -31,7 +31,9 @@ MonoBehaviour:
           Value: -1
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 
+        _consequence: "Sent\xEDs como te suben las ganas de vomitar, corres hasta
+          el borde del barco para hacerlo afuera y al golpear contra la baranda un
+          dado sale volando y lo pierdes en el mar\u2026 con tu v\xF3mito."
       roll2:
         effects:
         - target: 1
@@ -39,7 +41,9 @@ MonoBehaviour:
           Value: -1
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 
+        _consequence: "Sent\xEDs como te suben las ganas de vomitar, corres hasta
+          el borde del barco para hacerlo afuera y al golpear contra la baranda un
+          dado sale volando y lo pierdes en el mar\u2026 con tu v\xF3mito."
       roll3:
         effects:
         - target: 1
@@ -47,15 +51,18 @@ MonoBehaviour:
           Value: -1
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 
+        _consequence: "Sent\xEDs como te suben las ganas de vomitar, corres hasta
+          el borde del barco para hacerlo afuera y al golpear contra la baranda un
+          dado sale volando y lo pierdes en el mar\u2026 con tu v\xF3mito."
       roll4:
         effects:
         - target: 1
           type: 4
           Value: 1
           enemy: {fileID: 0}
-          specialDie: {fileID: 0}
-        _consequence: 
+          specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
+        _consequence: Te haces a un lado para que otros puedan hacer sus necesidades,
+          en eso a uno se le cae un dado. Un poco sucio, pero un dado es un dado.
       roll5:
         effects:
         - target: 1
@@ -63,7 +70,8 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 
+        _consequence: Te haces a un lado para que otros puedan hacer sus necesidades,
+          en eso a uno se le cae un dado. Un poco sucio, pero un dado es un dado.
       roll6:
         effects:
         - target: 1
@@ -71,4 +79,5 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: 
+        _consequence: Te haces a un lado para que otros puedan hacer sus necesidades,
+          en eso a uno se le cae un dado. Un poco sucio, pero un dado es un dado.
