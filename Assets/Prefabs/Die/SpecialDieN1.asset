@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25e1cbffc0f515d43b6b04b985e63136, type: 3}
-  m_Name: Medic Die
+  m_Name: SpecialDieN1
   m_EditorClassIdentifier: 
-  texture: {fileID: 0}
+  texture: {fileID: 2800000, guid: 523ca6ac44b7a6a4ab57fd71d429db56, type: 3}
   faces:
   - name: Face 1
     effectData:
@@ -51,9 +51,9 @@ MonoBehaviour:
       specialDie: {fileID: 0}
   - name: Face 6
     effectData:
-      target: 2
-      type: 1
-      Value: 100
+      target: 0
+      type: 0
+      Value: 0
       enemy: {fileID: 0}
       specialDie: {fileID: 0}
-  faceValues: 010000000200000003000000040000000500000006000000
+  faceValues: 010000000300000003000000030000000500000003000000

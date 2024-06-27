@@ -29,6 +29,6 @@ MonoBehaviour:
   rewards:
   - target: 1
     type: 3
-    Value: 100
+    Value: 250
     enemy: {fileID: 0}
     specialDie: {fileID: 0}

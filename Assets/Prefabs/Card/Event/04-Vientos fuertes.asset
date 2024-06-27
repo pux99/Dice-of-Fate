@@ -17,7 +17,7 @@ MonoBehaviour:
   _cardText: "Te levantas y notas un fuerte viento esta ma\xF1ana. Tratas de aprovecharlo
     para poder impulsar el barco. "
   options:
-  - _buttonText: Mover las Velas
+  - _buttonText: Tratar de mover las velas
     _text: 
     _roll: 1
     _options:

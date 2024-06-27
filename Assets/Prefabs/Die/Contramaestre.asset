@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25e1cbffc0f515d43b6b04b985e63136, type: 3}
-  m_Name: BossDie
+  m_Name: Contramaestre
   m_EditorClassIdentifier: 
   texture: {fileID: 2800000, guid: 3a69ade2af1183d4eae3f53df6ad9437, type: 3}
   faces:
@@ -56,3 +56,4 @@ MonoBehaviour:
       Value: 1
       enemy: {fileID: 0}
       specialDie: {fileID: 0}
+  faceValues: 010000000200000003000000040000000500000006000000

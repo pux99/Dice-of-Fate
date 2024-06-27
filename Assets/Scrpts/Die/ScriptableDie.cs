@@ -10,6 +10,9 @@ public class ScriptableDie : ScriptableObject
 {
     public Texture texture;
     public DieFace.diceFaceEffect[] faces = new DieFace.diceFaceEffect[6];
+    public int[] faceValues = {1,2,3,4,5,6};
+
+
     private void OnValidate()
     {
         for (int i = 0; i < faces.Length; i++)

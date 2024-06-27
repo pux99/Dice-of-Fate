@@ -17,7 +17,7 @@ MonoBehaviour:
   _cardText: "Antes de irte a dormir empiezas a escuchar una canci\xF3n proveniente
     del oc\xE9ano \xA1SIRENAS! "
   options:
-  - _buttonText: 'Tratar de resistir los encantos '
+  - _buttonText: 'Tratar de resistir sus encantos '
     _text: 
     _roll: 1
     _options:

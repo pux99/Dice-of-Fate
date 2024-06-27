@@ -28,7 +28,7 @@ MonoBehaviour:
         effects:
         - target: 1
           type: 4
-          Value: 2
+          Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
         - target: 1
@@ -36,7 +36,7 @@ MonoBehaviour:
           Value: 200
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: "Un dado extra y 200 de vida m\xE1xima."
+        _consequence: "Consigues un dado extra y 200 de vida m\xE1xima."
       roll2:
         effects:
         - target: 1
@@ -44,7 +44,7 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: Un dado extra.
+        _consequence: Consigues un dado extra.
       roll3:
         effects:
         - target: 1
@@ -52,7 +52,7 @@ MonoBehaviour:
           Value: 400
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: "400 de vida m\xE1xima."
+        _consequence: "Consigues 400 de vida m\xE1xima."
       roll4:
         effects:
         - target: 1
@@ -60,7 +60,7 @@ MonoBehaviour:
           Value: 200
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: "200 de vida m\xE1xima."
+        _consequence: "Consigues 200 de vida m\xE1xima."
       roll5:
         effects:
         - target: 1
@@ -68,8 +68,8 @@ MonoBehaviour:
           Value: 300
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: Cuando te pasan tu parte del tesoro te golpea en la cara. -300
-          de vida Max.
+        _consequence: Tratas de tomar un poco mas que tu parte y a los demas no les
+          hace mucha gracia. -300 de vida Max.
       roll6:
         effects:
         - target: 1

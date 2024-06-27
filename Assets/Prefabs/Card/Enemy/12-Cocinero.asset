@@ -20,21 +20,21 @@ MonoBehaviour:
   shield: 600
   numbreOfNormalDice: 3
   attack: 40
-  boss: 1
+  boss: 0
   specialDice:
-  - {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
+  - {fileID: 11400000, guid: df284c6b2d86712409b8ba6053bda645, type: 2}
   OnCombatStartEffects: []
   OnTurnStartEffects:
   - target: 2
     type: 1
-    Value: 0
+    Value: 100
     enemy: {fileID: 0}
     specialDie: {fileID: 0}
   OnTakingDamageEffects: []
   Random: 0
   rewards:
   - target: 1
-    type: 5
-    Value: 0
+    type: 4
+    Value: 1
     enemy: {fileID: 0}
-    specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
+    specialDie: {fileID: 0}

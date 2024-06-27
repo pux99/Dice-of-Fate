@@ -34,8 +34,7 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: "Reducir tu vida m\xE1xima 500 puntos y conseguir una vida
-          extra."
+        _consequence: "Pierdes 500 de vida m\xE1xima y consigues una vida extra."
       roll1:
         effects: []
         _consequence: 

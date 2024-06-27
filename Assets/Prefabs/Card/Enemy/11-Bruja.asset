@@ -19,7 +19,7 @@ MonoBehaviour:
   health: 1750
   shield: 600
   numbreOfNormalDice: 4
-  attack: 400
+  attack: 40
   boss: 0
   specialDice: []
   OnCombatStartEffects: []
@@ -34,6 +34,11 @@ MonoBehaviour:
   rewards:
   - target: 1
     type: 4
-    Value: 0
+    Value: 1
     enemy: {fileID: 0}
     specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
+  - target: 1
+    type: 5
+    Value: 1
+    enemy: {fileID: 0}
+    specialDie: {fileID: 11400000, guid: 9f410e38ab6250d459f9669f7ff6199f, type: 2}

@@ -31,24 +31,27 @@ MonoBehaviour:
           type: 5
           Value: 1
           enemy: {fileID: 0}
-          specialDie: {fileID: 11400000, guid: cbc925046427bc9478a2e2d1a27d31df, type: 2}
-        _consequence: 'Te dan un dado negativo. '
+          specialDie: {fileID: 11400000, guid: 704fec1dac5cd5541b1b149f926bce77, type: 2}
+        _consequence: 'El espiritu estaba pero tu estomago no, te cambian un dado
+          por uno negativo. '
       roll2:
         effects:
         - target: 1
           type: 5
           Value: 1
           enemy: {fileID: 0}
-          specialDie: {fileID: 11400000, guid: cbc925046427bc9478a2e2d1a27d31df, type: 2}
-        _consequence: 'Te dan un dado negativo. '
+          specialDie: {fileID: 11400000, guid: 704fec1dac5cd5541b1b149f926bce77, type: 2}
+        _consequence: 'El espiritu estaba pero tu estomago no, te cambian un dado
+          por uno negativo. '
       roll3:
         effects:
         - target: 1
           type: 5
           Value: 1
           enemy: {fileID: 0}
-          specialDie: {fileID: 11400000, guid: cbc925046427bc9478a2e2d1a27d31df, type: 2}
-        _consequence: 'Te dan un dado negativo. '
+          specialDie: {fileID: 11400000, guid: 704fec1dac5cd5541b1b149f926bce77, type: 2}
+        _consequence: 'El espiritu estaba pero tu estomago no, te cambian un dado
+          por uno negativo. '
       roll4:
         effects:
         - target: 2
@@ -56,7 +59,8 @@ MonoBehaviour:
           Value: 0
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: Tu oponente pierde un turno al comienzo de tu siguiente combate.
+        _consequence: Lo dejas en el piso a tu contrincante, tu oponente pierde un
+          turno al comienzo de tu siguiente combate.
       roll5:
         effects:
         - target: 2
@@ -64,7 +68,8 @@ MonoBehaviour:
           Value: 0
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: Tu oponente pierde un turno al comienzo de tu siguiente combate.
+        _consequence: Lo dejas en el piso a tu contrincante, tu oponente pierde un
+          turno al comienzo de tu siguiente combate.
       roll6:
         effects:
         - target: 2
@@ -72,4 +77,5 @@ MonoBehaviour:
           Value: 0
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
-        _consequence: Tu oponente pierde un turno al comienzo de tu siguiente combate.
+        _consequence: Lo dejas en el piso a tu contrincante, tu oponente pierde un
+          turno al comienzo de tu siguiente combate.

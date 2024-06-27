@@ -24,7 +24,7 @@ public class DieFace : MonoBehaviour
     private Vector3 _rotation;
 
     public bool onTop{get { return _onTop; }}
-    public int value {get { return _Value; }}
+    public int value {get { return _Value; } set { _Value = value; } }
     public Vector3 rotation{ get { return _rotation; }}
     //private void Update()
     //{

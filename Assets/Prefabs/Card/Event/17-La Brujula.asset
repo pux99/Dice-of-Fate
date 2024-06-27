@@ -20,39 +20,74 @@ MonoBehaviour:
   options:
   - _buttonText: Lo tomas
     _text: 
-    _roll: 0
+    _roll: 1
     _options:
       noRoll:
+        effects: []
+        _consequence: 
+      roll1:
         effects:
-        - target: 1
-          type: 5
-          Value: 1
-          enemy: {fileID: 0}
-          specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
         - target: 1
           type: 4
           Value: 1
           enemy: {fileID: 0}
-          specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
+          specialDie: {fileID: 0}
+        - target: 1
+          type: 5
+          Value: 1
+          enemy: {fileID: 0}
+          specialDie: {fileID: 11400000, guid: 9022529c9201ecd438045cd5aaf360f1, type: 2}
         _consequence: Consigues un dado especial.
-      roll1:
-        effects: []
-        _consequence: 
       roll2:
-        effects: []
-        _consequence: 
+        effects:
+        - target: 1
+          type: 4
+          Value: 1
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        - target: 1
+          type: 5
+          Value: 1
+          enemy: {fileID: 0}
+          specialDie: {fileID: 11400000, guid: 9f410e38ab6250d459f9669f7ff6199f, type: 2}
+        _consequence: Consigues un dado especial.
       roll3:
-        effects: []
-        _consequence: 
+        effects:
+        - target: 1
+          type: 4
+          Value: 1
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        - target: 1
+          type: 5
+          Value: 1
+          enemy: {fileID: 0}
+          specialDie: {fileID: 11400000, guid: 9f410e38ab6250d459f9669f7ff6199f, type: 2}
+        _consequence: Consigues un dado especial.
       roll4:
-        effects: []
-        _consequence: 
+        effects:
+        - target: 1
+          type: 4
+          Value: 1
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: Consigues un dado normal.
       roll5:
-        effects: []
-        _consequence: 
+        effects:
+        - target: 1
+          type: 4
+          Value: 1
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: Consigues un dado.
       roll6:
-        effects: []
-        _consequence: 
+        effects:
+        - target: 1
+          type: 4
+          Value: 1
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: Consigues un dado.
   - _buttonText: "Lo dejas ah\xED, debe haber alguna raz\xF3n por la que nadie lo
       agarr\xF3"
     _text: 
