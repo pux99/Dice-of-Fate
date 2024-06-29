@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Corcho
-    second: {fileID: 2100000, guid: 7074b60b5f754394fbbb8075b7e63699, type: 2}
+    second: {fileID: 2100000, guid: 38cff49ba7f62f54f8f7a58149bd837b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -18,7 +18,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Metal oxidado
-    second: {fileID: 2100000, guid: d6aa1090f386aae44bee8ebe8bebc50f, type: 2}
+    second: {fileID: 2100000, guid: 194b8d4f4a8f8ab4d969240a1879836e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

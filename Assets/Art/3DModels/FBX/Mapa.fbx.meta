@@ -3,7 +3,27 @@ guid: 941bb3c1d07e7d149b95cd388ea3826c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Madera.006
+    second: {fileID: 2100000, guid: 9677efb6992fccf4e8203e800edfd4f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mapa.001
+    second: {fileID: 2100000, guid: b86226ba8d44b284aa7d273998847411, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal.002
+    second: {fileID: 2100000, guid: 6a26a7d887cc8d7428715bdc8453959a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetalDorado
+    second: {fileID: 2100000, guid: 8432ed1682367bb42b559174df8b1deb, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -90,7 +110,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.39999998
+    globalScale: 40
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

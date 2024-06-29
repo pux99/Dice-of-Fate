@@ -8,17 +8,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Madera
-    second: {fileID: 2100000, guid: a15cecbee3c261848879c97c6f2b184d, type: 2}
+    second: {fileID: 2100000, guid: db49395644c09d2469c0ebbc77ed834c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Metal
-    second: {fileID: 2100000, guid: d0eec69f98d63b04e8a9414ba3888118, type: 2}
+    second: {fileID: 2100000, guid: 4c90e806f67b97e489ff74d18642acb5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: MetalDorado
-    second: {fileID: 2100000, guid: 54a097fc4ed4ace42bc65c1a7bd1cb79, type: 2}
+    second: {fileID: 2100000, guid: a47ca7445a0630640b8c4ae3d0e9052c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -105,7 +105,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.39999998
+    globalScale: 40
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
