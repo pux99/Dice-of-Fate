@@ -162,6 +162,7 @@ public class Die : MonoBehaviour
     }
     public void flip()
     {
+
         _currentFace = _faces[5 - _faces.IndexOf(_currentFace)];
         _value = _currentFace.value;
         fixRotation();
@@ -204,9 +205,9 @@ public class Die : MonoBehaviour
         {
             if (flippable)
             {
-                
                 flip();
                 flipt.Invoke();
+                flippable=false;
             }
         }//fliping
     }

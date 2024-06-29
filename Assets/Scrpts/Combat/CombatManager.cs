@@ -79,6 +79,7 @@ public class CombatManager : MonoBehaviour
         SoundAudioClip.instance.Destroymusic();
         SoundManager.PlayMusic(SoundManager.Sound.EnemyMusic,true);
         combatStart.Invoke();
+        scoring.updateScore();
     }
 
     void Rolling(List<Die> list)
@@ -93,6 +94,7 @@ public class CombatManager : MonoBehaviour
     void selection()
     {
         select.startState(OnUseDie);
+        scoring.calculatePoint();
     }
     void ScorePoint(List<Die> list)
     {
@@ -117,6 +119,7 @@ public class CombatManager : MonoBehaviour
     public void RollTheRest()
     {
         select.RollingAgain();
+        scoring.scoredInThisTurn = false;
     }
     public void ScoringPoint()
     {
@@ -167,17 +170,26 @@ public class CombatManager : MonoBehaviour
     public void EndOfPlayerTurn()
     {
         select.ResetValues();
-        DamageFigther(enemy,scoring.score);
+        if(scoring.scoredInThisTurn)
+            DamageFigther(enemy,scoring.score);
+        else
+        {
+            //un log
+        }
+        scoring.scoredInThisTurn = false;
         Log.AddLog("<color=#FF0000>" + enemy.name + "</color>" + " perdio " + scoring.score + " puntos de vida");
         scoring.score = 0;
         scoring.TotalPointsChange.Invoke(scoring.score);
-        ApllyDiceEffects(scoring.SpecialDice, enemy,player);
+        ApllyDiceEffects(scoring.SpecialDice, enemy, player);
+        if (enemy.health > 0)
+        {
+            enemy.OnTurnStart();
+        }     
         foreach (Die die in player.dice)
         {
             die.Disolv(true);
         }
         scoring.timeToMove = false;
-        enemy.OnTurnStart();
         if (enemy.health > 0 && !enemy.SkipNextTurn)
             enemyTurn.startState(enemy.dice, enemy.attack);
         else if (enemy.SkipNextTurn)
@@ -190,7 +202,9 @@ public class CombatManager : MonoBehaviour
         {
             OnUseDie.Add(die);
             die.freez();
-        }    
+        }
+        scoring.ClearList();
+        scoring.calculatePoint();
     }
     public void EndOfEnemyTurn(int value)
     {
@@ -240,9 +254,7 @@ public class CombatManager : MonoBehaviour
             effectApllier.ApplyEffect(effect);
             rewardText += Log.Logs.Last().GetComponent<TextMeshProUGUI>().text +" " ;
         }
-        
         win.Invoke(rewardText);
-        Debug.Log("defeted");
     }
     void Loss()
     {

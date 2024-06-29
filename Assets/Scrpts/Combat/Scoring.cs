@@ -11,6 +11,7 @@ public class Scoring : MonoBehaviour
     public GameObject container;
     bool onPlace;
     public bool timeToMove;
+    public bool scoredInThisTurn;
     public UnityEvent<int> TotalPointsChange=new UnityEvent<int>();
 
     void Update()
@@ -32,6 +33,7 @@ public class Scoring : MonoBehaviour
         timeToMove = true;
         diceList.Add(list);
         calculatePoint();
+        scoredInThisTurn=true;
         TotalPointsChange.Invoke(score);
     }
     public void ClearList()
@@ -50,7 +52,7 @@ public class Scoring : MonoBehaviour
         SpecialDice.Clear();
         diceList.Clear();
     }
-    void calculatePoint()
+    public void calculatePoint()
     {
         int value = 0;
 
@@ -160,5 +162,9 @@ public class Scoring : MonoBehaviour
         }
 
         
+    }
+    public void updateScore()
+    {
+        TotalPointsChange.Invoke(score);
     }
 }
