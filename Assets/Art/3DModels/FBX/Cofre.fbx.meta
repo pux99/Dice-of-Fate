@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Brass
-    second: {fileID: 2100000, guid: dbe3ae9b1f31e3e4ab7886f6f47926b1, type: 2}
+    second: {fileID: 2100000, guid: 2c7c0d00335fa934393a85043bc9bb54, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -18,7 +18,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Madera.002
-    second: {fileID: 2100000, guid: 9677efb6992fccf4e8203e800edfd4f2, type: 2}
+    second: {fileID: 2100000, guid: b7b57c2e83eaf614d9942757dee070c0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

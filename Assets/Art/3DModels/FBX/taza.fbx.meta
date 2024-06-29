@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Hierro
-    second: {fileID: 2100000, guid: f89f4b47127c4e24a9f8355a44b1d95f, type: 2}
+    second: {fileID: 2100000, guid: 645f633cb72ad074cb94fd23be57eac9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Madera.004
-    second: {fileID: 2100000, guid: a721ea3ece38dd84e923d5ab34e1d2ed, type: 2}
+    second: {fileID: 2100000, guid: 61b8210a7311b5f4cad2a38f8da3e0ec, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: d9e9691569b2dcc41be2af11bf41a3c6
+guid: fc684b86859634c48a2f477b1f459583
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brass.004
+    second: {fileID: 2100000, guid: 8432ed1682367bb42b559174df8b1deb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Madera.006
+    second: {fileID: 2100000, guid: 286e61094aed6cf46947e12646a8549e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hierro fundido.003
+    second: {fileID: 2100000, guid: 645f633cb72ad074cb94fd23be57eac9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -90,7 +105,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.39999998
+    globalScale: 40
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
