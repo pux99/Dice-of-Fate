@@ -15,11 +15,11 @@ MonoBehaviour:
   CardName: Barco Pirata
   CardArt: {fileID: 21300000, guid: d0101245fedb47443a502f64d5bd8f2c, type: 3}
   enemy: {fileID: 0}
-  maxHealth: 2500
-  health: 2500
+  maxHealth: 5000
+  health: 5000
   shield: 0
   numbreOfNormalDice: 5
-  attack: 10
+  attack: 5
   boss: 0
   specialDice: []
   OnCombatStartEffects: []

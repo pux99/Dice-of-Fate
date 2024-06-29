@@ -15,11 +15,11 @@ MonoBehaviour:
   CardName: "M\xE9dico"
   CardArt: {fileID: 21300000, guid: b2588040daec48041b2a8fbc35530bc4, type: 3}
   enemy: {fileID: 0}
-  maxHealth: 1250
-  health: 1250
+  maxHealth: 1875
+  health: 1875
   shield: 350
   numbreOfNormalDice: 3
-  attack: 30
+  attack: 15
   boss: 0
   specialDice:
   - {fileID: 11400000, guid: 14861fdd7ed5ab14386f1d6922896e74, type: 2}

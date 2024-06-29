@@ -15,11 +15,11 @@ MonoBehaviour:
   CardName: Grumete
   CardArt: {fileID: 21300000, guid: d651b70bb173b7f45b7d740c4f24141b, type: 3}
   enemy: {fileID: 0}
-  maxHealth: 500
-  health: 500
+  maxHealth: 750
+  health: 750
   shield: 150
   numbreOfNormalDice: 4
-  attack: 20
+  attack: 10
   boss: 0
   specialDice: []
   OnCombatStartEffects: []

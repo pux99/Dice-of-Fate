@@ -17,8 +17,8 @@ MonoBehaviour:
   enemy: {fileID: 0}
   maxHealth: 1
   health: 1
-  shield: 1200
-  numbreOfNormalDice: 6
+  shield: 1500
+  numbreOfNormalDice: 3
   attack: 30
   boss: 0
   specialDice: []

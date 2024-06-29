@@ -15,11 +15,11 @@ MonoBehaviour:
   CardName: Cartografo-Pirata
   CardArt: {fileID: 21300000, guid: 74f35abd2d10c5e4b803b63e16ceb532, type: 3}
   enemy: {fileID: 0}
-  maxHealth: 200
-  health: 200
+  maxHealth: 300
+  health: 300
   shield: 400
   numbreOfNormalDice: 3
-  attack: 40
+  attack: 20
   boss: 0
   specialDice: []
   OnCombatStartEffects: []

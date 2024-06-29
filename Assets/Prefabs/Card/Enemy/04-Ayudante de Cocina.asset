@@ -15,11 +15,11 @@ MonoBehaviour:
   CardName: Ayudante De Cocina
   CardArt: {fileID: 21300000, guid: 2acc84883ee4e894eb3f3a78f4824c68, type: 3}
   enemy: {fileID: 0}
-  maxHealth: 750
-  health: 750
+  maxHealth: 1125
+  health: 1125
   shield: 100
   numbreOfNormalDice: 5
-  attack: 20
+  attack: 10
   boss: 0
   specialDice: []
   OnCombatStartEffects: []

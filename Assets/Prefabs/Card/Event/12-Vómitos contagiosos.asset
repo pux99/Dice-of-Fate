@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardName: "V\xF3mitos contagiosos"
   CardArt: {fileID: 21300000, guid: a5442cf0ae865fb4c8e67531f9bba298, type: 3}
-  _cardText: "El gran oleaje hace que algunos de los piratas m\xE1s flojos, empiezan
+  _cardText: "El gran oleaje hace que algunos de los piratas m\xE1s flojos, empiecen
     a vomitar "
   options:
   - _buttonText: El olor, color y ruido empiezan a contagiar al resto de los tripulantes.

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efec3c4baeec50a4bb1dc6a20e911333, type: 3}
   m_Name: 07-Spoils Of War
   m_EditorClassIdentifier: 
-  CardName: Spoils of war
+  CardName: Division de botin
   CardArt: {fileID: 21300000, guid: 47f145626a2a69948abb32a55c938170, type: 3}
   _cardText: " Acaban de asaltar un barco que llevaba pasajeros a \xC1frica, y al
     parecer hay discusiones sobre que se llevar\xE1 cada uno por su aporte."

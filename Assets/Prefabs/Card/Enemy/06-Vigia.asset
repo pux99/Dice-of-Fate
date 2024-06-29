@@ -15,11 +15,11 @@ MonoBehaviour:
   CardName: "Vig\xEDa"
   CardArt: {fileID: 21300000, guid: 8b171d7b757860247b4b9247bbfb398c, type: 3}
   enemy: {fileID: 0}
-  maxHealth: 1000
-  health: 1000
+  maxHealth: 1500
+  health: 1500
   shield: 700
   numbreOfNormalDice: 2
-  attack: 50
+  attack: 25
   boss: 0
   specialDice:
   - {fileID: 11400000, guid: 59c19d961c114e243930d9810303f1bb, type: 2}

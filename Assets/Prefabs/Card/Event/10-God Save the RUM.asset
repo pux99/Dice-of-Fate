@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efec3c4baeec50a4bb1dc6a20e911333, type: 3}
   m_Name: 10-God Save the RUM
   m_EditorClassIdentifier: 
-  CardName: God Save The Rum
+  CardName: Todo por el RON
   CardArt: {fileID: 21300000, guid: ea50db2731dbe1a4ab11d137e9d2d36a, type: 3}
   _cardText: "Unas olas muy potentes empiezan a chocar con el barco, haciendo que
     todo lo que no estaba amarrado se mueva o se caiga por la borda. El ron\u2026
