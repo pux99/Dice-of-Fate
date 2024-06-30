@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.EventSystems.EventTrigger;
 
 
 
@@ -49,8 +50,10 @@ public class UiManager : MonoBehaviour
     [SerializeField] private CombatManager combat;
     [SerializeField] private GameObject CombatUI;
     [SerializeField] private Slider playerHP;
+    [SerializeField] private TextMeshProUGUI playerHpnumber;
     [SerializeField] private TextMeshProUGUI playerShield;
     [SerializeField] private Slider enemyHP;
+    [SerializeField] private TextMeshProUGUI enemyHpnumber;
     [SerializeField] private TextMeshProUGUI enemyShiel;
     [SerializeField] private Image EnemyCard;
     [SerializeField] private TextMeshProUGUI flips;//combertir botones en MYButton
@@ -159,6 +162,8 @@ public class UiManager : MonoBehaviour
     {
         enemyShiel.text = combat.enemy.shield.ToString();
         playerShield.text = combat.player.shield.ToString();
+        combat.player.updateHp();
+        combat.enemy.updateHp();
     }
     private void modifyFlips(int value)
     {
@@ -233,8 +238,15 @@ public class UiManager : MonoBehaviour
     public void UpdateHP(Fighter fighter)
     {
         if (fighter == combat.player)
+        {
             playerHP.value = (float)fighter.health / (float)fighter.maxHealth;
-        else enemyHP.value = (float)fighter.health / (float)fighter.maxHealth;
+            playerHpnumber.text = fighter.health.ToString();
+        }
+        else 
+        { 
+            enemyHP.value = (float)fighter.health / (float)fighter.maxHealth;
+            enemyHpnumber.text = fighter.health.ToString();
+        }
     }
     void FlipValueChange(int value)
     {
