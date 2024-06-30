@@ -177,7 +177,7 @@ public class CombatManager : MonoBehaviour
             //un log
         }
         scoring.scoredInThisTurn = false;
-        Log.AddLog("<color=#FF0000>" + enemy.name + "</color>" + " perdio " + scoring.score + " puntos de vida");
+        Log.AddLog("<color=#"+ ColorUtility.ToHtmlStringRGB(enemy.color) +">" + enemy.name + "</color>" + " perdio " + scoring.score + " puntos de vida");
         scoring.score = 0;
         scoring.TotalPointsChange.Invoke(scoring.score);
         ApllyDiceEffects(scoring.SpecialDice, enemy, player);
@@ -188,6 +188,7 @@ public class CombatManager : MonoBehaviour
         foreach (Die die in player.dice)
         {
             die.Disolv(true);
+            die._selected = false;
         }
         scoring.timeToMove = false;
         if (enemy.health > 0 && !enemy.SkipNextTurn)
@@ -209,7 +210,7 @@ public class CombatManager : MonoBehaviour
     public void EndOfEnemyTurn(int value)
     {
         player.Damage(value);
-        Log.AddLog("<color=#005500>" + player.name + "</color>" + " perdio " + value + " puntos de vida");
+        Log.AddLog("<color=#" + ColorUtility.ToHtmlStringRGB(player.color)+ ">" + player.name + "</color>" + " perdio " + value + " puntos de vida");
         player.OnTurnStart();
     }
     public void EndOfEnemyTurnDiceEfects(List<Die> specialDice)

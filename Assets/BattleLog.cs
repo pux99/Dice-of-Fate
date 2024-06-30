@@ -10,6 +10,8 @@ public class BattleLog : MonoBehaviour
     public GameObject baseLog;
     public GameObject log;
     public EffectApllier effectApllier;
+    public Player player;
+    public Enemy enemy;
 
     private void Start()
     {
@@ -27,9 +29,9 @@ public class BattleLog : MonoBehaviour
         string text;
         string color;
         if (effect.target == EffectData.Target.Player)
-            color= "<color=#005500>";
+            color= "<color=#"+ ColorUtility.ToHtmlStringRGB(player.color)+">";
         else
-            color = "<color=#FF0000>";
+            color = "<color=#" + ColorUtility.ToHtmlStringRGB(enemy.color)+">";
         switch (effect.type)
         {
             case EffectData.Type.Heal:

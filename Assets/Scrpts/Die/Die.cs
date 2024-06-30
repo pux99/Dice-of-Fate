@@ -32,7 +32,7 @@ public class Die : MonoBehaviour
     private bool _stopRolling;
     public bool selectable;
     public bool flippable;
-    private bool _selected;
+    public bool _selected;
     [SerializeField]private float _size;
 
 

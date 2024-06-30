@@ -18,6 +18,7 @@ public class Fighter : MonoBehaviour
     protected string Reward;
     public int lives=1;
     public bool SkipNextTurn;
+    public Color color;
     [SerializeField]private EffectApllier effectApllier;
     public GameObject BaseDie;
 
