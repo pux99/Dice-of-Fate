@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2230,6 +2230,7 @@ MonoBehaviour:
   _OnTakingDamageEffects: []
   lives: 1
   SkipNextTurn: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
   effectApllier: {fileID: 795504410}
   BaseDie: {fileID: 6717307124609694603, guid: b37c4de47fff15946a09bda4f0a712ab, type: 3}
   Defeted:
@@ -2604,6 +2605,9 @@ MonoBehaviour:
   cardEvent:
     m_PersistentCalls:
       m_Calls: []
+  combatEvent:
+    m_PersistentCalls:
+      m_Calls: []
   endOfEventRewardCalculation:
     m_PersistentCalls:
       m_Calls: []
@@ -2844,6 +2848,7 @@ MonoBehaviour:
   _OnTakingDamageEffects: []
   lives: 1
   SkipNextTurn: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
   effectApllier: {fileID: 795504410}
   BaseDie: {fileID: 6717307124609694603, guid: b37c4de47fff15946a09bda4f0a712ab, type: 3}
   Defeted:
@@ -3301,6 +3306,14 @@ PrefabInstance:
       propertyPath: boardManager
       value: 
       objectReference: {fileID: 1568401981}
+    - target: {fileID: 2088853040066537042, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2088853040066537042, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2156729426101851049, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3309,6 +3322,14 @@ PrefabInstance:
       propertyPath: boardManager
       value: 
       objectReference: {fileID: 1568401981}
+    - target: {fileID: 2697372123361441281, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697372123361441281, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2788265825819482682, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
       propertyPath: boardManager
       value: 
@@ -3397,6 +3418,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6477103443244460262, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6477103443244460262, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6477103443244460262, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 179.4139
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533413523074252422, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533413523074252422, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6883347577859642137, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3409,6 +3450,10 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1873483841}
+    - target: {fileID: 7692520766673948934, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7918467312229871339, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
       propertyPath: board
       value: 
