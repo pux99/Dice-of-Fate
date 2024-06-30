@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 18-Argh! un dado
   m_EditorClassIdentifier: 
   CardName: Argh! un dado
-  CardArt: {fileID: 21300000, guid: 9b4b22f588b4a814fbc2056dc58c8c36, type: 3}
+  CardArt: {fileID: 21300000, guid: 842159cc22765b04595faf5ab35afd0d, type: 3}
   _cardText: Argh! un dado
   options:
   - _buttonText: Argh! un dado

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 15-Capitan
   m_EditorClassIdentifier: 
   CardName: "Capit\xE1n"
-  CardArt: {fileID: 21300000, guid: c7002ef9384187747920ff2ec370a9ec, type: 3}
+  CardArt: {fileID: 21300000, guid: 05278602b65b9474ab5c17944739c9c5, type: 3}
   enemy: {fileID: 0}
   maxHealth: 5000
   health: 5000

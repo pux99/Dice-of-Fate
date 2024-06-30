@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 05-Medico
   m_EditorClassIdentifier: 
   CardName: "M\xE9dico"
-  CardArt: {fileID: 21300000, guid: b2588040daec48041b2a8fbc35530bc4, type: 3}
+  CardArt: {fileID: 21300000, guid: b770a12bc00f78142a50e453770609e4, type: 3}
   enemy: {fileID: 0}
   maxHealth: 1875
   health: 1875

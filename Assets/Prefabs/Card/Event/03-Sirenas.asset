@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 03-Sirenas
   m_EditorClassIdentifier: 
   CardName: Sirenas
-  CardArt: {fileID: 21300000, guid: baf1b45c0f9214c4f94e6a8ff7729d1a, type: 3}
+  CardArt: {fileID: 21300000, guid: ccafc8ec7a20e9349beb08ac0c823988, type: 3}
   _cardText: "Antes de irte a dormir empiezas a escuchar una canci\xF3n proveniente
     del oc\xE9ano \xA1SIRENAS! "
   options:

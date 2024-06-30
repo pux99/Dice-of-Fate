@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "09- Canci\xF3n Motivadora"
   m_EditorClassIdentifier: 
   CardName: " Canci\xF3n Motivadora"
-  CardArt: {fileID: 21300000, guid: f5853180a5a31984b95a319ed6f057ef, type: 3}
+  CardArt: {fileID: 21300000, guid: b4928e64f742d724683f33d6895b1f50, type: 3}
   _cardText: "Uno de los piratas ve que sus compas est\xE1n ca\xEDdos del bocho.
     Decide agarrar una \u201Cguitarra\u201D y ponerse a tocar, pero sin la voz que
     siga la canci\xF3n, los piratas no van a estar muy motivados"

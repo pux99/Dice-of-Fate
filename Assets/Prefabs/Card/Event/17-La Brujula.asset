@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 17-La Brujula
   m_EditorClassIdentifier: 
   CardName: La Brujula
-  CardArt: {fileID: 21300000, guid: cd68d316f3a6b9644a0daa42c080806c, type: 3}
+  CardArt: {fileID: 21300000, guid: 17fd59b3fb74ba04982268871fc07283, type: 3}
   _cardText: "Encuentras una br\xFAjula en el piso, al agarrarla la manilla empieza
     a girar r\xE1pidamente. Al frenarse vez que apunta a un barril de color sospechoso.
     \xA1Te acercas y lo abres... sorpresa arriba de todo hay un dado! "

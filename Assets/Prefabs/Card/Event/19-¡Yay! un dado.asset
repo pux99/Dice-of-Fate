@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "19-\xA1Yay! un dado"
   m_EditorClassIdentifier: 
   CardName: "\xA1Yay! \xBFun dado?"
-  CardArt: {fileID: 21300000, guid: ead0c80b415168b43aae81e53b6c67e9, type: 3}
+  CardArt: {fileID: 21300000, guid: 101a40e12b948fd409be6940bcf62fd6, type: 3}
   _cardText: 
   options:
   - _buttonText: "\xA1Yay! \xBFun dado?"

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 01-Sharknado
   m_EditorClassIdentifier: 
   CardName: Sharknado
-  CardArt: {fileID: 21300000, guid: baf1b45c0f9214c4f94e6a8ff7729d1a, type: 3}
+  CardArt: {fileID: 21300000, guid: 8c310e21c8960d642a312e26bf305e9a, type: 3}
   _cardText: 'Aparece un tornado por estribor que lleva consigo tiburones. '
   options:
   - _buttonText: Intentar esquivar el tornado.

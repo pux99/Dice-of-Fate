@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: 0 Start
   m_EditorClassIdentifier: 
   CardName: start
-  CardArt: {fileID: 21300000, guid: 2e6e39ecafae88844a246dc109280fc4, type: 3}
-  CardType: 
+  CardArt: {fileID: 21300000, guid: 2d95021bfc9ed03479404ebdc225057c, type: 3}
   _cardText: 
   options: []

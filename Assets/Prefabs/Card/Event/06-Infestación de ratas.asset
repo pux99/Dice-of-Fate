@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "06-Infestaci\xF3n de ratas"
   m_EditorClassIdentifier: 
   CardName: "Infestaci\xF3n de ratas"
-  CardArt: {fileID: 21300000, guid: 335518b78de678141b1cfa8418221cca, type: 3}
+  CardArt: {fileID: 21300000, guid: 9d3fbaa463f122c4f894cb4387111cea, type: 3}
   _cardText: " Las ratas que hay en el barco se multiplicaron y terminaron volvi\xE9ndose
     una plaga \xBFQui\xE9n lo hubiera dicho? Hay que resolver este problema "
   options:

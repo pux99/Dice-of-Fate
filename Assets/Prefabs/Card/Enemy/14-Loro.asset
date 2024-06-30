@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 14-Loro
   m_EditorClassIdentifier: 
   CardName: Loro
-  CardArt: {fileID: 21300000, guid: 6a8416f0dc039de4db92ca5fff514357, type: 3}
+  CardArt: {fileID: 21300000, guid: fa99c4e8b49891245a7a4a236eaad875, type: 3}
   enemy: {fileID: 0}
   maxHealth: 4000
   health: 4000

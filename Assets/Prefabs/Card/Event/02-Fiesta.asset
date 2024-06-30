@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 02-Fiesta
   m_EditorClassIdentifier: 
   CardName: Fiesta
-  CardArt: {fileID: 21300000, guid: 7970436bfcbbbf24ea4b73b10031474f, type: 3}
+  CardArt: {fileID: 21300000, guid: 4f8cb97be74e174479a83ae1684ed134, type: 3}
   _cardText: "La tripulaci\xF3n decide tener una fiesta luego del exitoso mot\xEDn,
     para festejar te pones en un duelo de resistencia con un compa\xF1ero a ver qui\xE9n
     toma m\xE1s. "
