@@ -739,8 +739,8 @@ MonoBehaviour:
   Blinking: {fileID: -876546973899608171, guid: 7efdffb6460bd8a4e80c6be7411e0090, type: 3}
   CardBack: {fileID: 2100000, guid: a58d47be9e83d084bb7b5a14e3902b73, type: 2}
   CardFront: {fileID: 2100000, guid: 19024e8e2c281e14eafda82aa0153f32, type: 2}
-  card: {fileID: 11400000, guid: b69a120f819607a4e88c64fb0bce907d, type: 2}
-  cardPool: {fileID: 11400000, guid: 49a1a9d2b372b4742a8a8dedbd424b07, type: 2}
+  card: {fileID: 11400000, guid: 4061be78f5b54014ca5b8107002f8fbd, type: 2}
+  cardPool: {fileID: 11400000, guid: 5a6d3c53530369b409dbb333635ccd53, type: 2}
   meshRenderer: {fileID: 0}
   newCurrentSpace:
     m_PersistentCalls:
@@ -2066,8 +2066,8 @@ MonoBehaviour:
   Blinking: {fileID: -876546973899608171, guid: 7efdffb6460bd8a4e80c6be7411e0090, type: 3}
   CardBack: {fileID: 2100000, guid: a58d47be9e83d084bb7b5a14e3902b73, type: 2}
   CardFront: {fileID: 2100000, guid: 19024e8e2c281e14eafda82aa0153f32, type: 2}
-  card: {fileID: 11400000, guid: b69a120f819607a4e88c64fb0bce907d, type: 2}
-  cardPool: {fileID: 11400000, guid: 49a1a9d2b372b4742a8a8dedbd424b07, type: 2}
+  card: {fileID: 11400000, guid: 4061be78f5b54014ca5b8107002f8fbd, type: 2}
+  cardPool: {fileID: 11400000, guid: 5a6d3c53530369b409dbb333635ccd53, type: 2}
   meshRenderer: {fileID: 0}
   newCurrentSpace:
     m_PersistentCalls:
@@ -3968,7 +3968,7 @@ MonoBehaviour:
   Blinking: {fileID: -876546973899608171, guid: 7efdffb6460bd8a4e80c6be7411e0090, type: 3}
   CardBack: {fileID: 2100000, guid: a58d47be9e83d084bb7b5a14e3902b73, type: 2}
   CardFront: {fileID: 2100000, guid: 19024e8e2c281e14eafda82aa0153f32, type: 2}
-  card: {fileID: 11400000, guid: b69a120f819607a4e88c64fb0bce907d, type: 2}
+  card: {fileID: 11400000, guid: 4061be78f5b54014ca5b8107002f8fbd, type: 2}
   cardPool: {fileID: 11400000, guid: da65638bcc5772641af6b7abb4825792, type: 2}
   meshRenderer: {fileID: 0}
   newCurrentSpace:
@@ -4168,7 +4168,7 @@ MonoBehaviour:
   Blinking: {fileID: -876546973899608171, guid: 7efdffb6460bd8a4e80c6be7411e0090, type: 3}
   CardBack: {fileID: 2100000, guid: a58d47be9e83d084bb7b5a14e3902b73, type: 2}
   CardFront: {fileID: 2100000, guid: 19024e8e2c281e14eafda82aa0153f32, type: 2}
-  card: {fileID: 11400000, guid: 5d81aefc97b1cd3428728d6ec05b6937, type: 2}
+  card: {fileID: 11400000, guid: 4061be78f5b54014ca5b8107002f8fbd, type: 2}
   cardPool: {fileID: 11400000, guid: 5a6d3c53530369b409dbb333635ccd53, type: 2}
   meshRenderer: {fileID: 0}
   newCurrentSpace:
