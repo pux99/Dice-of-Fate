@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e1cbffc0f515d43b6b04b985e63136, type: 3}
   m_Name: SpecialDieN2
   m_EditorClassIdentifier: 
-  texture: {fileID: 2800000, guid: 52005c3758bdd404cbe4b1d946ae3475, type: 3}
+  texture: {fileID: 2800000, guid: 420311a9247ae664483834efb53d1553, type: 3}
   faces:
   - name: Face 1
     effectData:

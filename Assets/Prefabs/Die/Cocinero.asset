@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e1cbffc0f515d43b6b04b985e63136, type: 3}
   m_Name: Cocinero
   m_EditorClassIdentifier: 
-  texture: {fileID: 0}
+  texture: {fileID: 2800000, guid: d6f5c02f4f426e14dad941f9b25731f0, type: 3}
   faces:
   - name: Face 1
     effectData:
