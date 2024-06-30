@@ -173,4 +173,8 @@ public class Fighter : MonoBehaviour
                 break;
         }
     }
+    public void updateHp()
+    {
+        UpdateHealthBar.Invoke(this);
+    }
 }
