@@ -9,6 +9,7 @@ public class BoardManager : MonoBehaviour
     List<BoardSpace> spaceList=new List<BoardSpace>();
     [SerializeField] private BoardSpace currentSpace;
     public UnityEvent<EventCard> cardEvent=new UnityEvent<EventCard>();
+    public UnityEvent<EnemyCard> combatEvent = new UnityEvent<EnemyCard>();
     public UnityEvent<Rewards.Reward, string> endOfEventRewardCalculation=new UnityEvent<Rewards.Reward,string>();
     public CombatManager combat;
     public Die die;
@@ -93,7 +94,12 @@ public class BoardManager : MonoBehaviour
         }
         if (space.card.GetType() == typeof(EnemyCard) && !space.Used)//space.card.CardType == "Enemy" && !space.Used)
         {
-            startCombat((EnemyCard)space.card);
+            foreach (BoardSpace boardSpace in spaceList)
+            {
+                boardSpace.EventOnGoing = true;
+            }
+            combatEvent.Invoke((EnemyCard)space.card);
+            //startCombat((EnemyCard)space.card);
             //foreach (BoardSpace boardSpace in spaceList)
             //{
             //    boardSpace.EventOnGoing = true;

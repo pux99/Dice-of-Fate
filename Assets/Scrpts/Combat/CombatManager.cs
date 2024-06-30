@@ -77,7 +77,12 @@ public class CombatManager : MonoBehaviour
             die.freez();
         }
         SoundAudioClip.instance.Destroymusic();
-        SoundManager.PlayMusic(SoundManager.Sound.EnemyMusic,true);
+        if(enemy.card.boss)
+        {
+            SoundManager.PlayMusic(SoundManager.Sound.BossMusic, true);
+        }
+        else
+            SoundManager.PlayMusic(SoundManager.Sound.EnemyMusic,true);
         combatStart.Invoke();
         scoring.updateScore();
     }
@@ -189,7 +194,9 @@ public class CombatManager : MonoBehaviour
         {
             die.Disolv(true);
             die._selected = false;
+            die.turnOffOutline();
         }
+        select.calculatePoint();
         scoring.timeToMove = false;
         if (enemy.health > 0 && !enemy.SkipNextTurn)
             enemyTurn.startState(enemy.dice, enemy.attack);

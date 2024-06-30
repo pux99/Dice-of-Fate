@@ -70,6 +70,8 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject WinOverlay;
     [SerializeField] private GameObject endOfGameOverlay;
     [SerializeField] private GameObject LossOverlay;
+    [SerializeField] private GameObject CombatStarUp;
+    [SerializeField] private combatuistarter combatuistarter;
     #endregion
     #region Board
     [Space(2)]
@@ -154,6 +156,7 @@ public class UiManager : MonoBehaviour
     public void BoardEventSubscription() 
     {
         board.cardEvent.AddListener(CardEventDisplay);
+        board.combatEvent.AddListener(CardCombatDisplay);
         board.endOfEventRewardCalculation.AddListener(CardEventEnding);
     }
 
@@ -296,9 +299,14 @@ public class UiManager : MonoBehaviour
         else
             option3.gameObject.SetActive(false);
     }
+    public void CardCombatDisplay(EnemyCard card)
+    {
+        CombatStarUp.SetActive(true);
+        combatuistarter.setenemy(card);
+    }
     public void CardEventEnding(Rewards.Reward reward,string OptionText)
     {
-        EventText.text = EventText.text + "\n\n<color=#ac0505>" + OptionText + "</color>";
+        EventText.text = EventText.text + "\n\n<color=#BDB4FF>" + OptionText + "</color>";
         EventText.text = EventText.text + "\n\n" + reward.consequence;
         option1.gameObject.SetActive(false);
         option2.gameObject.SetActive(false);
