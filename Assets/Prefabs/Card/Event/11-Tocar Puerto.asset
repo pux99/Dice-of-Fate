@@ -34,7 +34,7 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
-        _consequence: Logras visitar las tiendas de la ciudad. Puedes cambiar uno
+        _consequence: Logras visitar las tiendas de la ciudad. Logras cambiar uno
           de tus dados por uno especial.
       roll3:
         effects:
@@ -43,7 +43,7 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
-        _consequence: Logras visitar las tiendas de la ciudad. Puedes cambiar uno
+        _consequence: Logras visitar las tiendas de la ciudad. Logras cambiar uno
           de tus dados por uno especial.
       roll4:
         effects:
@@ -52,7 +52,7 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
-        _consequence: Logras visitar las tiendas de la ciudad. Puedes cambiar uno
+        _consequence: Logras visitar las tiendas de la ciudad. Logras cambiar uno
           de tus dados por uno especial.
       roll5:
         effects:
@@ -61,7 +61,7 @@ MonoBehaviour:
           Value: 1
           enemy: {fileID: 0}
           specialDie: {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
-        _consequence: Logras visitar las tiendas de la ciudad. Puedes cambiar uno
+        _consequence: Logras visitar las tiendas de la ciudad. Logras cambiar uno
           de tus dados por uno especial.
       roll6:
         effects: []

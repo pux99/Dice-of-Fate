@@ -60,7 +60,7 @@ MonoBehaviour:
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
         _consequence: "Cantas tan mal que les levantas el \xE1nimo a tus compa\xF1eros\u2026
-          para tirarte fruta podrida y te calles"
+          para tirarte fruta podrida y te calles. Recibes 200 de da\xF1o."
       roll5:
         effects:
         - target: 1
@@ -69,7 +69,7 @@ MonoBehaviour:
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
         _consequence: "Cantas tan mal que les levantas el \xE1nimo a tus compa\xF1eros\u2026
-          para tirarte fruta podrida y te calles"
+          para tirarte fruta podrida y te calles. Recibes 200 de da\xF1o."
       roll6:
         effects:
         - target: 1
@@ -78,7 +78,7 @@ MonoBehaviour:
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
         _consequence: "Cantas tan mal que les levantas el \xE1nimo a tus compa\xF1eros\u2026
-          para tirarte fruta podrida y te calles"
+          para tirarte fruta podrida y te calles. Recibes 200 de da\xF1o."
   - _buttonText: No Ayudar
     _text: No tienes porque meterte donde no te llaman.
     _roll: 0

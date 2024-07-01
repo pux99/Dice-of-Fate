@@ -19,7 +19,7 @@ MonoBehaviour:
   health: 1550
   shield: 500
   numbreOfNormalDice: 5
-  attack: 25
+  attack: 20
   boss: 0
   specialDice: []
   OnCombatStartEffects: []

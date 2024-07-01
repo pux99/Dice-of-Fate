@@ -15,9 +15,9 @@ MonoBehaviour:
   CardName: Contramaestre
   CardArt: {fileID: 21300000, guid: 57b1e10ea1acbab4ca0bf9859fea6015, type: 3}
   enemy: {fileID: 0}
-  maxHealth: 3600
-  health: 3600
-  shield: 800
+  maxHealth: 3500
+  health: 3500
+  shield: 600
   numbreOfNormalDice: 5
   attack: 10
   boss: 1

@@ -32,3 +32,8 @@ MonoBehaviour:
     Value: 250
     enemy: {fileID: 0}
     specialDie: {fileID: 0}
+  - target: 1
+    type: 1
+    Value: 250
+    enemy: {fileID: 0}
+    specialDie: {fileID: 0}

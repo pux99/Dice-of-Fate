@@ -15,16 +15,21 @@ MonoBehaviour:
   CardName: Loro
   CardArt: {fileID: 21300000, guid: fa99c4e8b49891245a7a4a236eaad875, type: 3}
   enemy: {fileID: 0}
-  maxHealth: 4000
-  health: 4000
-  shield: 850
+  maxHealth: 4200
+  health: 4200
+  shield: 600
   numbreOfNormalDice: 0
   attack: 15
   boss: 1
   specialDice:
   - {fileID: 11400000, guid: 46db13dcb7e4bc148b9e7996ca3a69b3, type: 2}
   OnCombatStartEffects: []
-  OnTurnStartEffects: []
+  OnTurnStartEffects:
+  - target: 2
+    type: 4
+    Value: 2
+    enemy: {fileID: 0}
+    specialDie: {fileID: 0}
   OnTakingDamageEffects: []
   Random: 0
   rewards:

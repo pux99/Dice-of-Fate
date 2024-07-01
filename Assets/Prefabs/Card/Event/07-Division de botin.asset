@@ -36,6 +36,11 @@ MonoBehaviour:
           Value: 200
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
+        - target: 1
+          type: 1
+          Value: 200
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
         _consequence: "Consigues un dado extra y 200 de vida m\xE1xima."
       roll2:
         effects:
@@ -52,11 +57,21 @@ MonoBehaviour:
           Value: 400
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
+        - target: 1
+          type: 1
+          Value: 400
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
         _consequence: "Consigues 400 de vida m\xE1xima."
       roll4:
         effects:
         - target: 1
           type: 3
+          Value: 200
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        - target: 1
+          type: 1
           Value: 200
           enemy: {fileID: 0}
           specialDie: {fileID: 0}
