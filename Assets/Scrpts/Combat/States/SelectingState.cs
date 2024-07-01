@@ -49,8 +49,6 @@ public class SelectingState : CombatState
                selected.Remove(die);
         calculatePoint();
         SelectedPointsChange.Invoke(_points);
-
-
     }
     public void calculatePoint()
     {

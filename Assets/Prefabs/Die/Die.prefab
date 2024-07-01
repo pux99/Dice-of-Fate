@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 8123346388604599972}
   - component: {fileID: 8555694955966488161}
   - component: {fileID: 8434050276553528261}
-  - component: {fileID: 4970752192161982182}
+  - component: {fileID: 875683777699109307}
   m_Layer: 7
   m_Name: Die
   m_TagString: Untagged
@@ -254,14 +254,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &4970752192161982182
-MeshCollider:
+--- !u!65 &875683777699109307
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6717307124609694603}
-  m_Material: {fileID: 13400000, guid: dc3857ee7d04c1b46930afb5ca319fd5, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -272,10 +272,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: d257d4c5795dbae418c79e0857a9df4c, type: 2}
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4270468609840195433
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EffectTEst
   m_EditorClassIdentifier: 
   CardName: test
-  CardArt: {fileID: 21300000, guid: 9b4b22f588b4a814fbc2056dc58c8c36, type: 3}
+  CardArt: {fileID: 21300000, guid: 8231201d0e88ac241a1d84f547e75ad3, type: 3}
   _cardText: test
   options:
   - _buttonText: aaa

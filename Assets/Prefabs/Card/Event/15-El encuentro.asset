@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 15-El encuentro
   m_EditorClassIdentifier: 
   CardName: El encuentro
-  CardArt: {fileID: 21300000, guid: bdd1ffad37767ed419c419b16f7e4e89, type: 3}
+  CardArt: {fileID: 21300000, guid: de0f7cafb690a5848bf8165b9bb51569, type: 3}
   _cardText: "El vig\xEDa grita \u201CBarco Aliado!\", y pueden ver como a lo lejos
     un Barco Pirata se acerca r\xE1pidamente y bastante m\xE1s atr\xE1s un barco
     de La Marina. Los piratas se acercan y les piden ayuda con recursos y refuerzos,

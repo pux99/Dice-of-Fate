@@ -795,8 +795,8 @@ MonoBehaviour:
   Blinking: {fileID: -876546973899608171, guid: 7efdffb6460bd8a4e80c6be7411e0090, type: 3}
   CardBack: {fileID: 2100000, guid: a58d47be9e83d084bb7b5a14e3902b73, type: 2}
   CardFront: {fileID: 2100000, guid: 19024e8e2c281e14eafda82aa0153f32, type: 2}
-  card: {fileID: 11400000, guid: b69a120f819607a4e88c64fb0bce907d, type: 2}
-  cardPool: {fileID: 11400000, guid: 49a1a9d2b372b4742a8a8dedbd424b07, type: 2}
+  card: {fileID: 11400000, guid: 160f258e70b12664db43ba16688ce60a, type: 2}
+  cardPool: {fileID: 0}
   meshRenderer: {fileID: 0}
   newCurrentSpace:
     m_PersistentCalls:

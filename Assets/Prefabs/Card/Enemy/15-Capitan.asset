@@ -18,18 +18,13 @@ MonoBehaviour:
   maxHealth: 5000
   health: 5000
   shield: 1000
-  numbreOfNormalDice: 5
-  attack: 20
+  numbreOfNormalDice: 10
+  attack: 10
   boss: 1
   specialDice:
   - {fileID: 11400000, guid: 9c86216097f1bea4db9967bfdf5dfe41, type: 2}
   OnCombatStartEffects: []
-  OnTurnStartEffects:
-  - target: 2
-    type: 4
-    Value: 1
-    enemy: {fileID: 0}
-    specialDie: {fileID: 0}
+  OnTurnStartEffects: []
   OnTakingDamageEffects:
   - target: 2
     type: 4

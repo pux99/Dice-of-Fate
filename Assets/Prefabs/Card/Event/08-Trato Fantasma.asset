@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 08-Trato Fantasma
   m_EditorClassIdentifier: 
   CardName: Trato fantasma
-  CardArt: {fileID: 21300000, guid: 598a5237f2706254982d933f30089bb8, type: 3}
+  CardArt: {fileID: 21300000, guid: 17821b5924e585e4a9fc120b1af10902, type: 3}
   _cardText: "Una noche mientras est\xE1s limpiando el piso observas como un extra\xF1o
     barco se acerca al tuyo, es un barco lleno de piratas fantasmas. Cuando est\xE1n
     lo suficientemente cerca como para que los escuches  ellos te ofrecen un trato"

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 05-Pelea De Monos
   m_EditorClassIdentifier: 
   CardName: Pelea de monos
-  CardArt: {fileID: 21300000, guid: 44b199109bb503046bba43e34252bf72, type: 3}
+  CardArt: {fileID: 21300000, guid: 94e4a792758af8345a433094fdf9a73f, type: 3}
   _cardText: "Notas que la tripulaci\xF3n est\xE1 toda junta rodeando algo. Al acercarte
     notas que la raz\xF3n por la que est\xE1n as\xED es porque est\xE1n teniendo
     una pelea de monos con apuestas"

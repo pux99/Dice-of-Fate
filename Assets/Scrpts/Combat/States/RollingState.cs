@@ -8,6 +8,7 @@ public class RollingState : CombatState
     // Start is called before the first frame update
     private int rollingCount;
     public UnityEvent endOfRoling;
+    Coroutine lastRoutine = null;
     private void Awake()
     {
         endOfRoling = new UnityEvent();
@@ -31,7 +32,7 @@ public class RollingState : CombatState
             }
             if (rollingCount == dieList.Count) 
             {
-                StopCoroutine(StuckPrevention());
+                StopCoroutine(lastRoutine);// no funciona no se porque
                 endOfRoling.Invoke();
                 active = false;
                 clearList();
@@ -51,7 +52,7 @@ public class RollingState : CombatState
             die.Roll();
         }
         rollingCount=0;
-        StartCoroutine(StuckPrevention());
+        lastRoutine=StartCoroutine(StuckPrevention());
         
     }
     IEnumerator StuckPrevention()
@@ -64,7 +65,8 @@ public class RollingState : CombatState
                 die.CheckValue();
             }
         }
-        endOfRoling.Invoke();
+        //if(active!=false)
+            endOfRoling.Invoke();
         active = false;
         clearList();
 

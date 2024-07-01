@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "12-V\xF3mitos contagiosos"
   m_EditorClassIdentifier: 
   CardName: "V\xF3mitos contagiosos"
-  CardArt: {fileID: 21300000, guid: a5442cf0ae865fb4c8e67531f9bba298, type: 3}
+  CardArt: {fileID: 21300000, guid: 3a13630890a208141bb97ed960ff03fe, type: 3}
   _cardText: "El gran oleaje hace que algunos de los piratas m\xE1s flojos, empiecen
     a vomitar "
   options:

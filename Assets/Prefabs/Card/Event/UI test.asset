@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: UI test
   m_EditorClassIdentifier: 
   CardName: UI test
-  CardArt: {fileID: 21300000, guid: b8bc7b5d9de8d6847afb13411b08350a, type: 3}
+  CardArt: {fileID: 21300000, guid: 8231201d0e88ac241a1d84f547e75ad3, type: 3}
   _cardText: esta carta esta para probar la ui por lo tanto no tiene ningu
   options:
   - _buttonText: BBBBBBBBBBB

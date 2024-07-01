@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pill
   m_EditorClassIdentifier: 
   CardName: Elige Tu Pildora
-  CardArt: {fileID: 21300000, guid: 99fb76cbe79fd7e47b99b01cb4b283f6, type: 3}
+  CardArt: {fileID: 21300000, guid: 8231201d0e88ac241a1d84f547e75ad3, type: 3}
   _cardText: La bruja te ofrece a elegir entre dos dados
   options:
   - _buttonText: Dado Rojo

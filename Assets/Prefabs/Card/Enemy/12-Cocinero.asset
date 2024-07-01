@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 12-Cocinero
   m_EditorClassIdentifier: 
   CardName: Cocinero
-  CardArt: {fileID: 21300000, guid: 9380c3547487f5544bdfa910e9814808, type: 3}
+  CardArt: {fileID: 21300000, guid: ddd95c6e2096bcf4cb781107c70b6b3a, type: 3}
   enemy: {fileID: 0}
   maxHealth: 2000
   health: 2000

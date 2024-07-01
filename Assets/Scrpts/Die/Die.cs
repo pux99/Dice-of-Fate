@@ -61,6 +61,7 @@ public class Die : MonoBehaviour
         select=new UnityEvent<bool,Die>();
         mr = GetComponent<MeshRenderer>();
         rb = GetComponent<Rigidbody>();
+        _outline = transform.GetChild(transform.childCount - 1).gameObject;
     }
     void Start()
     {
@@ -76,11 +77,10 @@ public class Die : MonoBehaviour
                 _faces[i].effect = DieData.faces[i];
                 if (_faces[i].effect.effectData.type != EffectData.Type.None)
                     _faces[i].special = true;
-
                 _faces[i].value = DieData.faceValues[i];
             }
         }
-        _outline = transform.GetChild(transform.childCount - 1).gameObject;
+        
         freez();
 
         disolv = 1;

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 16-La bruja
   m_EditorClassIdentifier: 
   CardName: La bruja
-  CardArt: {fileID: 21300000, guid: 6e75f80e846941742854ace50624578b, type: 3}
+  CardArt: {fileID: 21300000, guid: 76558ceee7bfd0e47ac305bf60de0533, type: 3}
   _cardText: En una de las embarcaciones, una de las brujas del pueblo les pide que
     la lleven a otra isla, a cambio de un poder misterioso.
   options:
