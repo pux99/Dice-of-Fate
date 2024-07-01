@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 04-Vientos fuertes
   m_EditorClassIdentifier: 
   CardName: Vientos fuertes
-  CardArt: {fileID: 21300000, guid: 755d0a3ec1a1e6e40a219d7b3713bf34, type: 3}
+  CardArt: {fileID: 21300000, guid: 213abb5e6b3d93c4ab1ae3a2712659e4, type: 3}
   _cardText: "Te levantas y notas un fuerte viento esta ma\xF1ana. Tratas de aprovecharlo
     para poder impulsar el barco. "
   options:

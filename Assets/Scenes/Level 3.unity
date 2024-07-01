@@ -4385,6 +4385,14 @@ PrefabInstance:
       propertyPath: audioClip
       value: 
       objectReference: {fileID: 1873483841}
+    - target: {fileID: 833410578591231713, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 916044420958284225, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1717338005095308976, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4395,10 +4403,10 @@ PrefabInstance:
       objectReference: {fileID: 1568401981}
     - target: {fileID: 1787245855698307890, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000061035156
+      value: -0.000061035156
       objectReference: {fileID: 0}
-    - target: {fileID: 1896120577666542624, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 1987860122478898648, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2038462001704575769, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
@@ -4429,14 +4437,42 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2786959787569140777, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2786959787569140777, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2786959787569140777, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2786959787569140777, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2786959787569140777, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2788265825819482682, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
       propertyPath: boardManager
       value: 
       objectReference: {fileID: 1568401981}
+    - target: {fileID: 3172196781761323991, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4035069981627361521, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
       propertyPath: boardManager
       value: 
       objectReference: {fileID: 1568401981}
+    - target: {fileID: 4215244551209349128, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4434974198488465417, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
       propertyPath: m_Value
       value: 0
@@ -4521,6 +4557,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5791757324148969322, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6477103443244460262, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -4589,14 +4629,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 688020857}
-    - target: {fileID: 8731362507756183424, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
-      propertyPath: m_fontSize
-      value: 44.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8731362507756183424, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 9001863778833115004, guid: 1aa64b2442350fb4ea96e9ca0f9ae0c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

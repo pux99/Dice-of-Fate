@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 14- Lavado de platos
   m_EditorClassIdentifier: 
   CardName: ' Lavado de platos '
-  CardArt: {fileID: 21300000, guid: 20d78d11196872747aeb33e19464889e, type: 3}
+  CardArt: {fileID: 21300000, guid: e19011082b0e0f84b95f998869fa4f6b, type: 3}
   _cardText: "Como ayudante de cocina, tienes que lavar los platos y botellas. Pero
     no est\xE1s seguro de cual de todos los barriles de agua es el correcto\u2026"
   options:
