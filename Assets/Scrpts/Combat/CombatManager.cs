@@ -211,6 +211,7 @@ public class CombatManager : MonoBehaviour
             OnUseDie.Add(die);
             die.freez();
         }
+        SoundAudioClip.instance.DestroySounds();
         scoring.ClearList();
         scoring.calculatePoint();
     }
