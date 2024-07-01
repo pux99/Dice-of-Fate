@@ -2705,7 +2705,7 @@ MonoBehaviour:
   _OnTakingDamageEffects: []
   lives: 1
   SkipNextTurn: 0
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0.99607843, g: 0.79607844, b: 1, a: 0}
   effectApllier: {fileID: 795504410}
   BaseDie: {fileID: 6717307124609694603, guid: b37c4de47fff15946a09bda4f0a712ab, type: 3}
   Defeted:
@@ -3882,7 +3882,7 @@ MonoBehaviour:
   _OnTakingDamageEffects: []
   lives: 1
   SkipNextTurn: 0
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0.5058824, g: 1, b: 0.96862745, a: 1}
   effectApllier: {fileID: 795504410}
   BaseDie: {fileID: 6717307124609694603, guid: b37c4de47fff15946a09bda4f0a712ab, type: 3}
   Defeted:
