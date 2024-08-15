@@ -1,14 +1,8 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Animations;
 using UnityEngine.Events;
-using static UnityEngine.Rendering.DebugUI;
-using static UnityEngine.UI.GridLayoutGroup;
 
 public class CombatManager : MonoBehaviour
 {
@@ -23,15 +17,15 @@ public class CombatManager : MonoBehaviour
     public Player player;
     public Enemy enemy;
 
-    private List<Die> OnUseDie= new List<Die>();
+    private List<Die> OnUseDie = new List<Die>();
     public List<Die> pOnUseDie { get { return OnUseDie; } }
-    
-    public int Flips=0;
+
+    public int Flips = 0;
 
     public EffectApllier effectApllier;
 
-    public UnityEvent combatStart=new UnityEvent();
-    public UnityEvent<int> FlipValueChange=new UnityEvent<int>();
+    public UnityEvent combatStart = new UnityEvent();
+    public UnityEvent<int> FlipValueChange = new UnityEvent<int>();
     public UnityEvent<string> win = new UnityEvent<string>();
     public UnityEvent<string> TextoDeEffectos = new UnityEvent<string>();
     public UnityEvent loss = new UnityEvent();
@@ -42,7 +36,7 @@ public class CombatManager : MonoBehaviour
         EventSubscription();
         //CombatStart(player,enemy);
     }
-    public void EventSubscription() 
+    public void EventSubscription()
     {
         rolling.endOfRoling.AddListener(fliping);// ver que eventos se pueden remover gracias a los botones
         flip.endOfFlip.AddListener(selection);
@@ -58,7 +52,7 @@ public class CombatManager : MonoBehaviour
 
     }
 
-    public void CombatStart(Player NewPlayer,Enemy NewEnemy)
+    public void CombatStart(Player NewPlayer, Enemy NewEnemy)
     {
         player = NewPlayer;
         enemy = NewEnemy;
@@ -77,12 +71,12 @@ public class CombatManager : MonoBehaviour
             die.freez();
         }
         SoundAudioClip.instance.Destroymusic();
-        if(enemy.card.boss)
+        if (enemy.card.boss)
         {
             SoundManager.PlayMusic(SoundManager.Sound.BossMusic, true);
         }
         else
-            SoundManager.PlayMusic(SoundManager.Sound.EnemyMusic,true);
+            SoundManager.PlayMusic(SoundManager.Sound.EnemyMusic, true);
         combatStart.Invoke();
         scoring.updateScore();
     }
@@ -134,8 +128,8 @@ public class CombatManager : MonoBehaviour
     {
         for (int i = 0; i < OnUseDie.Count; i++)
         {
-            bool onUse=false;
-            foreach(Die d2 in list)
+            bool onUse = false;
+            foreach (Die d2 in list)
             {
                 if (OnUseDie[i] == d2)
                 {
@@ -145,7 +139,7 @@ public class CombatManager : MonoBehaviour
             if (!onUse)
             {
                 OnUseDie.RemoveAt(i);
-                    i--;
+                i--;
             }
         }
     }
@@ -175,21 +169,21 @@ public class CombatManager : MonoBehaviour
     public void EndOfPlayerTurn()
     {
         select.ResetValues();
-        if(scoring.scoredInThisTurn)
-            DamageFigther(enemy,scoring.score);
+        if (scoring.scoredInThisTurn)
+            DamageFigther(enemy, scoring.score);
         else
         {
             //un log
         }
         scoring.scoredInThisTurn = false;
-        Log.AddLog("<color=#"+ ColorUtility.ToHtmlStringRGB(enemy.color) +">" + enemy.name + "</color>" + " perdio " + scoring.score + " puntos de vida");
+        Log.AddLog("<color=#" + ColorUtility.ToHtmlStringRGB(enemy.color) + ">" + enemy.name + "</color>" + " perdio " + scoring.score + " puntos de vida");
         scoring.score = 0;
         scoring.TotalPointsChange.Invoke(scoring.score);
         ApllyDiceEffects(scoring.SpecialDice, enemy, player);
         if (enemy.health > 0)
         {
             enemy.OnTurnStart();
-        }     
+        }
         foreach (Die die in player.dice)
         {
             die.Disolv(true);
@@ -203,7 +197,7 @@ public class CombatManager : MonoBehaviour
         else if (enemy.SkipNextTurn)
         {
             enemyTurn.EndOfEnemyTurn.Invoke(0);
-            enemy.SkipNextTurn=false;
+            enemy.SkipNextTurn = false;
         }
         OnUseDie.Clear();
         foreach (var die in player.dice)
@@ -218,15 +212,15 @@ public class CombatManager : MonoBehaviour
     public void EndOfEnemyTurn(int value)
     {
         player.Damage(value);
-        Log.AddLog("<color=#" + ColorUtility.ToHtmlStringRGB(player.color)+ ">" + player.name + "</color>" + " perdio " + value + " puntos de vida");
+        Log.AddLog("<color=#" + ColorUtility.ToHtmlStringRGB(player.color) + ">" + player.name + "</color>" + " perdio " + value + " puntos de vida");
         player.OnTurnStart();
     }
     public void EndOfEnemyTurnDiceEfects(List<Die> specialDice)
     {
         foreach (var die in specialDice)
-            effectApllier.ApplyEffect(die.DieData.faces[die.currentFace.normalValue-1].effectData);
+            effectApllier.ApplyEffect(die.DieData.faces[die.currentFace.normalValue - 1].effectData);
     }
-    void DamageFigther(Fighter fighter,int value)
+    void DamageFigther(Fighter fighter, int value)
     {
         fighter.Damage(value);
     }
@@ -238,12 +232,14 @@ public class CombatManager : MonoBehaviour
     public void modifyFlipCount(int value)
     {
         Flips += value;
-        if (Flips < 0) {
+        if (Flips < 0)
+        {
             Flips = 0;
         }
-        if (Flips > OnUseDie.Count) {
+        if (Flips > OnUseDie.Count)
+        {
             Flips = OnUseDie.Count;
-            
+
         }
         FlipValueChange.Invoke(Flips);
     }
@@ -251,17 +247,17 @@ public class CombatManager : MonoBehaviour
     {
         modifyFlipCount(0);
     }
-    void Win( )
+    void Win()
     {
         SoundAudioClip.instance.Destroymusic();
         SoundManager.PlayMusic(SoundManager.Sound.VictoryMusic, false);
         enemy.Defeted.RemoveListener(Win);
-        string rewardText="";
-        
-        foreach (EffectData effect in enemy.rewards )
+        string rewardText = "";
+
+        foreach (EffectData effect in enemy.rewards)
         {
             effectApllier.ApplyEffect(effect);
-            rewardText += Log.Logs.Last().GetComponent<TextMeshProUGUI>().text +" " ;
+            rewardText += Log.Logs.Last().GetComponent<TextMeshProUGUI>().text + " ";
         }
         win.Invoke(rewardText);
     }
@@ -279,7 +275,7 @@ public class CombatManager : MonoBehaviour
         {
             effectApllier.ApplyEffect(die.currentFace.effect.effectData);
         }
-        if(dice.Count > 0)
+        if (dice.Count > 0)
             TextoDeEffectos.Invoke(sucesos);
     }
 }

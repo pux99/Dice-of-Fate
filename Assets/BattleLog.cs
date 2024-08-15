@@ -1,12 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
+
 
 public class BattleLog : MonoBehaviour
 {
-    public List<GameObject> Logs=new List<GameObject>();
+    public List<GameObject> Logs = new List<GameObject>();
     public GameObject baseLog;
     public GameObject log;
     public EffectApllier effectApllier;
@@ -19,42 +18,42 @@ public class BattleLog : MonoBehaviour
     }
     public void AddLog(string logText)
     {
-        GameObject newlog= Instantiate(baseLog, log.transform);
+        GameObject newlog = Instantiate(baseLog, log.transform);
         newlog.GetComponent<TextMeshProUGUI>().text = logText;
         Logs.Add(newlog);
     }
-    public void AddEffectLog(EffectData effect,Fighter target)
+    public void AddEffectLog(EffectData effect, Fighter target)
     {
-        GameObject newlog = Instantiate(baseLog,log.transform);
+        GameObject newlog = Instantiate(baseLog, log.transform);
         string text;
         string color;
         if (effect.target == EffectData.Target.Player)
-            color= "<color=#"+ ColorUtility.ToHtmlStringRGB(player.color)+">";
+            color = "<color=#" + ColorUtility.ToHtmlStringRGB(player.color) + ">";
         else
-            color = "<color=#" + ColorUtility.ToHtmlStringRGB(enemy.color)+">";
+            color = "<color=#" + ColorUtility.ToHtmlStringRGB(enemy.color) + ">";
         switch (effect.type)
         {
             case EffectData.Type.Heal:
-                text = color+target.name+ "</color>" + " se curo "+effect.Value+" puntos de vida ";
+                text = color + target.name + "</color>" + " se curo " + effect.Value + " puntos de vida ";
                 break;
             case EffectData.Type.Damage:
                 text = color + target.name + "</color>" + " perdio " + effect.Value + " puntos de vida";
                 break;
             case EffectData.Type.MaxLife:
-                if(effect.Value>0)
+                if (effect.Value > 0)
                     text = color + target.name + "</color>" + " Gano " + effect.Value + " puntos de vida maxima ";
                 else
-                    text = color + target.name + "</color>" + " perdio " + Mathf.Abs( effect.Value) + " puntos de vida maxima ";
+                    text = color + target.name + "</color>" + " perdio " + Mathf.Abs(effect.Value) + " puntos de vida maxima ";
                 break;
             case EffectData.Type.DiceMode:
                 if (effect.Value > 0)
                 {
-                    if(effect.Value==1)
+                    if (effect.Value == 1)
                         text = color + target.name + "</color>" + " Gano un dado";
                     else
                         text = color + target.name + "</color>" + " Gano " + effect.Value + " Dados ";
                 }
-                    
+
                 else
                 {
                     if (target.dice.Count > effect.Value * -1)
