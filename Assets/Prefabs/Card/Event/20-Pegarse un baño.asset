@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efec3c4baeec50a4bb1dc6a20e911333, type: 3}
+  m_Name: "20-Pegarse un ba\xF1o"
+  m_EditorClassIdentifier: 
+  CardName: "Pegarse un ba\xF1o"
+  CardArt: {fileID: 21300000, guid: 38e69d5568767a34db7662da74653b04, type: 3}
+  _cardText: "No es muy com\xFAn entre los piratas y como no entienden mucho sobre
+    estar limpios usan el agua de mar, como si fueran a ba\xF1arse. Ni jab\xF3n ni
+    nada, solo agua de mar."
+  options:
+  - _buttonText: "ba\xF1arse?"
+    _text: 
+    _roll: 1
+    _options:
+      noRoll:
+        effects: []
+        _consequence: 
+      roll1:
+        effects:
+        - target: 1
+          type: 1
+          Value: 1500
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: "Te ba\xF1as y te curas toda la vida."
+      roll2:
+        effects:
+        - target: 1
+          type: 1
+          Value: 1500
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: "Te ba\xF1as y te curas toda la vida."
+      roll3:
+        effects:
+        - target: 1
+          type: 1
+          Value: 1500
+          enemy: {fileID: 0}
+          specialDie: {fileID: 0}
+        _consequence: "Te ba\xF1as y te curas toda la vida."
+      roll4:
+        effects: []
+        _consequence: "Decides que puedes esperar otra semana m\xE1s."
+      roll5:
+        effects: []
+        _consequence: "Decides que puedes esperar otra semana m\xE1s."
+      roll6:
+        effects: []
+        _consequence: "Decides que puedes esperar otra semana m\xE1s."

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class OptionButton : MonoBehaviour
 {
-    public CardEvent.Options option;
+    public EventCard.Options option;
     public bool RollFinish;
     public BoardManager boardManager;
-    public void StartUpButton(CardEvent.Options opt)
+    public void StartUpButton(EventCard.Options opt)
     {
         option = opt;
     }

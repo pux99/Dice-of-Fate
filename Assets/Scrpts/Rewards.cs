@@ -25,29 +25,36 @@ using UnityEngine;
 [Serializable]
 public class Rewards
 {
-     public enum EffectType
-     {
-         none,
-         Heal,
-         Damage,
-         MaxLife,
-         DiceMode,
-         changaDie
-     }
-    [Serializable]
-    public struct Effect
-     {
-         [SerializeField] private EffectType _reward;
-         [SerializeField] private int _value;
-        [SerializeField] private GameObject _GameObjectReward;
-        public EffectType reward { get { return _reward; } }
-         public int value { get { return _value; } }
-        public GameObject GameObjectReward { get { return _GameObjectReward; } }
-     }
+    // public enum EffectType
+    // {
+    //     none,
+    //     Heal,
+    //     Damage,
+    //     MaxLife,
+    //     DiceMode,
+    //     changaDie,
+    //     EnemylossTurn,
+    //     RevelEnemyCard,
+    //     BuffEnemyArmor,
+    //     DamageBoss,
+    //     ArmorBoss,
+    //     DiceBoss,
+    //     StartBattle
+    // }
+    //[Serializable]
+    //public struct Effect
+    // {
+    //     [SerializeField] private EffectType _reward;
+    //     [SerializeField] private int _value;
+    //    [SerializeField] private GameObject _GameObjectReward;
+    //    public EffectType reward { get { return _reward; } }
+    //     public int value { get { return _value; } }
+    //    public GameObject GameObjectReward { get { return _GameObjectReward; } }
+    // }
      [Serializable]
      public struct Reward
      {
-         public List<Effect> effects;
+         public List<EffectData> effects;
          [SerializeField] private string _consequence;
          public string consequence { get { return _consequence; } }
      }

@@ -8,17 +8,19 @@ public class BoardManager : MonoBehaviour
     // Start is called before the first frame update
     List<BoardSpace> spaceList=new List<BoardSpace>();
     [SerializeField] private BoardSpace currentSpace;
-    public UnityEvent<CardEvent> cardEvent=new UnityEvent<CardEvent>();
-    public UnityEvent<Rewards.Reward> endOfEventRewardCalculation=new UnityEvent<Rewards.Reward>();
+    public UnityEvent<EventCard> cardEvent=new UnityEvent<EventCard>();
+    public UnityEvent<EnemyCard> combatEvent = new UnityEvent<EnemyCard>();
+    public UnityEvent<Rewards.Reward, string> endOfEventRewardCalculation=new UnityEvent<Rewards.Reward,string>();
     public CombatManager combat;
     public Die die;
-    public effectApllier Effect;
+    public EffectApllier effectApllier;
     public Player player;
     public Enemy enemy;
     public bool watingDie;
-    private CardEvent.Options currentOption;
+    private EventCard.Options currentOption;
     public MoveCamera moveCamera;
-    public Vector3 dieStartingPosition; 
+    public GameObject RollingBox ;
+    public BossModifiers bossMods=new BossModifiers();
 
     public BoardSpace PCurrentSpace
     {
@@ -50,27 +52,27 @@ public class BoardManager : MonoBehaviour
                 {
                     case 1:
                         applyEffects(currentOption.options.roll1.effects);
-                        endOfEventRewardCalculation.Invoke(currentOption.options.roll1);
+                        endOfEventRewardCalculation.Invoke(currentOption.options.roll1,currentOption.buttonText);
                         break;
                     case 2:
                         applyEffects(currentOption.options.roll2.effects);
-                        endOfEventRewardCalculation.Invoke(currentOption.options.roll2);
+                        endOfEventRewardCalculation.Invoke(currentOption.options.roll2, currentOption.buttonText);
                         break;
                     case 3:
                         applyEffects(currentOption.options.roll3.effects);
-                        endOfEventRewardCalculation.Invoke(currentOption.options.roll3);
+                        endOfEventRewardCalculation.Invoke(currentOption.options.roll3, currentOption.buttonText);
                         break;
                     case 4:
                         applyEffects(currentOption.options.roll4.effects);
-                        endOfEventRewardCalculation.Invoke(currentOption.options.roll4);
+                        endOfEventRewardCalculation.Invoke(currentOption.options.roll4, currentOption.buttonText);
                         break;
                     case 5:
                         applyEffects(currentOption.options.roll5.effects);
-                        endOfEventRewardCalculation.Invoke(currentOption.options.roll5);
+                        endOfEventRewardCalculation.Invoke(currentOption.options.roll5, currentOption.buttonText);
                         break;
                     case 6:
                         applyEffects(currentOption.options.roll6.effects);
-                        endOfEventRewardCalculation.Invoke(currentOption.options.roll6);
+                        endOfEventRewardCalculation.Invoke(currentOption.options.roll6, currentOption.buttonText);
                         break;
                     default: break;
                 }
@@ -80,24 +82,31 @@ public class BoardManager : MonoBehaviour
     }
     void changeCurrentSpace(BoardSpace space)
     {
+        
         currentSpace= space;
-        if (space.card.CardType == "Event"&&!space.Used)
+        if (space.card.GetType() == typeof(EventCard)&&!space.Used)//space.card.CardType == "Event"&&!space.Used)
         {
             foreach(BoardSpace boardSpace in spaceList)
             {
                 boardSpace.EventOnGoing = true;
             }
-            cardEvent.Invoke((CardEvent)space.card);
+            cardEvent.Invoke((EventCard)space.card);
         }
-        if (space.card.CardType == "Enemy" && !space.Used)
+        if (space.card.GetType() == typeof(EnemyCard) && !space.Used)//space.card.CardType == "Enemy" && !space.Used)
         {
             foreach (BoardSpace boardSpace in spaceList)
             {
                 boardSpace.EventOnGoing = true;
             }
-            moveCamera.MoveToDice();
-            CardEnemy cardEnemy = (CardEnemy)space.card;
-            cardEnemy.SetUpEnemy(enemy);
+            combatEvent.Invoke((EnemyCard)space.card);
+            //startCombat((EnemyCard)space.card);
+            //foreach (BoardSpace boardSpace in spaceList)
+            //{
+            //    boardSpace.EventOnGoing = true;
+            //}
+            //moveCamera.MoveToDice();
+            //EnemyCard cardEnemy = (EnemyCard)space.card;
+            //cardEnemy.SetUpEnemy(enemy,bossMods);
 
         }
         space.Used = true;
@@ -109,6 +118,8 @@ public class BoardManager : MonoBehaviour
         {
             boardSpace.EventOnGoing = false;
         }
+        SoundAudioClip.instance.Destroymusic();
+        SoundManager.PlayMusic(SoundManager.Sound.BackgroundMusic, true);
     }
 
     void StartCombat()
@@ -116,49 +127,30 @@ public class BoardManager : MonoBehaviour
         combat.CombatStart(player, enemy);
     }
 
-    public void ResolveEvent(CardEvent.Options options)
+    public void ResolveEvent(EventCard.Options options)
     {
         currentOption = options;
         if (options.roll)
         {
             die.Disolv(false);
-            die.transform.position = dieStartingPosition;
+            die.transform.position = RollingBox.transform.position;
             die.Roll();
             watingDie = true;
         }
         else
         {
             applyEffects(options.options.noRoll.effects);
-            endOfEventRewardCalculation.Invoke(currentOption.options.noRoll);
+            endOfEventRewardCalculation.Invoke(currentOption.options.noRoll, currentOption.buttonText);
             //options.options.noRoll.consequence
         }
     }
 
-    void applyEffects(List< Rewards.Effect> effects)
+    void applyEffects(List< EffectData> effects)
     {
 
-        foreach (Rewards.Effect effect in effects)
+        foreach (EffectData effect in effects)
         {
-            switch (effect.reward)
-            {
-                case Rewards.EffectType.Heal:
-                    Effect.heal.ApplyEffect(player,effect.value);
-                    break;
-                case Rewards.EffectType.Damage:
-                    Effect.damage.ApplyEffect(player,effect.value);
-                    break;
-                case Rewards.EffectType.MaxLife:
-                    Effect.maxheathMod.ApplyEffect(player,effect.value);
-                    break;
-                case Rewards.EffectType.DiceMode:
-                    Effect.diceamountMod.ApplyEffect(player,effect.value);
-                    break;
-                case Rewards.EffectType.changaDie:
-                    Effect.changeDie.ApplyEffect(player, effect.value,effect.GameObjectReward);
-                    break;
-                default:
-                    break;
-            }
+            effectApllier.ApplyEffect(effect);
         }
     }
     public void ResumeBoardMovement()
@@ -168,5 +160,23 @@ public class BoardManager : MonoBehaviour
         {
             boardSpace.EventOnGoing = false;
         }
+    }
+    public void reveleEnemyCard()
+    {
+        foreach (BoardSpace boardSpace in spaceList) 
+        {
+            if(boardSpace.card!=null&&boardSpace.card.GetType() == typeof(EnemyCard))
+                boardSpace.reveld=true;
+
+        }
+    }
+    public void startCombat(EnemyCard enemyCard)
+    {
+        foreach (BoardSpace boardSpace in spaceList)
+        {
+            boardSpace.EventOnGoing = true;
+        }
+        moveCamera.MoveToDice();
+        enemyCard.SetUpEnemy(enemy, bossMods);
     }
 }

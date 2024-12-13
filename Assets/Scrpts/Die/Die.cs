@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class Die : MonoBehaviour
 {
     #region Variables
+    [SerializeField] public ScriptableDie DieData;
+
     private List<DieFace> _faces=new List<DieFace>();
     private GameObject _outline;
 
@@ -30,8 +32,9 @@ public class Die : MonoBehaviour
     private bool _stopRolling;
     public bool selectable;
     public bool flippable;
-    private bool _selected;
+    public bool _selected;
     [SerializeField]private float _size;
+
 
     public float size
     {
@@ -56,16 +59,28 @@ public class Die : MonoBehaviour
     {
         flipt=new UnityEvent();
         select=new UnityEvent<bool,Die>();
+        mr = GetComponent<MeshRenderer>();
+        rb = GetComponent<Rigidbody>();
+        _outline = transform.GetChild(transform.childCount - 1).gameObject;
     }
     void Start()
     {
-        mr = GetComponent<MeshRenderer>();
-        rb= GetComponent<Rigidbody>();
-        for(int i = 0; i < transform.childCount-1; i++) 
+        for (int i = 0; i < transform.childCount-1; i++) 
         {
             _faces.Add(transform.GetChild(i).GetComponent<DieFace>());
         }
-        _outline= transform.GetChild(transform.childCount - 1).gameObject;
+        if (DieData != null)
+        {
+            mr.material.mainTexture = DieData.texture;
+            for (int i = 0; i < _faces.Count; i++)
+            {
+                _faces[i].effect = DieData.faces[i];
+                if (_faces[i].effect.effectData.type != EffectData.Type.None)
+                    _faces[i].special = true;
+                _faces[i].value = DieData.faceValues[i];
+            }
+        }
+        
         freez();
 
         disolv = 1;
@@ -73,12 +88,10 @@ public class Die : MonoBehaviour
         {
             mat.SetFloat("_Disolv", disolv);
         }
-
     }
 
     void Update()
     {
-        
         if(rb.velocity.magnitude > 0)
         {
             _rolling = true;
@@ -109,8 +122,7 @@ public class Die : MonoBehaviour
             {
                 mat.SetFloat("_Disolv", disolv);
             }
-        }
-        
+        }  
     }
     void RollingPhase()
     {
@@ -126,7 +138,10 @@ public class Die : MonoBehaviour
         {
             face.ChekIfOnTop();
             if (face.onTop)
+            {
                 _currentFace = face;
+                break;
+            }
         }
         _value = _currentFace.value;
         fixRotation();
@@ -136,6 +151,7 @@ public class Die : MonoBehaviour
     public void Roll()
     {
         UnFreez();
+        PlayRandomDiceSound();
         rb.AddForce(new Vector3(Random.Range(-5, 5), Random.Range(-20, -10), Random.Range(10, 20)), ForceMode.Impulse);
         rb.AddTorque(new Vector3(Random.Range(30, 100), Random.Range(30, 50), Random.Range(30, 200)), ForceMode.Impulse);
         _stopRolling = false;
@@ -146,6 +162,7 @@ public class Die : MonoBehaviour
     }
     public void flip()
     {
+
         _currentFace = _faces[5 - _faces.IndexOf(_currentFace)];
         _value = _currentFace.value;
         fixRotation();
@@ -158,7 +175,8 @@ public class Die : MonoBehaviour
     }
     void UnFreez()
     {
-        rb.WakeUp();
+        //rb.constraints = RigidbodyConstraints.FreezeAll;
+        //rb.WakeUp();
         rb.constraints = RigidbodyConstraints.None;
     }
 
@@ -187,9 +205,9 @@ public class Die : MonoBehaviour
         {
             if (flippable)
             {
-                
                 flip();
                 flipt.Invoke();
+                flippable=false;
             }
         }//fliping
     }
@@ -208,5 +226,55 @@ public class Die : MonoBehaviour
     public void Randomize()
     {
         transform.Rotate(Random.Range(0,360), Random.Range(0, 360), Random.Range(0, 360));
+    }
+    public void GetReadyToRoll()
+    {
+        _stopRolling = false;
+    }
+    public void ChangeDiePropertys(ScriptableDie Data)
+    {
+        DieData = Data;
+        if (DieData != null)
+        {
+            mr.material.mainTexture = DieData.texture;
+            for (int i = 0; i < _faces.Count; i++)
+            {
+                _faces[i].effect = DieData.faces[i];
+                if(_faces[i].effect.effectData.type!=EffectData.Type.None)
+                    _faces[i].special=true;
+                _faces[i].value = DieData.faceValues[i];
+            }
+        }
+    }
+    public void PlayRandomDiceSound()
+    {
+        int randomNum;
+        randomNum = Random.Range(1, 8);
+        switch (randomNum)
+        {
+            case 1:
+                SoundManager.PlaySound(SoundManager.Sound.OneDiceRollA, false);
+                break;
+            case 2:
+                SoundManager.PlaySound(SoundManager.Sound.OneDiceRollB, false);
+                break;
+            case 3:
+                SoundManager.PlaySound(SoundManager.Sound.OneDiceRollC, false);
+                break;
+            case 4:
+                SoundManager.PlaySound(SoundManager.Sound.OneDiceRollD, false);
+                break;
+            case 5:
+                SoundManager.PlaySound(SoundManager.Sound.OneDiceRollE, false);
+                break;
+            case 6:
+                SoundManager.PlaySound(SoundManager.Sound.OneDiceRollF, false);
+                break;
+            case 7:
+                SoundManager.PlaySound(SoundManager.Sound.OneDiceRollG, false);
+                break;
+            default:
+                break;
+        }
     }
 }

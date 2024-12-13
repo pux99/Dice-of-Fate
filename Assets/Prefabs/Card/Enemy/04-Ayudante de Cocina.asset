@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a540e6e422c3f42836c6e862bcf669, type: 3}
+  m_Name: 04-Ayudante de Cocina
+  m_EditorClassIdentifier: 
+  CardName: Ayudante De Cocina
+  CardArt: {fileID: 21300000, guid: 86e03bdbc5110de48beba5ff765aea28, type: 3}
+  enemy: {fileID: 0}
+  maxHealth: 1125
+  health: 1125
+  shield: 100
+  numbreOfNormalDice: 5
+  attack: 10
+  boss: 0
+  specialDice: []
+  OnCombatStartEffects: []
+  OnTurnStartEffects: []
+  OnTakingDamageEffects: []
+  Random: 0
+  rewards:
+  - target: 1
+    type: 5
+    Value: 0
+    enemy: {fileID: 0}
+    specialDie: {fileID: 11400000, guid: 9f410e38ab6250d459f9669f7ff6199f, type: 2}

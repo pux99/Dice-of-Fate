@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.EventSystems.EventTrigger;
 
 
 
@@ -41,6 +42,7 @@ public class UiManager : MonoBehaviour
         }
        
     }
+    public ShowText showText;
 
     #region Combat
     [Header("Combat")]
@@ -48,8 +50,10 @@ public class UiManager : MonoBehaviour
     [SerializeField] private CombatManager combat;
     [SerializeField] private GameObject CombatUI;
     [SerializeField] private Slider playerHP;
+    [SerializeField] private TextMeshProUGUI playerHpnumber;
     [SerializeField] private TextMeshProUGUI playerShield;
     [SerializeField] private Slider enemyHP;
+    [SerializeField] private TextMeshProUGUI enemyHpnumber;
     [SerializeField] private TextMeshProUGUI enemyShiel;
     [SerializeField] private Image EnemyCard;
     [SerializeField] private TextMeshProUGUI flips;//combertir botones en MYButton
@@ -66,6 +70,8 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject WinOverlay;
     [SerializeField] private GameObject endOfGameOverlay;
     [SerializeField] private GameObject LossOverlay;
+    [SerializeField] private GameObject CombatStarUp;
+    [SerializeField] private combatuistarter combatuistarter;
     #endregion
     #region Board
     [Space(2)]
@@ -77,10 +83,10 @@ public class UiManager : MonoBehaviour
     [SerializeField] private MyOptionButton option1;
     [SerializeField] private MyOptionButton option2;
     [SerializeField] private MyOptionButton option3;
-    [SerializeField] private Button BEndEvent;
+    [SerializeField] public EventBattleStarter startBattle;
+    [SerializeField] public Button BEndEvent;
     
     #endregion
-
 
 
 
@@ -96,7 +102,7 @@ public class UiManager : MonoBehaviour
     {
         if(Input.GetKeyUp(KeyCode.Escape))
         {
-            if(options.active)
+            if(options.activeSelf)
             {
                 options.SetActive(false);
             }
@@ -150,6 +156,7 @@ public class UiManager : MonoBehaviour
     public void BoardEventSubscription() 
     {
         board.cardEvent.AddListener(CardEventDisplay);
+        board.combatEvent.AddListener(CardCombatDisplay);
         board.endOfEventRewardCalculation.AddListener(CardEventEnding);
     }
 
@@ -158,6 +165,8 @@ public class UiManager : MonoBehaviour
     {
         enemyShiel.text = combat.enemy.shield.ToString();
         playerShield.text = combat.player.shield.ToString();
+        combat.player.updateHp();
+        combat.enemy.updateHp();
     }
     private void modifyFlips(int value)
     {
@@ -232,8 +241,15 @@ public class UiManager : MonoBehaviour
     public void UpdateHP(Fighter fighter)
     {
         if (fighter == combat.player)
+        {
             playerHP.value = (float)fighter.health / (float)fighter.maxHealth;
-        else enemyHP.value = (float)fighter.health / (float)fighter.maxHealth;
+            playerHpnumber.text = fighter.health.ToString();
+        }
+        else 
+        { 
+            enemyHP.value = (float)fighter.health / (float)fighter.maxHealth;
+            enemyHpnumber.text = fighter.health.ToString();
+        }
     }
     void FlipValueChange(int value)
     {
@@ -244,9 +260,12 @@ public class UiManager : MonoBehaviour
         if(combat.pOnUseDie.Count > 0)
             BRollTheRest.interactable = true;
     }
-    void CardEventDisplay(CardEvent card)
+    void CardEventDisplay(EventCard card)
     {
+        float baseShowSpeed = 1;
         BoardUI.SetActive(true);
+        BEndEvent.interactable=false;
+        showText.Show(EventText, baseShowSpeed);
         EventText.text = card.cardText;
         CardImage.sprite = card.CardArt;
         if (card.options.Count > 0)
@@ -255,6 +274,7 @@ public class UiManager : MonoBehaviour
             option1.gameObject.SetActive(true);
             option1.text.text = card.options[0].buttonText;
             option1.button.interactable = true;
+            showText.Show(option1.text, .9f);
         }
         else
             option1.gameObject.SetActive(false);
@@ -264,6 +284,7 @@ public class UiManager : MonoBehaviour
             option2.gameObject.SetActive(true);
             option2.text.text = card.options[1].buttonText;
             option2.button.interactable = true;
+            showText.Show(option2.text, baseShowSpeed - .8f);
         }
         else
             option2.gameObject.SetActive(false);
@@ -273,24 +294,31 @@ public class UiManager : MonoBehaviour
             option3.gameObject.SetActive(true);
             option3.text.text = card.options[2].buttonText;
             option3.button.interactable = true;
+            showText.Show(option3.text, baseShowSpeed - 0.7f);
         }
         else
             option3.gameObject.SetActive(false);
     }
-    public void CardEventEnding(Rewards.Reward reward)
+    public void CardCombatDisplay(EnemyCard card)
     {
-        EventText.text = EventText.text + "\n" + reward.consequence;
-        option1.button.interactable = false;
-        option2.button.interactable = false;
-        option3.button.interactable = false;
-        BEndEvent.gameObject.SetActive(true);
-        
+        CombatStarUp.SetActive(true);
+        combatuistarter.setenemy(card);
+    }
+    public void CardEventEnding(Rewards.Reward reward,string OptionText)
+    {
+        EventText.text = EventText.text + "\n\n<color=#BDB4FF>" + OptionText + "</color>";
+        EventText.text = EventText.text + "\n\n" + reward.consequence;
+        option1.gameObject.SetActive(false);
+        option2.gameObject.SetActive(false);
+        option3.gameObject.SetActive(false);
+        BEndEvent.gameObject.SetActive(true); 
+        BEndEvent.interactable=true;
     }
     public void EventEnding()
     {
 
         BoardUI.SetActive(false);
-        BEndEvent.gameObject.SetActive(false);
+        //BEndEvent.gameObject.SetActive(false);
         board.ResumeBoardMovement();
     }
     public void WinCombat(string Reward)

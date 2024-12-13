@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a540e6e422c3f42836c6e862bcf669, type: 3}
+  m_Name: 03-Cartografo Pirata
+  m_EditorClassIdentifier: 
+  CardName: Cartografo-Pirata
+  CardArt: {fileID: 21300000, guid: c9bfd7fbf6cf03f408cf98492ed80f47, type: 3}
+  enemy: {fileID: 0}
+  maxHealth: 700
+  health: 700
+  shield: 400
+  numbreOfNormalDice: 3
+  attack: 20
+  boss: 0
+  specialDice: []
+  OnCombatStartEffects: []
+  OnTurnStartEffects: []
+  OnTakingDamageEffects: []
+  Random: 0
+  rewards:
+  - target: 1
+    type: 5
+    Value: 0
+    enemy: {fileID: 0}
+    specialDie: {fileID: 11400000, guid: 9f410e38ab6250d459f9669f7ff6199f, type: 2}

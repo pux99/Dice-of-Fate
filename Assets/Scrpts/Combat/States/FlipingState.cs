@@ -12,6 +12,7 @@ public class FlipingState : CombatState
     }
     public UnityEvent endOfFlip;
     public UnityEvent<int> FlipCountChange;
+    public bool startUpFlips;
 
     private void Awake()
     {
@@ -31,9 +32,10 @@ public class FlipingState : CombatState
         {
             if(onPlace)
             {
-                foreach(Die die in dieList)
+                if(startUpFlips)
                 {
-                    die.flippable = true;
+                    TurnOnFlips();
+                    startUpFlips=false;
                 }
                 if (flips <= 0)
                 {
@@ -63,6 +65,7 @@ public class FlipingState : CombatState
             
             die.flipt.AddListener(diceFlipt);
         }
+        startUpFlips = true;
     }
     void diceFlipt()
     {
@@ -74,6 +77,12 @@ public class FlipingState : CombatState
         flips += value;
         FlipCountChange.Invoke(flips);
     }
-
+    public void TurnOnFlips() 
+    {
+        foreach (Die die in dieList)
+        {
+            die.flippable = true;
+        }
+    }
     
 }

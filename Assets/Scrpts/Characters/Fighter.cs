@@ -9,11 +9,18 @@ public class Fighter : MonoBehaviour
     [SerializeField] protected int _health;
     [SerializeField] protected int _shield;// minimun amount of point to get damage
     [SerializeField] public GameObject diceHolder;
+    [SerializeField] public int normalDieCount;
+    public List<ScriptableDie> specialdice;
     public List<Die> dice;
-    public List<Rewards.Effect> _OnCombatStartStartEffects;
-    public List<Rewards.Effect> _OnTurnStartEffects;
-    public List<Rewards.Effect> _OnTakingDamageEffects;
+    public List<EffectData> _OnCombatStartEffects;
+    public List<EffectData> _OnTurnStartEffects;
+    public List<EffectData> _OnTakingDamageEffects;
     protected string Reward;
+    public int lives=1;
+    public bool SkipNextTurn;
+    public Color color;
+    [SerializeField]private EffectApllier effectApllier;
+    public GameObject BaseDie;
 
     public int shield { get { return _shield; } }
     public int health { get { return _health; } }
@@ -22,15 +29,6 @@ public class Fighter : MonoBehaviour
     public UnityEvent<Fighter> UpdateHealthBar=new UnityEvent<Fighter>();
 
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
     public void Heal(int value)
     {
         _health += value;
@@ -44,24 +42,49 @@ public class Fighter : MonoBehaviour
     {
         if (value > _shield)
         {
-
-
-            //if(_OnTakingDamageEffects!=null)
-           // foreach (Effect.Effects effect in _OnTakingDamageEffects)
-                //effect.ApplyEffect(this,1);
+           if(_OnTakingDamageEffects!=null)
+            foreach (EffectData effect in _OnTakingDamageEffects)
+                effectApllier.ApplyEffect(effect);
             _health -= value;
+            PlayDamageSound();
             if (_health <= 0)
             {
                 _health = 0;
                 UpdateHealthBar.Invoke(this);
-                defeat();
+                lives--;
+                if(lives<=0)
+                    defeat();
+                else
+                    Revive();
             }
             else
             {
                 UpdateHealthBar.Invoke(this);
             }
+        } 
+    }
+    public void  DamageEffect(int value)
+    {
+        if (_OnTakingDamageEffects != null)
+            foreach (EffectData effect in _OnTakingDamageEffects)
+                effectApllier.ApplyEffect(effect);
+        _health -= value;
+        PlayDamageSound();
+        if (_health <= 0)
+        {
+            _health = 0;
+            UpdateHealthBar.Invoke(this);
+            lives--;
+            if (lives <= 0)
+                defeat();
+            else
+                Revive();
         }
-        
+        else
+        {
+            UpdateHealthBar.Invoke(this);
+        }
+
     }
     public void ChangeMaxHealth(int value)
     {
@@ -81,5 +104,78 @@ public class Fighter : MonoBehaviour
     private void defeat() 
     {
         Defeted.Invoke();
+    }
+    private void Revive()
+    {
+        // efecto estetico
+        _health = _maxHealth / 2;
+    }
+    public void OnTurnStart()
+    {
+        foreach (EffectData effect in _OnTurnStartEffects)
+            effectApllier.ApplyEffect(effect);
+    }
+    public void OnStartOfBattle()
+    {
+        UpdateHealthBar.Invoke(this);
+        foreach (EffectData effect in _OnCombatStartEffects)
+            effectApllier.ApplyEffect(effect);
+    }
+    public void GenerateDie()
+    {
+        foreach(Die d in dice)
+        {
+            Destroy(d.gameObject);
+        }    
+        dice.Clear();
+        for (int i = 0; i < normalDieCount; i++)
+        {
+            GameObject newDie= Instantiate(BaseDie, diceHolder.transform);
+            dice.Add(newDie.GetComponent<Die>());
+        }
+        foreach(ScriptableDie dieData in specialdice)
+        {
+            GameObject newDie = Instantiate(BaseDie, diceHolder.transform);
+            Die newDieScript = newDie.GetComponent<Die>();
+            newDieScript.ChangeDiePropertys(dieData);
+            dice.Add(newDieScript);
+        }
+        foreach(Die d in dice)
+        {
+            d.freez();
+        }
+    }
+    public void AddDie(Die ndie)
+    {
+        ndie.gameObject.transform.parent=diceHolder.transform;
+        dice.Add(ndie);
+        ndie.Roll();
+        normalDieCount++;
+    }
+    public void RemoveDie(Die odie) 
+    {
+        dice.Remove(odie);
+        Destroy(odie.gameObject);
+        normalDieCount--;
+    }
+    public void PlayDamageSound()
+    {
+        int randomNum;
+        randomNum = Random.Range(1, 4);
+        switch (randomNum)
+        {
+            case 1: SoundManager.PlaySound(SoundManager.Sound.DamageSoundA, false);
+                break;
+            case 2: SoundManager.PlaySound(SoundManager.Sound.DamageSoundB, false);
+                break;
+            case 3: SoundManager.PlaySound(SoundManager.Sound.DamageSoundC, false);
+                break;
+            default:
+                break;
+        }
+    }
+    public void updateHp()
+    {
+        UpdateHealthBar.Invoke(this);
     }
 }

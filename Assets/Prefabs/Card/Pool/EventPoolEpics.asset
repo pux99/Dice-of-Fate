@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f0d9411df6a6eb4da167c4ddddd870a, type: 3}
+  m_Name: EventPoolEpics
+  m_EditorClassIdentifier: 
+  cards:
+  - {fileID: 11400000, guid: 1ab290f19c278f146ac371aee799b6a4, type: 2}
+  - {fileID: 11400000, guid: 8870b512bb9a34a418ef4acd5c16417b, type: 2}
+  - {fileID: 11400000, guid: 3a063bdf222f017459b4c9b49773cecd, type: 2}
+  - {fileID: 11400000, guid: 826d630d6e5319440b3f495ca605cef3, type: 2}
+  - {fileID: 11400000, guid: 4982c6b91caae894b9b282ca165ea51e, type: 2}
+  - {fileID: 11400000, guid: 4b4f35f749b14cd49b94c1be47e7c8c0, type: 2}
+  - {fileID: 11400000, guid: fa180c54c2a07fb499d962c1f526314f, type: 2}
+  - {fileID: 11400000, guid: e0c1eb12e4c1f364a8cdd13ec9b44e1c, type: 2}
+  - {fileID: 11400000, guid: 9b5126e8aeb28ae409eceed7232ec171, type: 2}

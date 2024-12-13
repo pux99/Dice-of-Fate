@@ -49,10 +49,8 @@ public class SelectingState : CombatState
                selected.Remove(die);
         calculatePoint();
         SelectedPointsChange.Invoke(_points);
-
-
     }
-    void calculatePoint()
+    public void calculatePoint()
     {
         int value = 0;
         List<Die> numberDice = new List<Die>();
@@ -108,9 +106,9 @@ public class SelectingState : CombatState
         }
         foreach (Die die in specialDice)
         {
-            if (die.currentFace.effect.type == DieFace.diceFaceEffect.EffectType.multyply)
+            if (die.currentFace.effect.effectData.type == EffectData.Type.multiplyDamage)
             {
-                value *= die.currentFace.effect.Value;
+                value *= die.currentFace.effect.effectData.Value;
             }
         }
          _points=value;
@@ -135,10 +133,14 @@ public class SelectingState : CombatState
             foreach (Die die in dieList)
             {
                 die.selectable = false;
+                die._selected = false;
+                die.turnOffOutline();
                 die.select.RemoveListener(ChangeSelected);
             }
             RollAgain.Invoke(dieList);
             dieList.Clear();
+            selected.Clear();
+            calculatePoint();
         }
         
     }
@@ -181,6 +183,7 @@ public class SelectingState : CombatState
             die.selectable = false;
             die.select.RemoveListener(ChangeSelected);
         }
+        selected.Clear();
         dieList.Clear();
     }
 }

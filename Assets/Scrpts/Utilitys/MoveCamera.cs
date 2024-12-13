@@ -20,8 +20,8 @@ public class MoveCamera : MonoBehaviour
         {
             if (this.transform.position != diceGame.transform.position || transform.rotation != diceGame.transform.rotation)
             {
-                transform.position = Vector3.MoveTowards(this.transform.position, diceGame.transform.position, 20 * Time.deltaTime);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, diceGame.transform.rotation, 20 * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(this.transform.position, diceGame.transform.position, 40 * Time.deltaTime);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, diceGame.transform.rotation, 40 * Time.deltaTime);
             }
             else
             {

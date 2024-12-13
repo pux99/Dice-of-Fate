@@ -7,6 +7,6 @@ public class Damage : Effect
     public override void ApplyEffect(Fighter figther,int Value)
     {
         base.ApplyEffect(figther, Value);
-        figther.Damage(Value);
+        figther.DamageEffect(Value);
     }
 }

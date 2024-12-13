@@ -12,18 +12,22 @@ public class BoardSpace : MonoBehaviour
     public bool Used;
     public bool EventOnGoing;
     public bool finalSpace;
+    public bool reveld;
     #region materials
     public Material Blinking;
     public Material CardBack;
     public Material CardFront;
     #endregion
     public Card card;
+    public CardPool cardPool;
     public MeshRenderer meshRenderer;
     public UnityEvent<BoardSpace> newCurrentSpace=new UnityEvent<BoardSpace>();
     // Start is called before the first frame update
     void Start()
     {
-        meshRenderer = gameObject.GetComponent<MeshRenderer>();   
+        meshRenderer = gameObject.GetComponent<MeshRenderer>();
+        if (cardPool != null&& cardPool.cards != null)
+            card = cardPool.cards[Random.Range(0, cardPool.cards.Count)];
     }
 
     // Update is called once per frame
@@ -56,6 +60,10 @@ public class BoardSpace : MonoBehaviour
                 meshRenderer.material.SetTexture("_Texture", card.CardArt.texture);
             }
 
+        }
+        if(reveld)
+        {
+            meshRenderer.material.mainTexture = card.CardArt.texture;
         }
     }
 
